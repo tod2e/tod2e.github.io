@@ -29,6 +29,7 @@
     rerollTargetBtn: document.getElementById('rerollTargetBtn'),
     drawBtn: document.getElementById('drawBtn'),
     showTextBtn: document.getElementById('showTextBtn'),
+    skipQuestionBtn: document.getElementById('skipQuestionBtn'),
     questionText: document.getElementById('questionText'),
     cardActionPanel: document.getElementById('cardActionPanel'),
     cardActionTitle: document.getElementById('cardActionTitle'),
@@ -58,6 +59,10 @@
 
     settingsModal: document.getElementById('settingsModal'),
     categoryControls: document.getElementById('categoryControls'),
+    moodCategoryControls: document.getElementById('moodCategoryControls'),
+    moodSelectionSummary: document.getElementById('moodSelectionSummary'),
+    selectMoodAllBtn: document.getElementById('selectMoodAllBtn'),
+    clearMoodBtn: document.getElementById('clearMoodBtn'),
     selectAllBtn: document.getElementById('selectAllBtn'),
     clearCatsBtn: document.getElementById('clearCatsBtn'),
     winningScoreInput: document.getElementById('winningScoreInput'),
@@ -445,6 +450,21 @@
     update();
   }
 
+  function skipQuestion() {
+    if (!state.currentId || !state.gameStarted) return;
+    const card = byId(state.currentId);
+    const askerName = currentPlayer()?.name || 'The current player';
+    pushUndo('skip question');
+    state.currentId = null;
+    state.currentTargets = [];
+    state.questionVisible = false;
+    advanceTurn();
+    state.lastActionMessage = `${askerName} skipped the question. ${currentPlayer()?.name || 'Next player'} draws next.`;
+    addLog(`<strong>${escapeHtml(askerName)}</strong> skipped asking ${escapeHtml(card?.type || 'the question')}.`);
+    saveState();
+    update();
+  }
+
   function checkWinner(player) {
     if (state.winnerShown) return;
     if ((state.scores[player.id] || 0) < state.winningScore) return;
@@ -467,15 +487,40 @@
     update();
   }
 
-  function applyMoodPreset(slug) {
-    if (!moodPresets[slug]) return;
-    pushUndo('set mood');
-    state.selectedCategories = moodPresets[slug];
-    state.lastActionMessage = `${categoryBySlug(slug)?.name || 'Mood'} mood selected.`;
+  function setSelectedCategories(nextSlugs, label = '') {
+    const validSlugs = categories.map(cat => cat.slug);
+    const cleaned = Array.from(new Set(nextSlugs)).filter(slug => validSlugs.includes(slug));
+    pushUndo('change categories');
+    state.selectedCategories = cleaned;
+    state.lastActionMessage = label;
     saveState();
     renderCategories();
+    renderMoodCategories();
     update();
-    closeModal(document.getElementById('moodModal'));
+  }
+
+  function selectedCategoryNames() {
+    return state.selectedCategories
+      .map(slug => categoryBySlug(slug)?.name)
+      .filter(Boolean);
+  }
+
+  function applyMoodPreset(slug) {
+    const preset = moodPresets[slug];
+    if (!preset) return;
+    const names = preset.map(item => categoryBySlug(item)?.name).filter(Boolean);
+    const label = names.length
+      ? `Draw pile set to ${names.join(', ')}.`
+      : 'No categories selected.';
+    setSelectedCategories(preset, label);
+  }
+
+  function toggleCategory(slug, checked) {
+    const current = new Set(state.selectedCategories);
+    if (checked) current.add(slug);
+    else current.delete(slug);
+    const names = Array.from(current).map(item => categoryBySlug(item)?.name).filter(Boolean);
+    setSelectedCategories(Array.from(current), names.length ? `Drawing from ${names.join(', ')}.` : 'No categories selected.');
   }
 
   function setWinningScore(value) {
@@ -524,12 +569,13 @@
         <div class="empty-card-copy">
           <span>Truth or Drink</span>
           <strong>${state.gameStarted ? 'Draw' : 'Set the table'}</strong>
-          <p>${state.gameStarted ? 'The next card lands here.' : 'Add players and choose the mood. Then draw.'}</p>
+          <p>${state.gameStarted ? 'The next card lands here.' : 'Add players and choose categories. Then draw.'}</p>
         </div>
       `;
       els.questionText.textContent = '';
       els.questionText.classList.add('hidden');
       els.showTextBtn.classList.add('hidden');
+      els.skipQuestionBtn.classList.add('hidden');
       return;
     }
 
@@ -550,6 +596,7 @@
     els.questionText.textContent = card.question;
     els.questionText.classList.toggle('hidden', !state.questionVisible);
     els.showTextBtn.classList.remove('hidden');
+    els.skipQuestionBtn.classList.remove('hidden');
     els.showTextBtn.textContent = state.questionVisible ? 'Hide text' : 'Show text';
   }
 
@@ -724,19 +771,45 @@
         </span>
       `;
       label.querySelector('input').addEventListener('change', (event) => {
-        pushUndo('change categories');
-        const slug = event.target.value;
-        if (event.target.checked) {
-          state.selectedCategories = Array.from(new Set([...state.selectedCategories, slug]));
-        } else {
-          state.selectedCategories = state.selectedCategories.filter(item => item !== slug);
-        }
-        state.lastActionMessage = '';
-        saveState();
-        update();
+        toggleCategory(event.target.value, event.target.checked);
       });
       els.categoryControls.appendChild(label);
     }
+  }
+
+  function renderMoodCategories() {
+    if (!els.moodCategoryControls) return;
+
+    els.moodCategoryControls.innerHTML = '';
+    const selectedNames = selectedCategoryNames();
+    const selectedCardCount = selectedCards().length;
+    const availableCardCount = availableCards().length;
+
+    if (els.moodSelectionSummary) {
+      els.moodSelectionSummary.textContent = selectedNames.length
+        ? `${selectedNames.join(' + ')} · ${selectedCardCount} selected cards · ${availableCardCount} still drawable`
+        : 'No categories selected. Pick at least one set before drawing.';
+    }
+
+    categories.forEach((cat, index) => {
+      const checked = state.selectedCategories.includes(cat.slug);
+      const label = document.createElement('label');
+      label.className = `mood-category-card${checked ? ' selected' : ''}`;
+      label.style.setProperty('--cat-color', cat.color);
+      label.innerHTML = `
+        <input type="checkbox" value="${escapeHtml(cat.slug)}" ${checked ? 'checked' : ''} />
+        <span class="mood-rank">${String(index + 1).padStart(2, '0')}</span>
+        <span class="mood-card-copy">
+          <strong>${escapeHtml(cat.name)}</strong>
+          <small>${escapeHtml(categoryDescriptions[cat.slug] || '')}</small>
+        </span>
+        <em>${cat.count} cards</em>
+      `;
+      label.querySelector('input').addEventListener('change', event => {
+        toggleCategory(event.target.value, event.target.checked);
+      });
+      els.moodCategoryControls.appendChild(label);
+    });
   }
 
   function renderDiscard() {
@@ -778,6 +851,7 @@
     els.discardCount.textContent = state.discardIds.length;
     els.drawBtn.disabled = hasCurrentCard || state.selectedCategories.length === 0 || available === 0;
     els.showTextBtn.disabled = !hasCurrentCard;
+    els.skipQuestionBtn.disabled = !hasCurrentCard || !state.gameStarted;
     els.undoBtn.disabled = state.undoStack.length === 0;
     els.resetDiscardBtn.disabled = state.discardIds.length === 0;
     els.newRoundBtn.disabled = state.players.length < 2;
@@ -807,6 +881,8 @@
     renderMainStage();
     renderPlayers();
     renderScoreboard();
+    renderCategories();
+    renderMoodCategories();
     renderDiscard();
     updateStats();
   }
@@ -867,6 +943,7 @@
   els.drawBtn.addEventListener('click', drawCard);
   els.rerollTargetBtn.addEventListener('click', rerollTargets);
   els.noPointBtn.addEventListener('click', skipPoint);
+  els.skipQuestionBtn.addEventListener('click', skipQuestion);
   els.undoBtn.addEventListener('click', undo);
   els.resetDiscardBtn.addEventListener('click', resetDiscard);
   els.resetGameBtn.addEventListener('click', () => resetSamePlayers({ keepStarted: true }));
@@ -880,21 +957,19 @@
   });
 
   els.selectAllBtn.addEventListener('click', () => {
-    pushUndo('select all categories');
-    state.selectedCategories = categories.map(c => c.slug);
-    state.lastActionMessage = '';
-    saveState();
-    renderCategories();
-    update();
+    setSelectedCategories(categories.map(c => c.slug), 'Drawing from every category.');
   });
 
   els.clearCatsBtn.addEventListener('click', () => {
-    pushUndo('clear categories');
-    state.selectedCategories = [];
-    state.lastActionMessage = '';
-    saveState();
-    renderCategories();
-    update();
+    setSelectedCategories([], 'No categories selected.');
+  });
+
+  els.selectMoodAllBtn?.addEventListener('click', () => {
+    setSelectedCategories(categories.map(c => c.slug), 'Drawing from every category.');
+  });
+
+  els.clearMoodBtn?.addEventListener('click', () => {
+    setSelectedCategories([], 'No categories selected.');
   });
 
   els.winningScoreInput.addEventListener('change', event => setWinningScore(event.target.value));
@@ -926,5 +1001,6 @@
 
   setupModals();
   renderCategories();
+  renderMoodCategories();
   update();
 })();

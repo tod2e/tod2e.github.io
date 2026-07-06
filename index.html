@@ -12,7 +12,7 @@
       <a class="brand" href="#top" aria-label="Truth or Drink home">Truth or Drink</a>
       <nav class="top-actions" aria-label="Game controls">
         <button type="button" class="chip-button" data-open-modal="playersModal">Players</button>
-        <button type="button" class="chip-button" data-open-modal="moodModal">Mood</button>
+        <button type="button" class="chip-button" data-open-modal="moodModal">Categories</button>
         <button type="button" class="chip-button" data-open-modal="rulesModal">Rules</button>
       </nav>
     </header>
@@ -35,7 +35,7 @@
           <div class="empty-card-copy">
             <span>Truth or Drink</span>
             <strong>Set the table</strong>
-            <p>Add players and choose the mood. Then draw.</p>
+            <p>Add players and choose categories. Then draw.</p>
           </div>
         </div>
 
@@ -46,6 +46,7 @@
         <div class="primary-actions">
           <button type="button" id="drawBtn" class="primary-button">Set up players</button>
           <button type="button" id="showTextBtn" class="secondary-button hidden">Show text</button>
+          <button type="button" id="skipQuestionBtn" class="secondary-button skip-question-button hidden">Skip question</button>
         </div>
 
         <div id="cardActionPanel" class="award-panel hidden" aria-live="polite">
@@ -168,30 +169,24 @@
 
   <dialog id="moodModal" class="modal-card" aria-labelledby="moodModalTitle">
     <button type="button" class="modal-close" data-close-modal aria-label="Close">×</button>
-    <p class="eyebrow">Question sets</p>
-    <h2 id="moodModalTitle">Choose the mood</h2>
-    <p class="modal-intro">Start lighter than you think. You can add sharper sets once everyone is warmed up.</p>
-    <div class="mood-ladder" role="list">
-      <button type="button" class="mood-row guide-row-happy-hour" data-preset="happy-hour" role="listitem">
-        <span class="mood-rank">01</span>
-        <span><strong>Happy Hour</strong><small>Warm-up prompts for newer friends, mixed groups, or the first few rounds.</small></span>
-        <em>Light</em>
-      </button>
-      <button type="button" class="mood-row guide-row-on-the-rocks" data-preset="on-the-rocks" role="listitem">
-        <span class="mood-rank">02</span>
-        <span><strong>On the Rocks</strong><small>Personal friend questions with enough bite to make the table lean in.</small></span>
-        <em>Personal</em>
-      </button>
-      <button type="button" class="mood-row guide-row-last-call" data-preset="last-call" role="listitem">
-        <span class="mood-rank">03</span>
-        <span><strong>Last Call</strong><small>Deeper, more revealing prompts for close friends and late-game honesty.</small></span>
-        <em>Deep</em>
-      </button>
-      <button type="button" class="mood-row guide-row-extra-dirty" data-preset="extra-dirty" role="listitem">
-        <span class="mood-rank">04</span>
-        <span><strong>Extra Dirty</strong><small>Explicit adult prompts. Keep this off unless everyone wants the NSFW version.</small></span>
-        <em>NSFW</em>
-      </button>
+    <p class="eyebrow">Draw pile</p>
+    <h2 id="moodModalTitle">Choose categories</h2>
+    <p class="modal-intro">Pick one category or mix several together. The draw pile is built only from the sets that are switched on.</p>
+
+    <div class="preset-bar" aria-label="Quick category mixes">
+      <button type="button" class="mini-button" data-preset="happy-hour">Light</button>
+      <button type="button" class="mini-button" data-preset="on-the-rocks">Friends mix</button>
+      <button type="button" class="mini-button" data-preset="last-call">Deep mix</button>
+      <button type="button" class="mini-button" data-preset="extra-dirty">Everything</button>
+    </div>
+
+    <p id="moodSelectionSummary" class="mood-summary">Loading selected categories...</p>
+    <div id="moodCategoryControls" class="mood-category-grid" role="group" aria-label="Category selection"></div>
+
+    <div class="button-row modal-actions">
+      <button type="button" id="selectMoodAllBtn" class="secondary-button">Select all</button>
+      <button type="button" id="clearMoodBtn" class="secondary-button">Clear</button>
+      <button type="button" class="primary-button" data-close-modal>Done</button>
     </div>
   </dialog>
 
@@ -204,7 +199,7 @@
     <div class="rule-strip" aria-label="Basic flow">
       <div><strong>1</strong><span>Add players</span></div>
       <div><strong>2</strong><span>Draw on your turn</span></div>
-      <div><strong>3</strong><span>Answer or pass</span></div>
+      <div><strong>3</strong><span>Ask, skip, or pass</span></div>
       <div><strong>4</strong><span>Award the card</span></div>
     </div>
 
@@ -220,6 +215,10 @@
       <div class="guide-row">
         <dt>This Round’s On Me</dt>
         <dd>Everyone gets a chance to answer or pass. The asker awards the card to their favorite answer.</dd>
+      </div>
+      <div class="guide-row">
+        <dt>Skip question</dt>
+        <dd>If the current player does not want to ask the drawn question, they can skip it. No point is awarded, the card goes to the discard pile, and the next player draws.</dd>
       </div>
       <div class="guide-row">
         <dt>Discard pile</dt>

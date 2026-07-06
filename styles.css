@@ -843,3 +843,104 @@ textarea:focus {
   .modal-actions { justify-content: stretch; }
   .modal-actions > * { flex: 1 1 100%; }
 }
+
+.skip-question-button {
+  border-color: rgba(183, 106, 90, 0.36);
+  color: #e6c9bd;
+  background: rgba(183, 106, 90, 0.09);
+}
+
+.skip-question-button:hover {
+  border-color: rgba(183, 106, 90, 0.58);
+  background: rgba(183, 106, 90, 0.16);
+}
+
+/* Multi-category draw-pile chooser */
+.preset-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 10px 0 14px;
+}
+
+.mood-summary {
+  margin: 0 0 12px;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  color: var(--muted);
+  background: rgba(255,255,255,0.035);
+  line-height: 1.4;
+}
+
+.mood-category-grid {
+  display: grid;
+  gap: 10px;
+}
+
+.mood-category-card {
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto 42px 1fr auto;
+  gap: 12px;
+  align-items: center;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  color: var(--ink);
+  background: rgba(255,255,255,0.032);
+  cursor: pointer;
+  transition: border-color 160ms ease, background 160ms ease, transform 160ms ease;
+}
+
+.mood-category-card:hover {
+  transform: translateY(-1px);
+  background: rgba(255,255,255,0.05);
+}
+
+.mood-category-card.selected,
+.mood-category-card:has(input:checked) {
+  border-color: color-mix(in srgb, var(--cat-color) 68%, white 10%);
+  background: color-mix(in srgb, var(--cat-color) 18%, rgba(255,255,255,0.035));
+}
+
+.mood-category-card input {
+  width: 18px;
+  min-height: 18px;
+  margin: 0;
+  accent-color: var(--cat-color);
+}
+
+.mood-card-copy {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+
+.mood-card-copy strong {
+  font-weight: 900;
+}
+
+.mood-card-copy small {
+  color: var(--muted);
+  line-height: 1.35;
+}
+
+.mood-category-card em {
+  color: var(--accent-strong);
+  font-style: normal;
+  font-size: 0.82rem;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+@media (max-width: 620px) {
+  .mood-category-card {
+    grid-template-columns: auto 36px 1fr;
+  }
+
+  .mood-category-card em {
+    grid-column: 3;
+  }
+}
