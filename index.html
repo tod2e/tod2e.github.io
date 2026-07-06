@@ -8,172 +8,196 @@
 </head>
 <body>
   <main class="app-shell">
-    <header class="hero">
-      <div class="hero-copy">
-        <h1>Truth or Drink</h1>
-        <div class="hero-actions" aria-label="Game guides">
-          <button type="button" class="ghost-button" data-open-modal="moodModal">Choose the mood</button>
-          <button type="button" class="ghost-button" data-open-modal="rulesModal">How to play</button>
-        </div>
-      </div>
-
-      <div class="stats-panel" aria-live="polite">
-        <span><strong id="selectedCount">0</strong> selected</span>
-        <span><strong id="availableCount">0</strong> left</span>
-        <span><strong id="discardCount">0</strong> discarded</span>
-      </div>
+    <header class="topbar" aria-label="Main navigation">
+      <a class="brand" href="#top" aria-label="Truth or Drink home">Truth or Drink</a>
+      <nav class="top-actions" aria-label="Game controls">
+        <button type="button" class="chip-button" data-open-modal="playersModal">Players</button>
+        <button type="button" class="chip-button" data-open-modal="moodModal">Mood</button>
+        <button type="button" class="chip-button" data-open-modal="rulesModal">Rules</button>
+      </nav>
     </header>
 
-    <section class="setup-card" id="setupPanel" aria-labelledby="setupHeading">
-      <div class="section-heading">
-        <div>
-          <div class="card-kicker">Before you start</div>
-          <h2 id="setupHeading">Add players in turn order</h2>
-          <p class="section-note">The asker rotates after each card is awarded or skipped. Points are awarded to the person whose answer wins the card.</p>
-        </div>
-        <div class="player-count-pill"><strong id="playerCount">0</strong> players</div>
+    <section id="top" class="table-stage" aria-labelledby="mainTitle">
+      <div class="stage-copy">
+        <p class="eyebrow" id="roundLabel">Round 1</p>
+        <h1 id="mainTitle"><span id="currentPlayerName">Set up players</span><span class="muted-heading"> draws</span></h1>
+        <p id="turnStatus" class="turn-status">Add players first, then the card becomes the center of the game.</p>
       </div>
 
-      <form id="addPlayerForm" class="player-form" autocomplete="off">
-        <label class="sr-only" for="playerNameInput">Player name</label>
-        <input id="playerNameInput" name="playerName" type="text" maxlength="32" placeholder="Add player name" />
-        <button type="submit" class="secondary-button">Add player</button>
-      </form>
-
-      <div id="setupPlayers" class="setup-player-list" aria-live="polite"></div>
-
-      <div class="button-row setup-actions">
-        <button type="button" id="startGameBtn" class="primary-button">Begin game</button>
-        <button type="button" id="clearPlayersBtn" class="secondary-button">Clear players</button>
-      </div>
-      <p id="setupStatus" class="status-line">Add at least two players to begin.</p>
-    </section>
-
-    <section class="game-panel hidden" id="gamePanel" aria-labelledby="gameHeading">
-      <div class="turn-card">
-        <div>
-          <div class="card-kicker">Current turn</div>
-          <h2 id="gameHeading"><span id="currentPlayerName">Player</span> draws</h2>
-          <p id="turnStatus" class="section-note">Draw a card to start the turn.</p>
+      <section class="card-console" aria-label="Current card and draw controls">
+        <div id="targetPanel" class="target-panel hidden" aria-live="polite">
+          <span class="target-label">Ask</span>
+          <strong id="targetText">—</strong>
+          <button type="button" id="rerollTargetBtn" class="mini-button">reroll</button>
         </div>
-        <button type="button" id="newGameBtn" class="secondary-button">New game</button>
-      </div>
 
-      <div class="scoreboard" aria-labelledby="scoreboardHeading">
-        <div class="scoreboard-head">
-          <h3 id="scoreboardHeading">Scoreboard</h3>
-          <span>Cards won</span>
-        </div>
-        <div id="scoreboardRows" class="scoreboard-rows"></div>
-      </div>
-    </section>
-
-    <section class="controls-card" aria-labelledby="categoriesHeading">
-      <div class="control-heading">
-        <div>
-          <div class="card-kicker">Deck setup</div>
-          <h2 id="categoriesHeading">Choose categories</h2>
-          <p class="section-note">Mix sets freely. The draw pile only uses checked categories.</p>
-        </div>
-        <div class="quick-actions">
-          <button type="button" id="selectAllBtn" class="small-button">Select all</button>
-          <button type="button" id="clearCatsBtn" class="small-button">Clear</button>
-        </div>
-      </div>
-      <div id="categoryControls" class="category-grid"></div>
-    </section>
-
-    <section class="draw-area">
-      <article class="current-card" aria-labelledby="currentHeading">
-        <div class="current-meta">
-          <div>
-            <div class="card-kicker">Draw pile</div>
-            <h2 id="currentHeading">Current card</h2>
+        <div id="cardStage" class="card-stage empty-card" aria-live="polite">
+          <div class="empty-card-copy">
+            <span>Truth or Drink</span>
+            <strong>Set the table</strong>
+            <p>Add players and choose the mood. Then draw.</p>
           </div>
-          <div id="currentLabels" class="label-row"></div>
         </div>
 
-        <div class="card-frame">
-          <div id="cardStage" class="card-stage empty-state">
-            <p>Add players, choose categories, then draw.</p>
-          </div>
+        <div id="currentLabels" class="label-row" aria-label="Current card labels"></div>
+
+        <p id="questionText" class="question-text hidden"></p>
+
+        <div class="primary-actions">
+          <button type="button" id="drawBtn" class="primary-button">Set up players</button>
+          <button type="button" id="showTextBtn" class="secondary-button hidden">Show text</button>
         </div>
 
         <div id="cardActionPanel" class="award-panel hidden" aria-live="polite">
-          <div>
-            <h3 id="cardActionTitle">Award this card</h3>
-            <p id="cardActionHint">Choose who won the answer, or skip if no one gets the point.</p>
+          <div class="award-copy">
+            <h2 id="cardActionTitle">Award the card</h2>
+            <p id="cardActionHint">Pick the answer that wins the point.</p>
           </div>
           <div id="awardButtons" class="award-grid"></div>
           <button type="button" id="noPointBtn" class="secondary-button full-width">No point, next turn</button>
         </div>
+      </section>
 
-        <div class="button-row draw-buttons">
-          <button type="button" id="drawBtn" class="primary-button">Draw card</button>
-          <button type="button" id="resetBtn" class="secondary-button">Reset discard pile</button>
-        </div>
-        <p id="statusLine" class="status-line">Loading deck...</p>
-        <p id="questionText" class="question-text"></p>
-      </article>
+      <section class="quick-strip" aria-label="Game status">
+        <button type="button" class="stat-card" data-open-modal="playersModal">
+          <strong id="playerCountMini">0</strong>
+          <span>players</span>
+        </button>
+        <button type="button" class="stat-card" data-open-modal="settingsModal">
+          <strong id="selectedCount">0</strong>
+          <span>selected</span>
+        </button>
+        <button type="button" id="discardQuickBtn" class="stat-card" data-open-modal="discardModal">
+          <strong id="discardCount">0</strong>
+          <span>discarded</span>
+        </button>
+        <button type="button" id="undoBtn" class="stat-card utility-card">
+          <strong>↶</strong>
+          <span>undo</span>
+        </button>
+      </section>
+    </section>
 
-      <aside class="discard-panel" aria-labelledby="discardHeading">
-        <div class="discard-heading">
+    <section id="scorePanel" class="lower-panel hidden" aria-labelledby="scoreboardHeading">
+      <div class="panel-card scoreboard-card">
+        <div class="panel-head">
           <div>
-            <div class="card-kicker">Used cards</div>
-            <h2 id="discardHeading">Discard pile</h2>
+            <p class="eyebrow">Score</p>
+            <h2 id="scoreboardHeading">Scoreboard</h2>
           </div>
-          <button type="button" id="hideDiscardBtn" class="small-button">Hide</button>
+          <span id="winTargetLabel" class="soft-pill">First to 7</span>
         </div>
-        <p class="discard-help">Drawn cards live here until reset, so prompts do not repeat in the same run.</p>
-        <div id="discardGrid" class="discard-grid"></div>
-      </aside>
+        <div id="scoreboardRows" class="scoreboard-rows"></div>
+      </div>
+
+      <div class="panel-card log-card">
+        <div class="panel-head compact-head">
+          <div>
+            <p class="eyebrow">Recent</p>
+            <h2>Game log</h2>
+          </div>
+          <button type="button" id="resetGameBtn" class="mini-button">reset game</button>
+        </div>
+        <div id="gameLog" class="game-log"></div>
+      </div>
     </section>
   </main>
 
+  <dialog id="playersModal" class="modal-card" aria-labelledby="playersModalTitle">
+    <button type="button" class="modal-close" data-close-modal aria-label="Close">×</button>
+    <p class="eyebrow">Before you start</p>
+    <h2 id="playersModalTitle">Players and turn order</h2>
+    <p class="modal-intro">Add names in the order people should draw. You can drag the vibe later by randomizing the order.</p>
+
+    <form id="addPlayerForm" class="player-form" autocomplete="off">
+      <label class="sr-only" for="playerNameInput">Player name</label>
+      <input id="playerNameInput" name="playerName" type="text" maxlength="32" placeholder="Add player name" />
+      <button type="submit" class="secondary-button">Add</button>
+    </form>
+
+    <form id="bulkPlayerForm" class="bulk-form" autocomplete="off">
+      <label for="bulkPlayerInput">Add several at once</label>
+      <textarea id="bulkPlayerInput" rows="3" placeholder="Ben, Alex, Maya, Sam"></textarea>
+      <button type="submit" class="mini-button">Add list</button>
+    </form>
+
+    <div id="setupPlayers" class="setup-player-list" aria-live="polite"></div>
+
+    <div class="button-row modal-actions">
+      <button type="button" id="randomizePlayersBtn" class="secondary-button">Randomize order</button>
+      <button type="button" id="clearPlayersBtn" class="secondary-button">Clear</button>
+      <button type="button" id="startGameBtn" class="primary-button">Begin game</button>
+    </div>
+    <p id="setupStatus" class="status-line">Add at least two players to begin.</p>
+  </dialog>
+
+  <dialog id="settingsModal" class="modal-card" aria-labelledby="settingsModalTitle">
+    <button type="button" class="modal-close" data-close-modal aria-label="Close">×</button>
+    <p class="eyebrow">Deck setup</p>
+    <h2 id="settingsModalTitle">Game settings</h2>
+    <p class="modal-intro">Pick the card sets and decide how long the game should run.</p>
+
+    <div class="setting-block">
+      <div class="setting-head">
+        <h3>Categories</h3>
+        <div class="quick-actions">
+          <button type="button" id="selectAllBtn" class="mini-button">all</button>
+          <button type="button" id="clearCatsBtn" class="mini-button">clear</button>
+        </div>
+      </div>
+      <div id="categoryControls" class="category-grid"></div>
+    </div>
+
+    <div class="setting-grid">
+      <label class="field-card" for="winningScoreInput">
+        <span>Winning score</span>
+        <input id="winningScoreInput" type="number" min="1" max="99" step="1" value="7" />
+      </label>
+      <label class="field-card" for="penaltyInput">
+        <span>Pass penalty</span>
+        <input id="penaltyInput" type="text" maxlength="40" value="drink" />
+      </label>
+    </div>
+
+    <div class="button-row modal-actions">
+      <button type="button" id="resetDiscardBtn" class="secondary-button">Reset discard pile</button>
+      <button type="button" id="newRoundBtn" class="secondary-button">New round, same players</button>
+    </div>
+    <p id="deckStatus" class="status-line">Loading deck...</p>
+  </dialog>
+
   <dialog id="moodModal" class="modal-card" aria-labelledby="moodModalTitle">
     <button type="button" class="modal-close" data-close-modal aria-label="Close">×</button>
-    <div class="card-kicker">Question sets</div>
+    <p class="eyebrow">Question sets</p>
     <h2 id="moodModalTitle">Choose the mood</h2>
-    <p class="modal-intro">Start lighter than you think you need. Add the heavier sets only when the room has earned them.</p>
+    <p class="modal-intro">Start lighter than you think. You can add sharper sets once everyone is warmed up.</p>
     <div class="mood-ladder" role="list">
-      <div class="mood-row guide-row-happy-hour" role="listitem">
+      <button type="button" class="mood-row guide-row-happy-hour" data-preset="happy-hour" role="listitem">
         <span class="mood-rank">01</span>
-        <div>
-          <h3>Happy Hour</h3>
-          <p>Warm-up prompts for newer friends, mixed groups, or the first few rounds.</p>
-        </div>
-        <span class="mood-pill">Light</span>
-      </div>
-      <div class="mood-row guide-row-on-the-rocks" role="listitem">
+        <span><strong>Happy Hour</strong><small>Warm-up prompts for newer friends, mixed groups, or the first few rounds.</small></span>
+        <em>Light</em>
+      </button>
+      <button type="button" class="mood-row guide-row-on-the-rocks" data-preset="on-the-rocks" role="listitem">
         <span class="mood-rank">02</span>
-        <div>
-          <h3>On the Rocks</h3>
-          <p>Personal friend questions with enough bite to make the table lean in.</p>
-        </div>
-        <span class="mood-pill">Personal</span>
-      </div>
-      <div class="mood-row guide-row-last-call" role="listitem">
+        <span><strong>On the Rocks</strong><small>Personal friend questions with enough bite to make the table lean in.</small></span>
+        <em>Personal</em>
+      </button>
+      <button type="button" class="mood-row guide-row-last-call" data-preset="last-call" role="listitem">
         <span class="mood-rank">03</span>
-        <div>
-          <h3>Last Call</h3>
-          <p>Deeper, more revealing prompts for close friends and late-game honesty.</p>
-        </div>
-        <span class="mood-pill">Deep</span>
-      </div>
-      <div class="mood-row guide-row-extra-dirty" role="listitem">
+        <span><strong>Last Call</strong><small>Deeper, more revealing prompts for close friends and late-game honesty.</small></span>
+        <em>Deep</em>
+      </button>
+      <button type="button" class="mood-row guide-row-extra-dirty" data-preset="extra-dirty" role="listitem">
         <span class="mood-rank">04</span>
-        <div>
-          <h3>Extra Dirty</h3>
-          <p>Explicit adult prompts. Keep this off unless everyone wants the NSFW version.</p>
-        </div>
-        <span class="mood-pill">NSFW</span>
-      </div>
+        <span><strong>Extra Dirty</strong><small>Explicit adult prompts. Keep this off unless everyone wants the NSFW version.</small></span>
+        <em>NSFW</em>
+      </button>
     </div>
   </dialog>
 
   <dialog id="rulesModal" class="modal-card" aria-labelledby="rulesModalTitle">
     <button type="button" class="modal-close" data-close-modal aria-label="Close">×</button>
-    <div class="card-kicker">How to play</div>
+    <p class="eyebrow">How to play</p>
     <h2 id="rulesModalTitle">Rules and card types</h2>
     <p class="modal-intro">Answer honestly, or pass by taking the agreed penalty. Alcohol is optional.</p>
 
@@ -202,6 +226,25 @@
         <dd>Once a card is drawn, it cannot be drawn again until the discard pile is reset.</dd>
       </div>
     </dl>
+  </dialog>
+
+  <dialog id="discardModal" class="modal-card wide-modal" aria-labelledby="discardModalTitle">
+    <button type="button" class="modal-close" data-close-modal aria-label="Close">×</button>
+    <p class="eyebrow">Used cards</p>
+    <h2 id="discardModalTitle">Discard pile</h2>
+    <p class="modal-intro">Drawn cards stay here and will not repeat until you reset the pile.</p>
+    <div id="discardGrid" class="discard-grid"></div>
+  </dialog>
+
+  <dialog id="winnerModal" class="modal-card winner-modal" aria-labelledby="winnerModalTitle">
+    <button type="button" class="modal-close" data-close-modal aria-label="Close">×</button>
+    <p class="eyebrow">Game over</p>
+    <h2 id="winnerModalTitle">Winner</h2>
+    <p id="winnerText" class="winner-text"></p>
+    <div class="button-row modal-actions">
+      <button type="button" id="winnerContinueBtn" class="secondary-button">Keep playing</button>
+      <button type="button" id="winnerResetBtn" class="primary-button">New round</button>
+    </div>
   </dialog>
 
   <script src="manifest.js"></script>

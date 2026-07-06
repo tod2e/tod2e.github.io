@@ -1,52 +1,31 @@
-# Truth or Drink GitHub Pages Site
+# Truth or Drink card drawer
 
-This folder contains a complete static site for drawing Truth or Drink cards from selected categories without repeats.
+A static GitHub Pages-ready Truth or Drink card drawer.
 
-## Contents
+## What is included
 
-- `index.html` - the web page
-- `styles.css` - styling
-- `script.js` - player setup, turn order, scoring, deck selection, random draw, and discard-pile logic
-- `manifest.json` / `manifest.js` - card metadata
-- `cards/` - individual PNG card images sorted into category folders
+- 396 prompt card images sorted into four category folders
+- `index.html`, `styles.css`, and `script.js`
+- `manifest.js` with the card metadata used by the app
+- discard-pile logic so drawn cards do not repeat until reset
+- player setup and turn-order tracking
+- point tracking according to the card rules
+- mood/category presets
+- target suggestions for Straight Up / Make It a Double / This Round's On Me
+- undo, game log, winning score, bulk player add, randomize order, and new-round controls
 
-## Main features
+## How to deploy on GitHub Pages
 
-- Clickable pop-up guides for **Choose the mood** and **How to play**
-- Player setup before the game begins
-- Turn order that rotates through players in the order entered
-- Scoreboard for awarded cards
-- Rule-aware award panel for Straight Up, Make It a Double, and This Round's On Me
-- Category selection
-- Random draw button
-- Digital discard pile so cards do not repeat until reset
-- Responsive layout for phones and tablets
+1. Create a GitHub repository.
+2. Upload the contents of this folder, not the zip file itself.
+3. Go to **Settings → Pages**.
+4. Under **Build and deployment**, choose **Deploy from a branch**.
+5. Select the `main` branch and the root folder `/`.
+6. Save. GitHub will publish the site after a short build.
 
-## Card counts
+## Local testing
 
-- On the Rocks: 99 cards
-- Last Call: 99 cards
-- Happy Hour: 99 cards
-- Extra Dirty: 99 cards
-
-Total drawable prompt cards: 396
-
-Artwork/card-back pages with no prompt text were not included in the draw pile.
-
-## Deploying to GitHub Pages
-
-1. Create a new GitHub repo, or use an existing repo.
-2. Copy all files from this folder into the repo root.
-3. Commit and push to GitHub.
-4. In GitHub, go to **Settings → Pages**.
-5. Choose **Deploy from a branch**, select `main`, and use `/root`.
-6. Wait for GitHub to publish the site.
-
-For a personal site, name the repository `YOURUSERNAME.github.io` and the site will publish at that address. For a normal project repo, GitHub will publish it under `https://YOURUSERNAME.github.io/REPO-NAME/`.
-
-## Local preview
-
-Run this inside the folder:
+Open `index.html` directly in a browser, or run a local static server:
 
 ```bash
 python3 -m http.server 8000
@@ -54,6 +33,6 @@ python3 -m http.server 8000
 
 Then open `http://localhost:8000`.
 
-## Note
+## Notes
 
-Only publish these card images publicly if you have the right to share them.
+The app stores game progress in browser `localStorage`, so refreshes preserve the current game on the same device/browser. Reset the game or clear site data to wipe saved progress.
