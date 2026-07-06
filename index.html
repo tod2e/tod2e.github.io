@@ -3,16 +3,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Card Drawer</title>
+  <title>Truth or Drink</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <main class="app-shell">
     <header class="hero">
       <div>
-        <p class="eyebrow">Static GitHub Pages deck</p>
-        <h1>Card Drawer</h1>
-        <p class="subhead">Pick categories, draw randomly, and keep drawn cards in the discard pile so they do not repeat.</p>
+        <h1>Truth or Drink</h1>
       </div>
       <div class="stats-panel" aria-live="polite">
         <span><strong id="selectedCount">0</strong> selected</span>
@@ -22,59 +20,90 @@
     </header>
 
     <section class="info-grid" aria-label="Game guide">
-      <article class="guide-card" aria-labelledby="categoryGuideHeading">
-        <h2 id="categoryGuideHeading">Category guide</h2>
-        <p class="guide-intro">Choose the question set that fits the room. They get more intimate as you move down the list.</p>
-        <dl class="guide-list category-guide-list">
-          <div class="guide-row guide-row-happy-hour">
-            <dt>Happy Hour</dt>
-            <dd>Lightest set. Good for warming up, newer friends, or groups that still need a gentle entry point.</dd>
+      <article class="guide-card guide-card-wide" aria-labelledby="categoryGuideHeading">
+        <div class="card-kicker">Question sets</div>
+        <div class="guide-header">
+          <h2 id="categoryGuideHeading">Choose the mood</h2>
+          <p class="guide-intro">Start light. Add heavier sets only when the room is clearly up for it.</p>
+        </div>
+        <div class="mood-ladder" role="list">
+          <div class="mood-row guide-row-happy-hour" role="listitem">
+            <span class="mood-rank">01</span>
+            <div>
+              <h3>Happy Hour</h3>
+              <p>Warm-up prompts for newer friends, mixed groups, or the first few rounds.</p>
+            </div>
+            <span class="mood-pill">Light</span>
           </div>
-          <div class="guide-row guide-row-on-the-rocks">
-            <dt>On the Rocks</dt>
-            <dd>More personal friend questions, with enough bite to make the conversation interesting without going fully nuclear.</dd>
+          <div class="mood-row guide-row-on-the-rocks" role="listitem">
+            <span class="mood-rank">02</span>
+            <div>
+              <h3>On the Rocks</h3>
+              <p>Personal friend questions with enough bite to make things interesting.</p>
+            </div>
+            <span class="mood-pill">Personal</span>
           </div>
-          <div class="guide-row guide-row-last-call">
-            <dt>Last Call</dt>
-            <dd>Deeper, more revealing prompts for close friends and late-game conversations.</dd>
+          <div class="mood-row guide-row-last-call" role="listitem">
+            <span class="mood-rank">03</span>
+            <div>
+              <h3>Last Call</h3>
+              <p>Deeper, more revealing prompts for close friends and later-game energy.</p>
+            </div>
+            <span class="mood-pill">Deep</span>
           </div>
-          <div class="guide-row guide-row-extra-dirty">
-            <dt>Extra Dirty</dt>
-            <dd>Most explicit set. NSFW/adult questions, so leave this off unless everyone actually wants that version of the game.</dd>
+          <div class="mood-row guide-row-extra-dirty" role="listitem">
+            <span class="mood-rank">04</span>
+            <div>
+              <h3>Extra Dirty</h3>
+              <p>Explicit adult prompts. Leave this off unless everyone wants the NSFW version.</p>
+            </div>
+            <span class="mood-pill">NSFW</span>
           </div>
-        </dl>
+        </div>
       </article>
 
       <article class="guide-card" aria-labelledby="rulesGuideHeading">
-        <h2 id="rulesGuideHeading">Rules and card types</h2>
-        <p class="guide-intro">Basic rule: answer honestly or pass by drinking. No alcohol is required; use any agreed penalty or just skip.</p>
+        <div class="card-kicker">How to play</div>
+        <div class="guide-header">
+          <h2 id="rulesGuideHeading">Rules and card types</h2>
+          <p class="guide-intro">Answer honestly, or pass by taking the agreed penalty. Alcohol is optional.</p>
+        </div>
+
+        <div class="rule-strip" aria-label="Basic flow">
+          <div><strong>1</strong><span>Select sets</span></div>
+          <div><strong>2</strong><span>Draw a card</span></div>
+          <div><strong>3</strong><span>Answer or pass</span></div>
+          <div><strong>4</strong><span>No repeats</span></div>
+        </div>
+
         <dl class="guide-list rules-guide-list">
           <div class="guide-row">
             <dt>Straight Up</dt>
-            <dd>Ask one person. If they give a satisfying answer, they get the card as a point. If they pass, ask someone else.</dd>
+            <dd>Ask one person. If they answer, they can keep the card as a point. If they pass, ask someone else.</dd>
           </div>
           <div class="guide-row">
             <dt>Make It a Double</dt>
-            <dd>Ask one person, then ask another. Give the point to whichever answer you like best.</dd>
+            <dd>Ask one person, then ask another. Award the card to whichever answer you like better.</dd>
           </div>
           <div class="guide-row">
             <dt>This Round’s On Me</dt>
-            <dd>Everyone gets a chance to answer or pass. The asker gives the point to their favorite answer.</dd>
+            <dd>Everyone gets a chance to answer or pass. The asker chooses their favorite answer.</dd>
           </div>
           <div class="guide-row">
             <dt>Digital discard pile</dt>
-            <dd>When a card is drawn, this site immediately moves it to the discard pile, so it will not repeat until you reset.</dd>
+            <dd>Once drawn, a card is moved to the discard pile and cannot appear again until you reset.</dd>
           </div>
         </dl>
-        <p class="two-player-note">For two players, the printed game treats the special card types as optional. The simplest version is to alternate drawing and asking each other.</p>
+        <p class="two-player-note">Two-player shortcut: ignore the special formats and alternate drawing cards for each other.</p>
       </article>
     </section>
 
     <section class="controls-card" aria-labelledby="categoriesHeading">
       <div class="control-heading">
         <div>
+          <div class="card-kicker">Deck setup</div>
           <h2 id="categoriesHeading">Choose categories</h2>
-          <p class="section-note">Only cards from selected categories can be drawn. You can mix sets or keep the game to one lane.</p>
+          <p class="section-note">Mix sets freely. The draw pile only uses checked categories.</p>
         </div>
         <div class="quick-actions">
           <button type="button" id="selectAllBtn" class="small-button">Select all</button>
@@ -92,21 +121,29 @@
     <section class="draw-area">
       <article class="current-card" aria-labelledby="currentHeading">
         <div class="current-meta">
-          <h2 id="currentHeading">Current card</h2>
+          <div>
+            <div class="card-kicker">Draw pile</div>
+            <h2 id="currentHeading">Current card</h2>
+          </div>
           <div id="currentLabels" class="label-row"></div>
         </div>
-        <div id="cardStage" class="card-stage empty-state">
-          <p>Select at least one category, then draw.</p>
+        <div class="card-frame">
+          <div id="cardStage" class="card-stage empty-state">
+            <p>Select at least one category, then draw.</p>
+          </div>
         </div>
         <p id="questionText" class="question-text"></p>
       </article>
 
       <aside class="discard-panel" aria-labelledby="discardHeading">
         <div class="discard-heading">
-          <h2 id="discardHeading">Discard pile</h2>
+          <div>
+            <div class="card-kicker">Used cards</div>
+            <h2 id="discardHeading">Discard pile</h2>
+          </div>
           <button type="button" id="hideDiscardBtn" class="small-button">Hide</button>
         </div>
-        <p class="discard-help">Cards move here as soon as they are drawn. They will not be drawn again until you reset the pile.</p>
+        <p class="discard-help">Drawn cards live here until reset, so the same prompt will not come back immediately.</p>
         <div id="discardGrid" class="discard-grid"></div>
       </aside>
     </section>

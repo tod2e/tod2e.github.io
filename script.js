@@ -4,6 +4,13 @@
   const categories = manifest.categories;
   const storageKey = 'cardDrawerState:v1';
 
+  const categoryDescriptions = {
+    'happy-hour': 'Warm-up prompts for an easy start.',
+    'on-the-rocks': 'Personal questions with a little bite.',
+    'last-call': 'Deeper prompts for close friends.',
+    'extra-dirty': 'Explicit adult prompts. NSFW.'
+  };
+
   const els = {
     categoryControls: document.getElementById('categoryControls'),
     drawBtn: document.getElementById('drawBtn'),
@@ -80,6 +87,7 @@
         <span class="category-copy">
           <span class="category-name">${cat.name}</span>
           <span class="category-count">${cat.count} cards</span>
+          <span class="category-description">${categoryDescriptions[cat.slug] || ''}</span>
         </span>
       `;
       label.querySelector('input').addEventListener('change', (event) => {

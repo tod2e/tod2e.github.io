@@ -1,4 +1,4 @@
-# Card Drawer GitHub Pages Site
+# Truth or Drink GitHub Pages Site
 
 This folder contains a complete static site for drawing cards from selected categories without repeats.
 

@@ -1,31 +1,31 @@
 window.CARD_MANIFEST = {
-  "title": "Card Drawer",
+  "title": "Truth or Drink",
   "source": "TOD2E-individual-cards(1).pdf",
   "cardsIncluded": 396,
   "note": "Prompt cards only. Artwork/card-back pages with no prompt text were excluded from the draw pile.",
   "categories": [
     {
+      "name": "Happy Hour",
+      "slug": "happy-hour",
+      "color": "#6e8f75",
+      "count": 99
+    },
+    {
       "name": "On the Rocks",
       "slug": "on-the-rocks",
-      "color": "#0598c8",
+      "color": "#527b88",
       "count": 99
     },
     {
       "name": "Last Call",
       "slug": "last-call",
-      "color": "#e74b9a",
-      "count": 99
-    },
-    {
-      "name": "Happy Hour",
-      "slug": "happy-hour",
-      "color": "#00a99d",
+      "color": "#8b6579",
       "count": 99
     },
     {
       "name": "Extra Dirty",
       "slug": "extra-dirty",
-      "color": "#ef2f24",
+      "color": "#9b5c4f",
       "count": 99
     }
   ],
