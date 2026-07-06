@@ -9,9 +9,14 @@
 <body>
   <main class="app-shell">
     <header class="hero">
-      <div>
+      <div class="hero-copy">
         <h1>Truth or Drink</h1>
+        <div class="hero-actions" aria-label="Game guides">
+          <button type="button" class="ghost-button" data-open-modal="moodModal">Choose the mood</button>
+          <button type="button" class="ghost-button" data-open-modal="rulesModal">How to play</button>
+        </div>
       </div>
+
       <div class="stats-panel" aria-live="polite">
         <span><strong id="selectedCount">0</strong> selected</span>
         <span><strong id="availableCount">0</strong> left</span>
@@ -19,83 +24,48 @@
       </div>
     </header>
 
-    <section class="info-grid" aria-label="Game guide">
-      <article class="guide-card guide-card-wide" aria-labelledby="categoryGuideHeading">
-        <div class="card-kicker">Question sets</div>
-        <div class="guide-header">
-          <h2 id="categoryGuideHeading">Choose the mood</h2>
-          <p class="guide-intro">Start light. Add heavier sets only when the room is clearly up for it.</p>
+    <section class="setup-card" id="setupPanel" aria-labelledby="setupHeading">
+      <div class="section-heading">
+        <div>
+          <div class="card-kicker">Before you start</div>
+          <h2 id="setupHeading">Add players in turn order</h2>
+          <p class="section-note">The asker rotates after each card is awarded or skipped. Points are awarded to the person whose answer wins the card.</p>
         </div>
-        <div class="mood-ladder" role="list">
-          <div class="mood-row guide-row-happy-hour" role="listitem">
-            <span class="mood-rank">01</span>
-            <div>
-              <h3>Happy Hour</h3>
-              <p>Warm-up prompts for newer friends, mixed groups, or the first few rounds.</p>
-            </div>
-            <span class="mood-pill">Light</span>
-          </div>
-          <div class="mood-row guide-row-on-the-rocks" role="listitem">
-            <span class="mood-rank">02</span>
-            <div>
-              <h3>On the Rocks</h3>
-              <p>Personal friend questions with enough bite to make things interesting.</p>
-            </div>
-            <span class="mood-pill">Personal</span>
-          </div>
-          <div class="mood-row guide-row-last-call" role="listitem">
-            <span class="mood-rank">03</span>
-            <div>
-              <h3>Last Call</h3>
-              <p>Deeper, more revealing prompts for close friends and later-game energy.</p>
-            </div>
-            <span class="mood-pill">Deep</span>
-          </div>
-          <div class="mood-row guide-row-extra-dirty" role="listitem">
-            <span class="mood-rank">04</span>
-            <div>
-              <h3>Extra Dirty</h3>
-              <p>Explicit adult prompts. Leave this off unless everyone wants the NSFW version.</p>
-            </div>
-            <span class="mood-pill">NSFW</span>
-          </div>
-        </div>
-      </article>
+        <div class="player-count-pill"><strong id="playerCount">0</strong> players</div>
+      </div>
 
-      <article class="guide-card" aria-labelledby="rulesGuideHeading">
-        <div class="card-kicker">How to play</div>
-        <div class="guide-header">
-          <h2 id="rulesGuideHeading">Rules and card types</h2>
-          <p class="guide-intro">Answer honestly, or pass by taking the agreed penalty. Alcohol is optional.</p>
-        </div>
+      <form id="addPlayerForm" class="player-form" autocomplete="off">
+        <label class="sr-only" for="playerNameInput">Player name</label>
+        <input id="playerNameInput" name="playerName" type="text" maxlength="32" placeholder="Add player name" />
+        <button type="submit" class="secondary-button">Add player</button>
+      </form>
 
-        <div class="rule-strip" aria-label="Basic flow">
-          <div><strong>1</strong><span>Select sets</span></div>
-          <div><strong>2</strong><span>Draw a card</span></div>
-          <div><strong>3</strong><span>Answer or pass</span></div>
-          <div><strong>4</strong><span>No repeats</span></div>
-        </div>
+      <div id="setupPlayers" class="setup-player-list" aria-live="polite"></div>
 
-        <dl class="guide-list rules-guide-list">
-          <div class="guide-row">
-            <dt>Straight Up</dt>
-            <dd>Ask one person. If they answer, they can keep the card as a point. If they pass, ask someone else.</dd>
-          </div>
-          <div class="guide-row">
-            <dt>Make It a Double</dt>
-            <dd>Ask one person, then ask another. Award the card to whichever answer you like better.</dd>
-          </div>
-          <div class="guide-row">
-            <dt>This Round’s On Me</dt>
-            <dd>Everyone gets a chance to answer or pass. The asker chooses their favorite answer.</dd>
-          </div>
-          <div class="guide-row">
-            <dt>Digital discard pile</dt>
-            <dd>Once drawn, a card is moved to the discard pile and cannot appear again until you reset.</dd>
-          </div>
-        </dl>
-        <p class="two-player-note">Two-player shortcut: ignore the special formats and alternate drawing cards for each other.</p>
-      </article>
+      <div class="button-row setup-actions">
+        <button type="button" id="startGameBtn" class="primary-button">Begin game</button>
+        <button type="button" id="clearPlayersBtn" class="secondary-button">Clear players</button>
+      </div>
+      <p id="setupStatus" class="status-line">Add at least two players to begin.</p>
+    </section>
+
+    <section class="game-panel hidden" id="gamePanel" aria-labelledby="gameHeading">
+      <div class="turn-card">
+        <div>
+          <div class="card-kicker">Current turn</div>
+          <h2 id="gameHeading"><span id="currentPlayerName">Player</span> draws</h2>
+          <p id="turnStatus" class="section-note">Draw a card to start the turn.</p>
+        </div>
+        <button type="button" id="newGameBtn" class="secondary-button">New game</button>
+      </div>
+
+      <div class="scoreboard" aria-labelledby="scoreboardHeading">
+        <div class="scoreboard-head">
+          <h3 id="scoreboardHeading">Scoreboard</h3>
+          <span>Cards won</span>
+        </div>
+        <div id="scoreboardRows" class="scoreboard-rows"></div>
+      </div>
     </section>
 
     <section class="controls-card" aria-labelledby="categoriesHeading">
@@ -111,11 +81,6 @@
         </div>
       </div>
       <div id="categoryControls" class="category-grid"></div>
-      <div class="button-row">
-        <button type="button" id="drawBtn" class="primary-button">Draw card</button>
-        <button type="button" id="resetBtn" class="secondary-button">Reset discard pile</button>
-      </div>
-      <p id="statusLine" class="status-line">Loading deck...</p>
     </section>
 
     <section class="draw-area">
@@ -127,11 +92,27 @@
           </div>
           <div id="currentLabels" class="label-row"></div>
         </div>
+
         <div class="card-frame">
           <div id="cardStage" class="card-stage empty-state">
-            <p>Select at least one category, then draw.</p>
+            <p>Add players, choose categories, then draw.</p>
           </div>
         </div>
+
+        <div id="cardActionPanel" class="award-panel hidden" aria-live="polite">
+          <div>
+            <h3 id="cardActionTitle">Award this card</h3>
+            <p id="cardActionHint">Choose who won the answer, or skip if no one gets the point.</p>
+          </div>
+          <div id="awardButtons" class="award-grid"></div>
+          <button type="button" id="noPointBtn" class="secondary-button full-width">No point, next turn</button>
+        </div>
+
+        <div class="button-row draw-buttons">
+          <button type="button" id="drawBtn" class="primary-button">Draw card</button>
+          <button type="button" id="resetBtn" class="secondary-button">Reset discard pile</button>
+        </div>
+        <p id="statusLine" class="status-line">Loading deck...</p>
         <p id="questionText" class="question-text"></p>
       </article>
 
@@ -143,11 +124,86 @@
           </div>
           <button type="button" id="hideDiscardBtn" class="small-button">Hide</button>
         </div>
-        <p class="discard-help">Drawn cards live here until reset, so the same prompt will not come back immediately.</p>
+        <p class="discard-help">Drawn cards live here until reset, so prompts do not repeat in the same run.</p>
         <div id="discardGrid" class="discard-grid"></div>
       </aside>
     </section>
   </main>
+
+  <dialog id="moodModal" class="modal-card" aria-labelledby="moodModalTitle">
+    <button type="button" class="modal-close" data-close-modal aria-label="Close">×</button>
+    <div class="card-kicker">Question sets</div>
+    <h2 id="moodModalTitle">Choose the mood</h2>
+    <p class="modal-intro">Start lighter than you think you need. Add the heavier sets only when the room has earned them.</p>
+    <div class="mood-ladder" role="list">
+      <div class="mood-row guide-row-happy-hour" role="listitem">
+        <span class="mood-rank">01</span>
+        <div>
+          <h3>Happy Hour</h3>
+          <p>Warm-up prompts for newer friends, mixed groups, or the first few rounds.</p>
+        </div>
+        <span class="mood-pill">Light</span>
+      </div>
+      <div class="mood-row guide-row-on-the-rocks" role="listitem">
+        <span class="mood-rank">02</span>
+        <div>
+          <h3>On the Rocks</h3>
+          <p>Personal friend questions with enough bite to make the table lean in.</p>
+        </div>
+        <span class="mood-pill">Personal</span>
+      </div>
+      <div class="mood-row guide-row-last-call" role="listitem">
+        <span class="mood-rank">03</span>
+        <div>
+          <h3>Last Call</h3>
+          <p>Deeper, more revealing prompts for close friends and late-game honesty.</p>
+        </div>
+        <span class="mood-pill">Deep</span>
+      </div>
+      <div class="mood-row guide-row-extra-dirty" role="listitem">
+        <span class="mood-rank">04</span>
+        <div>
+          <h3>Extra Dirty</h3>
+          <p>Explicit adult prompts. Keep this off unless everyone wants the NSFW version.</p>
+        </div>
+        <span class="mood-pill">NSFW</span>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog id="rulesModal" class="modal-card" aria-labelledby="rulesModalTitle">
+    <button type="button" class="modal-close" data-close-modal aria-label="Close">×</button>
+    <div class="card-kicker">How to play</div>
+    <h2 id="rulesModalTitle">Rules and card types</h2>
+    <p class="modal-intro">Answer honestly, or pass by taking the agreed penalty. Alcohol is optional.</p>
+
+    <div class="rule-strip" aria-label="Basic flow">
+      <div><strong>1</strong><span>Add players</span></div>
+      <div><strong>2</strong><span>Draw on your turn</span></div>
+      <div><strong>3</strong><span>Answer or pass</span></div>
+      <div><strong>4</strong><span>Award the card</span></div>
+    </div>
+
+    <dl class="guide-list rules-guide-list">
+      <div class="guide-row">
+        <dt>Straight Up</dt>
+        <dd>The current player asks one person. If they answer, award that person the card. If they pass, ask someone else.</dd>
+      </div>
+      <div class="guide-row">
+        <dt>Make It a Double</dt>
+        <dd>The current player asks two people. Award the card to whichever answer the asker likes better.</dd>
+      </div>
+      <div class="guide-row">
+        <dt>This Round’s On Me</dt>
+        <dd>Everyone gets a chance to answer or pass. The asker awards the card to their favorite answer.</dd>
+      </div>
+      <div class="guide-row">
+        <dt>Discard pile</dt>
+        <dd>Once a card is drawn, it cannot be drawn again until the discard pile is reset.</dd>
+      </div>
+    </dl>
+  </dialog>
+
   <script src="manifest.js"></script>
   <script src="script.js"></script>
 </body>

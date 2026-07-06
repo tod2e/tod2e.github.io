@@ -1,14 +1,26 @@
 # Truth or Drink GitHub Pages Site
 
-This folder contains a complete static site for drawing cards from selected categories without repeats.
+This folder contains a complete static site for drawing Truth or Drink cards from selected categories without repeats.
 
 ## Contents
 
 - `index.html` - the web page
 - `styles.css` - styling
-- `script.js` - deck selection, random draw, and discard-pile logic
+- `script.js` - player setup, turn order, scoring, deck selection, random draw, and discard-pile logic
 - `manifest.json` / `manifest.js` - card metadata
 - `cards/` - individual PNG card images sorted into category folders
+
+## Main features
+
+- Clickable pop-up guides for **Choose the mood** and **How to play**
+- Player setup before the game begins
+- Turn order that rotates through players in the order entered
+- Scoreboard for awarded cards
+- Rule-aware award panel for Straight Up, Make It a Double, and This Round's On Me
+- Category selection
+- Random draw button
+- Digital discard pile so cards do not repeat until reset
+- Responsive layout for phones and tablets
 
 ## Card counts
 
@@ -45,8 +57,3 @@ Then open `http://localhost:8000`.
 ## Note
 
 Only publish these card images publicly if you have the right to share them.
-
-
-## Category and rules guide
-
-The homepage includes short explanations for the four category sets and the main card types: Straight Up, Make It a Double, and This Round's On Me. The draw logic also keeps a client-side discard pile so drawn cards do not repeat until the discard pile is reset.
