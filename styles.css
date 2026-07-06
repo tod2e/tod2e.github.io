@@ -92,12 +92,95 @@ h2 {
 
 .stats-panel strong { color: var(--ink); }
 
-.controls-card, .current-card, .discard-panel {
+.controls-card, .current-card, .discard-panel, .guide-card {
   background: rgba(255,255,255,0.86);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   box-shadow: 0 12px 36px rgba(0,0,0,0.07);
 }
+
+.info-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 22px;
+  margin-bottom: 22px;
+}
+
+.guide-card {
+  padding: 20px;
+}
+
+.guide-card h2 {
+  margin-bottom: 8px;
+}
+
+.guide-intro, .section-note, .two-player-note {
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.guide-intro {
+  margin-bottom: 14px;
+}
+
+.section-note {
+  margin: 6px 0 0;
+  font-size: 0.94rem;
+}
+
+.two-player-note {
+  margin: 14px 0 0;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: #f7f3eb;
+  font-size: 0.92rem;
+}
+
+.guide-list {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+}
+
+.guide-row {
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: #fff;
+}
+
+.guide-row dt {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+  font-weight: 900;
+}
+
+.guide-row dt::before {
+  content: "";
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  background: var(--cat-color, #111);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--cat-color, #111), transparent 84%);
+}
+
+.rules-guide-list .guide-row dt::before {
+  display: none;
+}
+
+.guide-row dd {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.45;
+  font-size: 0.94rem;
+}
+
+.guide-row-happy-hour { --cat-color: #00a99d; }
+.guide-row-on-the-rocks { --cat-color: #0598c8; }
+.guide-row-last-call { --cat-color: #e74b9a; }
+.guide-row-extra-dirty { --cat-color: #ef2f24; }
 
 .controls-card {
   padding: 20px;
@@ -252,7 +335,7 @@ button:disabled { opacity: .5; cursor: not-allowed; }
 .discard-panel.collapsed .discard-grid { display: none; }
 
 @media (max-width: 900px) {
-  .hero, .draw-area { grid-template-columns: 1fr; }
+  .hero, .draw-area, .info-grid { grid-template-columns: 1fr; }
   .stats-panel { width: 100%; grid-template-columns: repeat(3, 1fr); border-radius: 20px; }
   .stats-panel span { justify-content: center; }
   .category-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -261,6 +344,8 @@ button:disabled { opacity: .5; cursor: not-allowed; }
 
 @media (max-width: 560px) {
   .app-shell { width: min(100% - 20px, 1180px); padding-top: 18px; }
+  .guide-card, .controls-card { padding: 14px; }
+  .control-heading { align-items: flex-start; flex-direction: column; }
   .category-grid { grid-template-columns: 1fr; }
   .stats-panel { grid-template-columns: 1fr; }
   .current-card { min-height: auto; padding: 14px; }

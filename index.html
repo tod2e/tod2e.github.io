@@ -21,9 +21,61 @@
       </div>
     </header>
 
+    <section class="info-grid" aria-label="Game guide">
+      <article class="guide-card" aria-labelledby="categoryGuideHeading">
+        <h2 id="categoryGuideHeading">Category guide</h2>
+        <p class="guide-intro">Choose the question set that fits the room. They get more intimate as you move down the list.</p>
+        <dl class="guide-list category-guide-list">
+          <div class="guide-row guide-row-happy-hour">
+            <dt>Happy Hour</dt>
+            <dd>Lightest set. Good for warming up, newer friends, or groups that still need a gentle entry point.</dd>
+          </div>
+          <div class="guide-row guide-row-on-the-rocks">
+            <dt>On the Rocks</dt>
+            <dd>More personal friend questions, with enough bite to make the conversation interesting without going fully nuclear.</dd>
+          </div>
+          <div class="guide-row guide-row-last-call">
+            <dt>Last Call</dt>
+            <dd>Deeper, more revealing prompts for close friends and late-game conversations.</dd>
+          </div>
+          <div class="guide-row guide-row-extra-dirty">
+            <dt>Extra Dirty</dt>
+            <dd>Most explicit set. NSFW/adult questions, so leave this off unless everyone actually wants that version of the game.</dd>
+          </div>
+        </dl>
+      </article>
+
+      <article class="guide-card" aria-labelledby="rulesGuideHeading">
+        <h2 id="rulesGuideHeading">Rules and card types</h2>
+        <p class="guide-intro">Basic rule: answer honestly or pass by drinking. No alcohol is required; use any agreed penalty or just skip.</p>
+        <dl class="guide-list rules-guide-list">
+          <div class="guide-row">
+            <dt>Straight Up</dt>
+            <dd>Ask one person. If they give a satisfying answer, they get the card as a point. If they pass, ask someone else.</dd>
+          </div>
+          <div class="guide-row">
+            <dt>Make It a Double</dt>
+            <dd>Ask one person, then ask another. Give the point to whichever answer you like best.</dd>
+          </div>
+          <div class="guide-row">
+            <dt>This Round’s On Me</dt>
+            <dd>Everyone gets a chance to answer or pass. The asker gives the point to their favorite answer.</dd>
+          </div>
+          <div class="guide-row">
+            <dt>Digital discard pile</dt>
+            <dd>When a card is drawn, this site immediately moves it to the discard pile, so it will not repeat until you reset.</dd>
+          </div>
+        </dl>
+        <p class="two-player-note">For two players, the printed game treats the special card types as optional. The simplest version is to alternate drawing and asking each other.</p>
+      </article>
+    </section>
+
     <section class="controls-card" aria-labelledby="categoriesHeading">
       <div class="control-heading">
-        <h2 id="categoriesHeading">Categories</h2>
+        <div>
+          <h2 id="categoriesHeading">Choose categories</h2>
+          <p class="section-note">Only cards from selected categories can be drawn. You can mix sets or keep the game to one lane.</p>
+        </div>
         <div class="quick-actions">
           <button type="button" id="selectAllBtn" class="small-button">Select all</button>
           <button type="button" id="clearCatsBtn" class="small-button">Clear</button>
