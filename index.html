@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Card Drawer</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Static GitHub Pages deck</p>
+        <h1>Card Drawer</h1>
+        <p class="subhead">Pick categories, draw randomly, and keep drawn cards in the discard pile so they do not repeat.</p>
+      </div>
+      <div class="stats-panel" aria-live="polite">
+        <span><strong id="selectedCount">0</strong> selected</span>
+        <span><strong id="availableCount">0</strong> left</span>
+        <span><strong id="discardCount">0</strong> discarded</span>
+      </div>
+    </header>
+
+    <section class="controls-card" aria-labelledby="categoriesHeading">
+      <div class="control-heading">
+        <h2 id="categoriesHeading">Categories</h2>
+        <div class="quick-actions">
+          <button type="button" id="selectAllBtn" class="small-button">Select all</button>
+          <button type="button" id="clearCatsBtn" class="small-button">Clear</button>
+        </div>
+      </div>
+      <div id="categoryControls" class="category-grid"></div>
+      <div class="button-row">
+        <button type="button" id="drawBtn" class="primary-button">Draw card</button>
+        <button type="button" id="resetBtn" class="secondary-button">Reset discard pile</button>
+      </div>
+      <p id="statusLine" class="status-line">Loading deck...</p>
+    </section>
+
+    <section class="draw-area">
+      <article class="current-card" aria-labelledby="currentHeading">
+        <div class="current-meta">
+          <h2 id="currentHeading">Current card</h2>
+          <div id="currentLabels" class="label-row"></div>
+        </div>
+        <div id="cardStage" class="card-stage empty-state">
+          <p>Select at least one category, then draw.</p>
+        </div>
+        <p id="questionText" class="question-text"></p>
+      </article>
+
+      <aside class="discard-panel" aria-labelledby="discardHeading">
+        <div class="discard-heading">
+          <h2 id="discardHeading">Discard pile</h2>
+          <button type="button" id="hideDiscardBtn" class="small-button">Hide</button>
+        </div>
+        <p class="discard-help">Cards move here as soon as they are drawn. They will not be drawn again until you reset the pile.</p>
+        <div id="discardGrid" class="discard-grid"></div>
+      </aside>
+    </section>
+  </main>
+  <script src="manifest.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

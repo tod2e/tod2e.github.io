@@ -1,0 +1,3994 @@
+{
+  "title": "Card Drawer",
+  "source": "TOD2E-individual-cards(1).pdf",
+  "cardsIncluded": 396,
+  "note": "Prompt cards only. Artwork/card-back pages with no prompt text were excluded from the draw pile.",
+  "categories": [
+    {
+      "name": "On the Rocks",
+      "slug": "on-the-rocks",
+      "color": "#0598c8",
+      "count": 99
+    },
+    {
+      "name": "Last Call",
+      "slug": "last-call",
+      "color": "#e74b9a",
+      "count": 99
+    },
+    {
+      "name": "Happy Hour",
+      "slug": "happy-hour",
+      "color": "#00a99d",
+      "count": 99
+    },
+    {
+      "name": "Extra Dirty",
+      "slug": "extra-dirty",
+      "color": "#ef2f24",
+      "count": 99
+    }
+  ],
+  "cards": [
+    {
+      "id": "on-the-rocks-001",
+      "page": 1,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Straight Up",
+      "question": "Will we be friends in ten years?",
+      "image": "cards/on-the-rocks/on-the-rocks-001-straight-up.png",
+      "filename": "on-the-rocks-001-straight-up.png"
+    },
+    {
+      "id": "on-the-rocks-002",
+      "page": 2,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "This Round's On Me",
+      "question": "What personal demon are you in denial about?",
+      "image": "cards/on-the-rocks/on-the-rocks-002-this-rounds-on-me.png",
+      "filename": "on-the-rocks-002-this-rounds-on-me.png"
+    },
+    {
+      "id": "on-the-rocks-003",
+      "page": 3,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Straight Up",
+      "question": "What’s something you think that I get away with, but that you never could?",
+      "image": "cards/on-the-rocks/on-the-rocks-003-straight-up.png",
+      "filename": "on-the-rocks-003-straight-up.png"
+    },
+    {
+      "id": "on-the-rocks-004",
+      "page": 4,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Straight Up",
+      "question": "What is something you like about me that other people just don’t appreciate?",
+      "image": "cards/on-the-rocks/on-the-rocks-004-straight-up.png",
+      "filename": "on-the-rocks-004-straight-up.png"
+    },
+    {
+      "id": "on-the-rocks-005",
+      "page": 5,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Straight Up",
+      "question": "Tell us about a time you set something in motion and left the fallout for others to deal with.",
+      "image": "cards/on-the-rocks/on-the-rocks-005-straight-up.png",
+      "filename": "on-the-rocks-005-straight-up.png"
+    },
+    {
+      "id": "on-the-rocks-006",
+      "page": 6,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Make It a Double",
+      "question": "What’s something you’ve always done— and only realized as an adult that it was weird?",
+      "image": "cards/on-the-rocks/on-the-rocks-006-make-it-a-double.png",
+      "filename": "on-the-rocks-006-make-it-a-double.png"
+    },
+    {
+      "id": "on-the-rocks-007",
+      "page": 7,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Straight Up",
+      "question": "If you had to eat one delectable part of my delicious body, what part would you choose?",
+      "image": "cards/on-the-rocks/on-the-rocks-007-straight-up.png",
+      "filename": "on-the-rocks-007-straight-up.png"
+    },
+    {
+      "id": "on-the-rocks-008",
+      "page": 8,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Straight Up",
+      "question": "When was the last time you lost your cool? What happened? How do you feel about it now?",
+      "image": "cards/on-the-rocks/on-the-rocks-008-straight-up.png",
+      "filename": "on-the-rocks-008-straight-up.png"
+    },
+    {
+      "id": "on-the-rocks-009",
+      "page": 9,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Make It a Double",
+      "question": "Describe me in three words from a language that you do not speak well.",
+      "image": "cards/on-the-rocks/on-the-rocks-009-make-it-a-double.png",
+      "filename": "on-the-rocks-009-make-it-a-double.png"
+    },
+    {
+      "id": "on-the-rocks-010",
+      "page": 10,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Straight Up",
+      "question": "What’s a grand gesture you tried to save or repair a relationship?",
+      "image": "cards/on-the-rocks/on-the-rocks-010-straight-up.png",
+      "filename": "on-the-rocks-010-straight-up.png"
+    },
+    {
+      "id": "on-the-rocks-011",
+      "page": 11,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "This Round's On Me",
+      "question": "Have you ever been fired? If so, what for? If not, why not?",
+      "image": "cards/on-the-rocks/on-the-rocks-011-this-rounds-on-me.png",
+      "filename": "on-the-rocks-011-this-rounds-on-me.png"
+    },
+    {
+      "id": "on-the-rocks-012",
+      "page": 12,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Straight Up",
+      "question": "Our minds have traded bodies. What’s the first thing you’re going to do in my body?",
+      "image": "cards/on-the-rocks/on-the-rocks-012-straight-up.png",
+      "filename": "on-the-rocks-012-straight-up.png"
+    },
+    {
+      "id": "on-the-rocks-013",
+      "page": 13,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Straight Up",
+      "question": "What’s something you understand about your parents now that you’re grown up? Do they k k ? know you know?",
+      "image": "cards/on-the-rocks/on-the-rocks-013-straight-up.png",
+      "filename": "on-the-rocks-013-straight-up.png"
+    },
+    {
+      "id": "on-the-rocks-014",
+      "page": 14,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Make It a Double",
+      "question": "Describe a time when you really thought you might die.",
+      "image": "cards/on-the-rocks/on-the-rocks-014-make-it-a-double.png",
+      "filename": "on-the-rocks-014-make-it-a-double.png"
+    },
+    {
+      "id": "on-the-rocks-015",
+      "page": 15,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Straight Up",
+      "question": "Have you ever ghosted someone you were close with?",
+      "image": "cards/on-the-rocks/on-the-rocks-015-straight-up.png",
+      "filename": "on-the-rocks-015-straight-up.png"
+    },
+    {
+      "id": "on-the-rocks-016",
+      "page": 16,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Straight Up",
+      "question": "Tell us what you wish you’d said during your last breakup, but didn’t.",
+      "image": "cards/on-the-rocks/on-the-rocks-016-straight-up.png",
+      "filename": "on-the-rocks-016-straight-up.png"
+    },
+    {
+      "id": "on-the-rocks-017",
+      "page": 17,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "This Round's On Me",
+      "question": "What’s something about your personal hygiene that you could be more rigorous about?",
+      "image": "cards/on-the-rocks/on-the-rocks-017-this-rounds-on-me.png",
+      "filename": "on-the-rocks-017-this-rounds-on-me.png"
+    },
+    {
+      "id": "on-the-rocks-018",
+      "page": 18,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "This Round's On Me",
+      "question": "Tell us what you do to annoy your partner on purpose.",
+      "image": "cards/on-the-rocks/on-the-rocks-018-this-rounds-on-me.png",
+      "filename": "on-the-rocks-018-this-rounds-on-me.png"
+    },
+    {
+      "id": "on-the-rocks-019",
+      "page": 19,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Straight Up",
+      "question": "What’s a place where you feel at home where I would absolutely not fit in?",
+      "image": "cards/on-the-rocks/on-the-rocks-019-straight-up.png",
+      "filename": "on-the-rocks-019-straight-up.png"
+    },
+    {
+      "id": "on-the-rocks-020",
+      "page": 20,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Make It a Double",
+      "question": "Tell us about a time you got more wasted than was advisable.",
+      "image": "cards/on-the-rocks/on-the-rocks-020-make-it-a-double.png",
+      "filename": "on-the-rocks-020-make-it-a-double.png"
+    },
+    {
+      "id": "on-the-rocks-021",
+      "page": 21,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Straight Up",
+      "question": "What is your worst coping mechanism? Defense mechanism?",
+      "image": "cards/on-the-rocks/on-the-rocks-021-straight-up.png",
+      "filename": "on-the-rocks-021-straight-up.png"
+    },
+    {
+      "id": "on-the-rocks-022",
+      "page": 22,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Straight Up",
+      "question": "Assuming you were single, what would it take for you to get back together with your last ex?",
+      "image": "cards/on-the-rocks/on-the-rocks-022-straight-up.png",
+      "filename": "on-the-rocks-022-straight-up.png"
+    },
+    {
+      "id": "on-the-rocks-023",
+      "page": 23,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Make It a Double",
+      "question": "Do your best (or worst) impersonation of me. I promise to clap appreciatively.",
+      "image": "cards/on-the-rocks/on-the-rocks-023-make-it-a-double.png",
+      "filename": "on-the-rocks-023-make-it-a-double.png"
+    },
+    {
+      "id": "on-the-rocks-024",
+      "page": 24,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Straight Up",
+      "question": "Have you broken any bones? What happened? Did you hear the crack?",
+      "image": "cards/on-the-rocks/on-the-rocks-024-straight-up.png",
+      "filename": "on-the-rocks-024-straight-up.png"
+    },
+    {
+      "id": "on-the-rocks-025",
+      "page": 25,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "This Round's On Me",
+      "question": "What’s something that you do that you wonder if other people do too, but don’t know for certain?",
+      "image": "cards/on-the-rocks/on-the-rocks-025-this-rounds-on-me.png",
+      "filename": "on-the-rocks-025-this-rounds-on-me.png"
+    },
+    {
+      "id": "on-the-rocks-026",
+      "page": 26,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Make It a Double",
+      "question": "Write me a new dating app bio in three sentences or less.",
+      "image": "cards/on-the-rocks/on-the-rocks-026-make-it-a-double.png",
+      "filename": "on-the-rocks-026-make-it-a-double.png"
+    },
+    {
+      "id": "on-the-rocks-027",
+      "page": 27,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Straight Up",
+      "question": "I get a news alert that instantly makes me extremely happy—but no one else here cares. What’s the news?",
+      "image": "cards/on-the-rocks/on-the-rocks-027-straight-up.png",
+      "filename": "on-the-rocks-027-straight-up.png"
+    },
+    {
+      "id": "on-the-rocks-028",
+      "page": 28,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "This Round's On Me",
+      "question": "What’s my greatest physical asset? Don’t be shy.",
+      "image": "cards/on-the-rocks/on-the-rocks-028-this-rounds-on-me.png",
+      "filename": "on-the-rocks-028-this-rounds-on-me.png"
+    },
+    {
+      "id": "on-the-rocks-029",
+      "page": 29,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Straight Up",
+      "question": "If I could help you with one unpleasant task, what would it be? What makes me the right choice for the job?",
+      "image": "cards/on-the-rocks/on-the-rocks-029-straight-up.png",
+      "filename": "on-the-rocks-029-straight-up.png"
+    },
+    {
+      "id": "on-the-rocks-030",
+      "page": 30,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Straight Up",
+      "question": "Tell me about a disagreement we had--and how we resolved it. Has it made us stronger?",
+      "image": "cards/on-the-rocks/on-the-rocks-030-straight-up.png",
+      "filename": "on-the-rocks-030-straight-up.png"
+    },
+    {
+      "id": "on-the-rocks-031",
+      "page": 31,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Straight Up",
+      "question": "Tell us about a time you observed me lying to someone else. Was it the right thing to do?",
+      "image": "cards/on-the-rocks/on-the-rocks-031-straight-up.png",
+      "filename": "on-the-rocks-031-straight-up.png"
+    },
+    {
+      "id": "on-the-rocks-032",
+      "page": 32,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Straight Up",
+      "question": "We’re starting a business. What venture would we be most successful at as a pair?",
+      "image": "cards/on-the-rocks/on-the-rocks-032-straight-up.png",
+      "filename": "on-the-rocks-032-straight-up.png"
+    },
+    {
+      "id": "on-the-rocks-033",
+      "page": 33,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "This Round's On Me",
+      "question": "Describe the last time you were out of control.",
+      "image": "cards/on-the-rocks/on-the-rocks-033-this-rounds-on-me.png",
+      "filename": "on-the-rocks-033-this-rounds-on-me.png"
+    },
+    {
+      "id": "on-the-rocks-034",
+      "page": 34,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Straight Up",
+      "question": "Have you ever dated a friend’s ex? Ever wanted to?",
+      "image": "cards/on-the-rocks/on-the-rocks-034-straight-up.png",
+      "filename": "on-the-rocks-034-straight-up.png"
+    },
+    {
+      "id": "on-the-rocks-035",
+      "page": 35,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Make It a Double",
+      "question": "Describe your worst bathroom- related disaster.",
+      "image": "cards/on-the-rocks/on-the-rocks-035-make-it-a-double.png",
+      "filename": "on-the-rocks-035-make-it-a-double.png"
+    },
+    {
+      "id": "on-the-rocks-036",
+      "page": 36,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Straight Up",
+      "question": "What have you borrowed from me and still not returned? Can I have it back right now?",
+      "image": "cards/on-the-rocks/on-the-rocks-036-straight-up.png",
+      "filename": "on-the-rocks-036-straight-up.png"
+    },
+    {
+      "id": "on-the-rocks-037",
+      "page": 37,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Straight Up",
+      "question": "Have you ever shared a piece of information that you realized too late was probably supposed to be a secret?",
+      "image": "cards/on-the-rocks/on-the-rocks-037-straight-up.png",
+      "filename": "on-the-rocks-037-straight-up.png"
+    },
+    {
+      "id": "on-the-rocks-038",
+      "page": 38,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "This Round's On Me",
+      "question": "Tell us about a time you were shot down romantically.",
+      "image": "cards/on-the-rocks/on-the-rocks-038-this-rounds-on-me.png",
+      "filename": "on-the-rocks-038-this-rounds-on-me.png"
+    },
+    {
+      "id": "on-the-rocks-039",
+      "page": 39,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Straight Up",
+      "question": "Of all the things we do together, what is the best thing we do together?",
+      "image": "cards/on-the-rocks/on-the-rocks-039-straight-up.png",
+      "filename": "on-the-rocks-039-straight-up.png"
+    },
+    {
+      "id": "on-the-rocks-040",
+      "page": 40,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Make It a Double",
+      "question": "I don’t know why you put up with me! Why do you keep me around?",
+      "image": "cards/on-the-rocks/on-the-rocks-040-make-it-a-double.png",
+      "filename": "on-the-rocks-040-make-it-a-double.png"
+    },
+    {
+      "id": "on-the-rocks-041",
+      "page": 41,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Straight Up",
+      "question": "What have I ruined for you?",
+      "image": "cards/on-the-rocks/on-the-rocks-041-straight-up.png",
+      "filename": "on-the-rocks-041-straight-up.png"
+    },
+    {
+      "id": "on-the-rocks-042",
+      "page": 42,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Straight Up",
+      "question": "What did you get in major trouble for doing as a kid, and did you ever learn your lesson?",
+      "image": "cards/on-the-rocks/on-the-rocks-042-straight-up.png",
+      "filename": "on-the-rocks-042-straight-up.png"
+    },
+    {
+      "id": "on-the-rocks-043",
+      "page": 43,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Make It a Double",
+      "question": "Name a time you could have helped someone, but didn’t bother.",
+      "image": "cards/on-the-rocks/on-the-rocks-043-make-it-a-double.png",
+      "filename": "on-the-rocks-043-make-it-a-double.png"
+    },
+    {
+      "id": "on-the-rocks-044",
+      "page": 44,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Straight Up",
+      "question": "What’s the worst thing you’ve ever had to do at work or school? How’d you handle it?",
+      "image": "cards/on-the-rocks/on-the-rocks-044-straight-up.png",
+      "filename": "on-the-rocks-044-straight-up.png"
+    },
+    {
+      "id": "on-the-rocks-045",
+      "page": 45,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Straight Up",
+      "question": "Have you ever sat back and watched me confidently do something incorrectly?",
+      "image": "cards/on-the-rocks/on-the-rocks-045-straight-up.png",
+      "filename": "on-the-rocks-045-straight-up.png"
+    },
+    {
+      "id": "on-the-rocks-046",
+      "page": 46,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Straight Up",
+      "question": "What’s something you did for free as a favor, that in retrospect, you really wish you’d charged for?",
+      "image": "cards/on-the-rocks/on-the-rocks-046-straight-up.png",
+      "filename": "on-the-rocks-046-straight-up.png"
+    },
+    {
+      "id": "on-the-rocks-047",
+      "page": 47,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Straight Up",
+      "question": "Do you ever pity laugh at my jokes, even if you don’t think they’re funny?",
+      "image": "cards/on-the-rocks/on-the-rocks-047-straight-up.png",
+      "filename": "on-the-rocks-047-straight-up.png"
+    },
+    {
+      "id": "on-the-rocks-048",
+      "page": 48,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Straight Up",
+      "question": "If you could have any body part of mine (for aesthetic, not medical, reasons), what would it be?",
+      "image": "cards/on-the-rocks/on-the-rocks-048-straight-up.png",
+      "filename": "on-the-rocks-048-straight-up.png"
+    },
+    {
+      "id": "on-the-rocks-049",
+      "page": 49,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Straight Up",
+      "question": "Would you ever see a band that you hated in concert, just to make me happy? Have you?",
+      "image": "cards/on-the-rocks/on-the-rocks-049-straight-up.png",
+      "filename": "on-the-rocks-049-straight-up.png"
+    },
+    {
+      "id": "on-the-rocks-050",
+      "page": 50,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "This Round's On Me",
+      "question": "What are your vices? Have they gotten better or worse over time?",
+      "image": "cards/on-the-rocks/on-the-rocks-050-this-rounds-on-me.png",
+      "filename": "on-the-rocks-050-this-rounds-on-me.png"
+    },
+    {
+      "id": "on-the-rocks-051",
+      "page": 51,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Straight Up",
+      "question": "What interest have you given up due to a community you didn’t want to be a part of?",
+      "image": "cards/on-the-rocks/on-the-rocks-051-straight-up.png",
+      "filename": "on-the-rocks-051-straight-up.png"
+    },
+    {
+      "id": "on-the-rocks-052",
+      "page": 52,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Straight Up",
+      "question": "Tell us about a time you shot someone down romantically.",
+      "image": "cards/on-the-rocks/on-the-rocks-052-straight-up.png",
+      "filename": "on-the-rocks-052-straight-up.png"
+    },
+    {
+      "id": "on-the-rocks-053",
+      "page": 53,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Straight Up",
+      "question": "If I were in a relationship with someone you hated, would you tell me?",
+      "image": "cards/on-the-rocks/on-the-rocks-053-straight-up.png",
+      "filename": "on-the-rocks-053-straight-up.png"
+    },
+    {
+      "id": "on-the-rocks-054",
+      "page": 54,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Straight Up",
+      "question": "Do you think I’m capable of doing something you could never forgive me for?",
+      "image": "cards/on-the-rocks/on-the-rocks-054-straight-up.png",
+      "filename": "on-the-rocks-054-straight-up.png"
+    },
+    {
+      "id": "on-the-rocks-055",
+      "page": 55,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Straight Up",
+      "question": "Science has advanced, and now you and I are raising our five-year- old together. How are we doing? What is the kid like?",
+      "image": "cards/on-the-rocks/on-the-rocks-055-straight-up.png",
+      "filename": "on-the-rocks-055-straight-up.png"
+    },
+    {
+      "id": "on-the-rocks-056",
+      "page": 56,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "This Round's On Me",
+      "question": "What’s a piece of pop culture that makes you suspicious of anyone who is a fan?",
+      "image": "cards/on-the-rocks/on-the-rocks-056-this-rounds-on-me.png",
+      "filename": "on-the-rocks-056-this-rounds-on-me.png"
+    },
+    {
+      "id": "on-the-rocks-057",
+      "page": 57,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Straight Up",
+      "question": "If I killed somebody, under what circumstances would you help me cover it up?",
+      "image": "cards/on-the-rocks/on-the-rocks-057-straight-up.png",
+      "filename": "on-the-rocks-057-straight-up.png"
+    },
+    {
+      "id": "on-the-rocks-058",
+      "page": 58,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Straight Up",
+      "question": "Someone who’s never met me asks you what I’m like. How do you answer?",
+      "image": "cards/on-the-rocks/on-the-rocks-058-straight-up.png",
+      "filename": "on-the-rocks-058-straight-up.png"
+    },
+    {
+      "id": "on-the-rocks-059",
+      "page": 59,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Straight Up",
+      "question": "If we were to meet for the first time today, would we become friends?",
+      "image": "cards/on-the-rocks/on-the-rocks-059-straight-up.png",
+      "filename": "on-the-rocks-059-straight-up.png"
+    },
+    {
+      "id": "on-the-rocks-060",
+      "page": 60,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Make It a Double",
+      "question": "Have you ever stolen anything? What, and why? Do you still have it?",
+      "image": "cards/on-the-rocks/on-the-rocks-060-make-it-a-double.png",
+      "filename": "on-the-rocks-060-make-it-a-double.png"
+    },
+    {
+      "id": "on-the-rocks-061",
+      "page": 61,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Straight Up",
+      "question": "Has your ego ever gotten in the way of apologizing or patching up a fight? Did you ever resolve it?",
+      "image": "cards/on-the-rocks/on-the-rocks-061-straight-up.png",
+      "filename": "on-the-rocks-061-straight-up.png"
+    },
+    {
+      "id": "on-the-rocks-062",
+      "page": 62,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Make It a Double",
+      "question": "What was your most embarrassing moment that transpired in public? Let’s all relive it!",
+      "image": "cards/on-the-rocks/on-the-rocks-062-make-it-a-double.png",
+      "filename": "on-the-rocks-062-make-it-a-double.png"
+    },
+    {
+      "id": "on-the-rocks-063",
+      "page": 63,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Straight Up",
+      "question": "What is your favorite memory of our relationship?",
+      "image": "cards/on-the-rocks/on-the-rocks-063-straight-up.png",
+      "filename": "on-the-rocks-063-straight-up.png"
+    },
+    {
+      "id": "on-the-rocks-064",
+      "page": 64,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Straight Up",
+      "question": "What is (or would be) the worst thing about having me as a travel companion?",
+      "image": "cards/on-the-rocks/on-the-rocks-064-straight-up.png",
+      "filename": "on-the-rocks-064-straight-up.png"
+    },
+    {
+      "id": "on-the-rocks-065",
+      "page": 65,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "This Round's On Me",
+      "question": "What’s a comment someone made about you that burned itself into your mind and forever altered your behavior?",
+      "image": "cards/on-the-rocks/on-the-rocks-065-this-rounds-on-me.png",
+      "filename": "on-the-rocks-065-this-rounds-on-me.png"
+    },
+    {
+      "id": "on-the-rocks-066",
+      "page": 66,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Make It a Double",
+      "question": "What’s something you avoid because you’re afraid you’ll enjoy it too much?",
+      "image": "cards/on-the-rocks/on-the-rocks-066-make-it-a-double.png",
+      "filename": "on-the-rocks-066-make-it-a-double.png"
+    },
+    {
+      "id": "on-the-rocks-067",
+      "page": 67,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Straight Up",
+      "question": "Do you think you are more or less attractive than the average person? Why?",
+      "image": "cards/on-the-rocks/on-the-rocks-067-straight-up.png",
+      "filename": "on-the-rocks-067-straight-up.png"
+    },
+    {
+      "id": "on-the-rocks-068",
+      "page": 68,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Make It a Double",
+      "question": "What’s your most expensive mistake?",
+      "image": "cards/on-the-rocks/on-the-rocks-068-make-it-a-double.png",
+      "filename": "on-the-rocks-068-make-it-a-double.png"
+    },
+    {
+      "id": "on-the-rocks-069",
+      "page": 69,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Straight Up",
+      "question": "We’re road tripping through the middle of nowhere. Do you have me drive or navigate?",
+      "image": "cards/on-the-rocks/on-the-rocks-069-straight-up.png",
+      "filename": "on-the-rocks-069-straight-up.png"
+    },
+    {
+      "id": "on-the-rocks-070",
+      "page": 70,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Straight Up",
+      "question": "Have you ever done something with the goal of impressing specifically me?",
+      "image": "cards/on-the-rocks/on-the-rocks-070-straight-up.png",
+      "filename": "on-the-rocks-070-straight-up.png"
+    },
+    {
+      "id": "on-the-rocks-071",
+      "page": 71,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Make It a Double",
+      "question": "What’s the biggest lie you’ve ever come up with to cancel plans?",
+      "image": "cards/on-the-rocks/on-the-rocks-071-make-it-a-double.png",
+      "filename": "on-the-rocks-071-make-it-a-double.png"
+    },
+    {
+      "id": "on-the-rocks-072",
+      "page": 72,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Straight Up",
+      "question": "How are we wrong for each other romantically?",
+      "image": "cards/on-the-rocks/on-the-rocks-072-straight-up.png",
+      "filename": "on-the-rocks-072-straight-up.png"
+    },
+    {
+      "id": "on-the-rocks-073",
+      "page": 73,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "This Round's On Me",
+      "question": "What’s an offense you’ve committed that could get you fired from work?",
+      "image": "cards/on-the-rocks/on-the-rocks-073-this-rounds-on-me.png",
+      "filename": "on-the-rocks-073-this-rounds-on-me.png"
+    },
+    {
+      "id": "on-the-rocks-074",
+      "page": 74,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Straight Up",
+      "question": "Describe my perfect life partner. Have I been on the right track to find this person?",
+      "image": "cards/on-the-rocks/on-the-rocks-074-straight-up.png",
+      "filename": "on-the-rocks-074-straight-up.png"
+    },
+    {
+      "id": "on-the-rocks-075",
+      "page": 75,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Straight Up",
+      "question": "Which of us do you think has committed more crimes?",
+      "image": "cards/on-the-rocks/on-the-rocks-075-straight-up.png",
+      "filename": "on-the-rocks-075-straight-up.png"
+    },
+    {
+      "id": "on-the-rocks-076",
+      "page": 76,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Make It a Double",
+      "question": "Describe the first time we met. What was your honest first impression of me?",
+      "image": "cards/on-the-rocks/on-the-rocks-076-make-it-a-double.png",
+      "filename": "on-the-rocks-076-make-it-a-double.png"
+    },
+    {
+      "id": "on-the-rocks-077",
+      "page": 77,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Straight Up",
+      "question": "If I listed you as my job reference, what would you say about me? Would it all be true?",
+      "image": "cards/on-the-rocks/on-the-rocks-077-straight-up.png",
+      "filename": "on-the-rocks-077-straight-up.png"
+    },
+    {
+      "id": "on-the-rocks-078",
+      "page": 78,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Make It a Double",
+      "question": "What have you learned from me?",
+      "image": "cards/on-the-rocks/on-the-rocks-078-make-it-a-double.png",
+      "filename": "on-the-rocks-078-make-it-a-double.png"
+    },
+    {
+      "id": "on-the-rocks-079",
+      "page": 79,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Make It a Double",
+      "question": "How would your life be worse if we had never met?",
+      "image": "cards/on-the-rocks/on-the-rocks-079-make-it-a-double.png",
+      "filename": "on-the-rocks-079-make-it-a-double.png"
+    },
+    {
+      "id": "on-the-rocks-080",
+      "page": 80,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Straight Up",
+      "question": "How long did it take you to get over your last ex? What did you do to get over it? Are you actually over it?",
+      "image": "cards/on-the-rocks/on-the-rocks-080-straight-up.png",
+      "filename": "on-the-rocks-080-straight-up.png"
+    },
+    {
+      "id": "on-the-rocks-081",
+      "page": 81,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Straight Up",
+      "question": "Have you ever just let me win?",
+      "image": "cards/on-the-rocks/on-the-rocks-081-straight-up.png",
+      "filename": "on-the-rocks-081-straight-up.png"
+    },
+    {
+      "id": "on-the-rocks-082",
+      "page": 82,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "This Round's On Me",
+      "question": "What’s a habit, compulsion, or relationship you wish you could quit?",
+      "image": "cards/on-the-rocks/on-the-rocks-082-this-rounds-on-me.png",
+      "filename": "on-the-rocks-082-this-rounds-on-me.png"
+    },
+    {
+      "id": "on-the-rocks-083",
+      "page": 83,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Straight Up",
+      "question": "What’s something I talked you out of doing, and it was the right call?",
+      "image": "cards/on-the-rocks/on-the-rocks-083-straight-up.png",
+      "filename": "on-the-rocks-083-straight-up.png"
+    },
+    {
+      "id": "on-the-rocks-084",
+      "page": 84,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Straight Up",
+      "question": "Who’s the smartest person here? Make your case.",
+      "image": "cards/on-the-rocks/on-the-rocks-084-straight-up.png",
+      "filename": "on-the-rocks-084-straight-up.png"
+    },
+    {
+      "id": "on-the-rocks-085",
+      "page": 85,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Straight Up",
+      "question": "When was the last timeyou cried? What happened?",
+      "image": "cards/on-the-rocks/on-the-rocks-085-straight-up.png",
+      "filename": "on-the-rocks-085-straight-up.png"
+    },
+    {
+      "id": "on-the-rocks-086",
+      "page": 86,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Make It a Double",
+      "question": "What do you wish you were as good at as me?",
+      "image": "cards/on-the-rocks/on-the-rocks-086-make-it-a-double.png",
+      "filename": "on-the-rocks-086-make-it-a-double.png"
+    },
+    {
+      "id": "on-the-rocks-087",
+      "page": 87,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Straight Up",
+      "question": "You and I are dating. What’s going to break us up?",
+      "image": "cards/on-the-rocks/on-the-rocks-087-straight-up.png",
+      "filename": "on-the-rocks-087-straight-up.png"
+    },
+    {
+      "id": "on-the-rocks-088",
+      "page": 88,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Straight Up",
+      "question": "Was your childhood happier than the average person’s?",
+      "image": "cards/on-the-rocks/on-the-rocks-088-straight-up.png",
+      "filename": "on-the-rocks-088-straight-up.png"
+    },
+    {
+      "id": "on-the-rocks-089",
+      "page": 89,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Straight Up",
+      "question": "What’s something you’re self-conscious about? Are you working on it?",
+      "image": "cards/on-the-rocks/on-the-rocks-089-straight-up.png",
+      "filename": "on-the-rocks-089-straight-up.png"
+    },
+    {
+      "id": "on-the-rocks-090",
+      "page": 90,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "This Round's On Me",
+      "question": "Have you been blocked by any celebrities on social media? Tell us the story!",
+      "image": "cards/on-the-rocks/on-the-rocks-090-this-rounds-on-me.png",
+      "filename": "on-the-rocks-090-this-rounds-on-me.png"
+    },
+    {
+      "id": "on-the-rocks-091",
+      "page": 91,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Straight Up",
+      "question": "Every friendship involves give-and-take. Which one am I?",
+      "image": "cards/on-the-rocks/on-the-rocks-091-straight-up.png",
+      "filename": "on-the-rocks-091-straight-up.png"
+    },
+    {
+      "id": "on-the-rocks-092",
+      "page": 92,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Make It a Double",
+      "question": "If I didn’t have my current job, what do you see me doing?",
+      "image": "cards/on-the-rocks/on-the-rocks-092-make-it-a-double.png",
+      "filename": "on-the-rocks-092-make-it-a-double.png"
+    },
+    {
+      "id": "on-the-rocks-093",
+      "page": 93,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Straight Up",
+      "question": "If someone important to you said they’d stop seeing you unless you stopped seeing me, would you?",
+      "image": "cards/on-the-rocks/on-the-rocks-093-straight-up.png",
+      "filename": "on-the-rocks-093-straight-up.png"
+    },
+    {
+      "id": "on-the-rocks-094",
+      "page": 94,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Straight Up",
+      "question": "What’s the longest period of time you could share a hotel room with me before never wanting to see me again?",
+      "image": "cards/on-the-rocks/on-the-rocks-094-straight-up.png",
+      "filename": "on-the-rocks-094-straight-up.png"
+    },
+    {
+      "id": "on-the-rocks-095",
+      "page": 95,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Straight Up",
+      "question": "Have you ever seen me charm my way out of trouble?",
+      "image": "cards/on-the-rocks/on-the-rocks-095-straight-up.png",
+      "filename": "on-the-rocks-095-straight-up.png"
+    },
+    {
+      "id": "on-the-rocks-096",
+      "page": 96,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "This Round's On Me",
+      "question": "Tell us about a secret you had to keep from your loved ones.",
+      "image": "cards/on-the-rocks/on-the-rocks-096-this-rounds-on-me.png",
+      "filename": "on-the-rocks-096-this-rounds-on-me.png"
+    },
+    {
+      "id": "on-the-rocks-097",
+      "page": 97,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Straight Up",
+      "question": "What would you never hire me to do?",
+      "image": "cards/on-the-rocks/on-the-rocks-097-straight-up.png",
+      "filename": "on-the-rocks-097-straight-up.png"
+    },
+    {
+      "id": "on-the-rocks-098",
+      "page": 98,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Straight Up",
+      "question": "Describe a time when you really disappointed someone. Did you ever earn back their trust?",
+      "image": "cards/on-the-rocks/on-the-rocks-098-straight-up.png",
+      "filename": "on-the-rocks-098-straight-up.png"
+    },
+    {
+      "id": "on-the-rocks-099",
+      "page": 99,
+      "group": "On the Rocks",
+      "groupSlug": "on-the-rocks",
+      "type": "Make It a Double",
+      "question": "If I were a chain restaurant, which one would I be and why?",
+      "image": "cards/on-the-rocks/on-the-rocks-099-make-it-a-double.png",
+      "filename": "on-the-rocks-099-make-it-a-double.png"
+    },
+    {
+      "id": "last-call-001",
+      "page": 109,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Straight Up",
+      "question": "What problem do I think I’m successfully hiding from everyone, but is actually completely obvious?",
+      "image": "cards/last-call/last-call-001-straight-up.png",
+      "filename": "last-call-001-straight-up.png"
+    },
+    {
+      "id": "last-call-002",
+      "page": 110,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Make It a Double",
+      "question": "Tell us about a loophole you exploited until you got caught.",
+      "image": "cards/last-call/last-call-002-make-it-a-double.png",
+      "filename": "last-call-002-make-it-a-double.png"
+    },
+    {
+      "id": "last-call-003",
+      "page": 111,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Straight Up",
+      "question": "How many kids is too many kids? How many will you have?",
+      "image": "cards/last-call/last-call-003-straight-up.png",
+      "filename": "last-call-003-straight-up.png"
+    },
+    {
+      "id": "last-call-004",
+      "page": 112,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Straight Up",
+      "question": "What animal am I most like? Describe how this species and I are similar.",
+      "image": "cards/last-call/last-call-004-straight-up.png",
+      "filename": "last-call-004-straight-up.png"
+    },
+    {
+      "id": "last-call-005",
+      "page": 113,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Straight Up",
+      "question": "How comfortable are we with one another? Give us an example.",
+      "image": "cards/last-call/last-call-005-straight-up.png",
+      "filename": "last-call-005-straight-up.png"
+    },
+    {
+      "id": "last-call-006",
+      "page": 114,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "This Round's On Me",
+      "question": "Is there a seemingly normal rule of society that you have never, ever followed?",
+      "image": "cards/last-call/last-call-006-this-rounds-on-me.png",
+      "filename": "last-call-006-this-rounds-on-me.png"
+    },
+    {
+      "id": "last-call-007",
+      "page": 115,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Straight Up",
+      "question": "If someone were interested in dating me, what story would you tell them to see if they can handle me?",
+      "image": "cards/last-call/last-call-007-straight-up.png",
+      "filename": "last-call-007-straight-up.png"
+    },
+    {
+      "id": "last-call-008",
+      "page": 116,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Straight Up",
+      "question": "If we were dying of thirst, how would we ration the last bottle of water between all of us here?",
+      "image": "cards/last-call/last-call-008-straight-up.png",
+      "filename": "last-call-008-straight-up.png"
+    },
+    {
+      "id": "last-call-009",
+      "page": 117,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Make It a Double",
+      "question": "What’s the meanest thing you’ve seen me do?",
+      "image": "cards/last-call/last-call-009-make-it-a-double.png",
+      "filename": "last-call-009-make-it-a-double.png"
+    },
+    {
+      "id": "last-call-010",
+      "page": 118,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Straight Up",
+      "question": "Have you ever pretended to be someone else online? Who is this alter ego, and were you ever found out?",
+      "image": "cards/last-call/last-call-010-straight-up.png",
+      "filename": "last-call-010-straight-up.png"
+    },
+    {
+      "id": "last-call-011",
+      "page": 119,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Straight Up",
+      "question": "Am I your type? What would I have to do to become more your type? I’m not hitting on you, we’re just talking.",
+      "image": "cards/last-call/last-call-011-straight-up.png",
+      "filename": "last-call-011-straight-up.png"
+    },
+    {
+      "id": "last-call-012",
+      "page": 120,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Straight Up",
+      "question": "What is something you’re struggling with that we don’t know about?",
+      "image": "cards/last-call/last-call-012-straight-up.png",
+      "filename": "last-call-012-straight-up.png"
+    },
+    {
+      "id": "last-call-013",
+      "page": 121,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Straight Up",
+      "question": "What do I think I’m great at, but I’m actually thoroughly average at?",
+      "image": "cards/last-call/last-call-013-straight-up.png",
+      "filename": "last-call-013-straight-up.png"
+    },
+    {
+      "id": "last-call-014",
+      "page": 122,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "This Round's On Me",
+      "question": "What’s the most terrible thing you’ve ever done for money?",
+      "image": "cards/last-call/last-call-014-this-rounds-on-me.png",
+      "filename": "last-call-014-this-rounds-on-me.png"
+    },
+    {
+      "id": "last-call-015",
+      "page": 123,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Straight Up",
+      "question": "Have you ever intentionally scammed someone or misled them for personal gain?",
+      "image": "cards/last-call/last-call-015-straight-up.png",
+      "filename": "last-call-015-straight-up.png"
+    },
+    {
+      "id": "last-call-016",
+      "page": 124,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Straight Up",
+      "question": "What am I stubborn about that’s making my life miserable?",
+      "image": "cards/last-call/last-call-016-straight-up.png",
+      "filename": "last-call-016-straight-up.png"
+    },
+    {
+      "id": "last-call-017",
+      "page": 125,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Make It a Double",
+      "question": "Your Google history has been made public. Which search is the hardest to explain?",
+      "image": "cards/last-call/last-call-017-make-it-a-double.png",
+      "filename": "last-call-017-make-it-a-double.png"
+    },
+    {
+      "id": "last-call-018",
+      "page": 126,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Straight Up",
+      "question": "Have you ever talked about me behind my back? If yes, what did you say?",
+      "image": "cards/last-call/last-call-018-straight-up.png",
+      "filename": "last-call-018-straight-up.png"
+    },
+    {
+      "id": "last-call-019",
+      "page": 127,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Straight Up",
+      "question": "Name a time you wished you could have helped me. What would you have done?",
+      "image": "cards/last-call/last-call-019-straight-up.png",
+      "filename": "last-call-019-straight-up.png"
+    },
+    {
+      "id": "last-call-020",
+      "page": 128,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Straight Up",
+      "question": "Tell us about a time you deliberately did something to provoke your partner.",
+      "image": "cards/last-call/last-call-020-straight-up.png",
+      "filename": "last-call-020-straight-up.png"
+    },
+    {
+      "id": "last-call-021",
+      "page": 129,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Make It a Double",
+      "question": "What advice do I need but don’t want to hear?",
+      "image": "cards/last-call/last-call-021-make-it-a-double.png",
+      "filename": "last-call-021-make-it-a-double.png"
+    },
+    {
+      "id": "last-call-022",
+      "page": 130,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Straight Up",
+      "question": "Are there certain situations with me you avoid on purpose?",
+      "image": "cards/last-call/last-call-022-straight-up.png",
+      "filename": "last-call-022-straight-up.png"
+    },
+    {
+      "id": "last-call-023",
+      "page": 131,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Straight Up",
+      "question": "When was the last time you lied to me? What was the lie?",
+      "image": "cards/last-call/last-call-023-straight-up.png",
+      "filename": "last-call-023-straight-up.png"
+    },
+    {
+      "id": "last-call-024",
+      "page": 132,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Straight Up",
+      "question": "Would Adult Me be attractive to Teenage You?",
+      "image": "cards/last-call/last-call-024-straight-up.png",
+      "filename": "last-call-024-straight-up.png"
+    },
+    {
+      "id": "last-call-025",
+      "page": 133,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "This Round's On Me",
+      "question": "What’s the most self-serving thing you’ve ever done?",
+      "image": "cards/last-call/last-call-025-this-rounds-on-me.png",
+      "filename": "last-call-025-this-rounds-on-me.png"
+    },
+    {
+      "id": "last-call-026",
+      "page": 134,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Straight Up",
+      "question": "Have you ever had a pregnancy scare?",
+      "image": "cards/last-call/last-call-026-straight-up.png",
+      "filename": "last-call-026-straight-up.png"
+    },
+    {
+      "id": "last-call-027",
+      "page": 135,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Straight Up",
+      "question": "Name a friend of mine you aren’t the biggest fan of. Is there anything you think I should reconsider about them?",
+      "image": "cards/last-call/last-call-027-straight-up.png",
+      "filename": "last-call-027-straight-up.png"
+    },
+    {
+      "id": "last-call-028",
+      "page": 136,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Straight Up",
+      "question": "When do I demand the most attention?",
+      "image": "cards/last-call/last-call-028-straight-up.png",
+      "filename": "last-call-028-straight-up.png"
+    },
+    {
+      "id": "last-call-029",
+      "page": 137,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Make It a Double",
+      "question": "What’s your greatest moment of telling someone off? Can you reenact it for us?",
+      "image": "cards/last-call/last-call-029-make-it-a-double.png",
+      "filename": "last-call-029-make-it-a-double.png"
+    },
+    {
+      "id": "last-call-030",
+      "page": 138,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Straight Up",
+      "question": "Have you ever had to apologize to someone for my behavior? Did the person accept the apology?",
+      "image": "cards/last-call/last-call-030-straight-up.png",
+      "filename": "last-call-030-straight-up.png"
+    },
+    {
+      "id": "last-call-031",
+      "page": 139,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Straight Up",
+      "question": "Have you ever had to apologize to someone for my behavior? Did the person accept the apology?",
+      "image": "cards/last-call/last-call-031-straight-up.png",
+      "filename": "last-call-031-straight-up.png"
+    },
+    {
+      "id": "last-call-032",
+      "page": 140,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Straight Up",
+      "question": "Describe a time you lost a little bit of respect for me.",
+      "image": "cards/last-call/last-call-032-straight-up.png",
+      "filename": "last-call-032-straight-up.png"
+    },
+    {
+      "id": "last-call-033",
+      "page": 141,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Straight Up",
+      "question": "What’s a fact I can never seem to remember about you?",
+      "image": "cards/last-call/last-call-033-straight-up.png",
+      "filename": "last-call-033-straight-up.png"
+    },
+    {
+      "id": "last-call-034",
+      "page": 142,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Straight Up",
+      "question": "What’s something that’s definitely not my problem, but somehow always becomes my problem?",
+      "image": "cards/last-call/last-call-034-straight-up.png",
+      "filename": "last-call-034-straight-up.png"
+    },
+    {
+      "id": "last-call-035",
+      "page": 143,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Straight Up",
+      "question": "Have I ever done anything you think should have gotten me shitcanned?",
+      "image": "cards/last-call/last-call-035-straight-up.png",
+      "filename": "last-call-035-straight-up.png"
+    },
+    {
+      "id": "last-call-036",
+      "page": 144,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "This Round's On Me",
+      "question": "Have you ever pooped yourself as an adult?",
+      "image": "cards/last-call/last-call-036-this-rounds-on-me.png",
+      "filename": "last-call-036-this-rounds-on-me.png"
+    },
+    {
+      "id": "last-call-037",
+      "page": 145,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Straight Up",
+      "question": "What’s the angriest you’ve ever been at me? What resolved it?",
+      "image": "cards/last-call/last-call-037-straight-up.png",
+      "filename": "last-call-037-straight-up.png"
+    },
+    {
+      "id": "last-call-038",
+      "page": 146,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Make It a Double",
+      "question": "What’s something you’re currently doing that you’ll stop if and only if you get caught?",
+      "image": "cards/last-call/last-call-038-make-it-a-double.png",
+      "filename": "last-call-038-make-it-a-double.png"
+    },
+    {
+      "id": "last-call-039",
+      "page": 147,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Straight Up",
+      "question": "Have you ever been genuinely scared of me?",
+      "image": "cards/last-call/last-call-039-straight-up.png",
+      "filename": "last-call-039-straight-up.png"
+    },
+    {
+      "id": "last-call-040",
+      "page": 148,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Straight Up",
+      "question": "What would you never, ever want my help with?",
+      "image": "cards/last-call/last-call-040-straight-up.png",
+      "filename": "last-call-040-straight-up.png"
+    },
+    {
+      "id": "last-call-041",
+      "page": 149,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Straight Up",
+      "question": "If we met up again after not seeing each other for five years, what’s the first thing we’d do together?",
+      "image": "cards/last-call/last-call-041-straight-up.png",
+      "filename": "last-call-041-straight-up.png"
+    },
+    {
+      "id": "last-call-042",
+      "page": 150,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Make It a Double",
+      "question": "What’s the shallowest reason you’ve ever swiped left on a dating profile?",
+      "image": "cards/last-call/last-call-042-make-it-a-double.png",
+      "filename": "last-call-042-make-it-a-double.png"
+    },
+    {
+      "id": "last-call-043",
+      "page": 151,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Straight Up",
+      "question": "What’s a bad habit that you picked up from me?",
+      "image": "cards/last-call/last-call-043-straight-up.png",
+      "filename": "last-call-043-straight-up.png"
+    },
+    {
+      "id": "last-call-044",
+      "page": 152,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Straight Up",
+      "question": "How’s my drug and alcohol use? Do you think I could stand to do more, or less?",
+      "image": "cards/last-call/last-call-044-straight-up.png",
+      "filename": "last-call-044-straight-up.png"
+    },
+    {
+      "id": "last-call-045",
+      "page": 153,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "This Round's On Me",
+      "question": "What will you never understand about me?",
+      "image": "cards/last-call/last-call-045-this-rounds-on-me.png",
+      "filename": "last-call-045-this-rounds-on-me.png"
+    },
+    {
+      "id": "last-call-046",
+      "page": 154,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Straight Up",
+      "question": "What’s something you learned from watching someone else fail spectacularly?",
+      "image": "cards/last-call/last-call-046-straight-up.png",
+      "filename": "last-call-046-straight-up.png"
+    },
+    {
+      "id": "last-call-047",
+      "page": 155,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Straight Up",
+      "question": "What’s the most annoying thing I do without realizing it?",
+      "image": "cards/last-call/last-call-047-straight-up.png",
+      "filename": "last-call-047-straight-up.png"
+    },
+    {
+      "id": "last-call-048",
+      "page": 156,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Straight Up",
+      "question": "If you found out I’d been embezzling from work, would you rat me out?",
+      "image": "cards/last-call/last-call-048-straight-up.png",
+      "filename": "last-call-048-straight-up.png"
+    },
+    {
+      "id": "last-call-049",
+      "page": 157,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Straight Up",
+      "question": "Have you ever stabbed someone in the back or actively plotted against them?",
+      "image": "cards/last-call/last-call-049-straight-up.png",
+      "filename": "last-call-049-straight-up.png"
+    },
+    {
+      "id": "last-call-050",
+      "page": 158,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "This Round's On Me",
+      "question": "What’s the weirdest thing about me?",
+      "image": "cards/last-call/last-call-050-this-rounds-on-me.png",
+      "filename": "last-call-050-this-rounds-on-me.png"
+    },
+    {
+      "id": "last-call-051",
+      "page": 159,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Straight Up",
+      "question": "What’s the closest we’ve ever come to parting ways forever? Did we fix the problem, or are we in denial?",
+      "image": "cards/last-call/last-call-051-straight-up.png",
+      "filename": "last-call-051-straight-up.png"
+    },
+    {
+      "id": "last-call-052",
+      "page": 160,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Make It a Double",
+      "question": "What’s something you know would make you a better person, but you just don’t want to do it?",
+      "image": "cards/last-call/last-call-052-make-it-a-double.png",
+      "filename": "last-call-052-make-it-a-double.png"
+    },
+    {
+      "id": "last-call-053",
+      "page": 161,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Straight Up",
+      "question": "Do you think I care more or less about my reputation than most people? What’s your evidence?",
+      "image": "cards/last-call/last-call-053-straight-up.png",
+      "filename": "last-call-053-straight-up.png"
+    },
+    {
+      "id": "last-call-054",
+      "page": 162,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Straight Up",
+      "question": "Rate my current outfit on a scale of 1-10. Is this better or worse than I usually look? Name a time you wished you could have helped me. What would you have done?",
+      "image": "cards/last-call/last-call-054-straight-up.png",
+      "filename": "last-call-054-straight-up.png"
+    },
+    {
+      "id": "last-call-055",
+      "page": 163,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Straight Up",
+      "question": "What percentage of the time do you think I’m completely full of shit?",
+      "image": "cards/last-call/last-call-055-straight-up.png",
+      "filename": "last-call-055-straight-up.png"
+    },
+    {
+      "id": "last-call-056",
+      "page": 164,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Make It a Double",
+      "question": "If you were to kill me, how would you do it?",
+      "image": "cards/last-call/last-call-056-make-it-a-double.png",
+      "filename": "last-call-056-make-it-a-double.png"
+    },
+    {
+      "id": "last-call-057",
+      "page": 165,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Straight Up",
+      "question": "Have you ever caught me in a lie? Did you confront me about it? Why or why not?",
+      "image": "cards/last-call/last-call-057-straight-up.png",
+      "filename": "last-call-057-straight-up.png"
+    },
+    {
+      "id": "last-call-058",
+      "page": 166,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Straight Up",
+      "question": "What’s the most unhygienic thing you’ve ever seen me do?",
+      "image": "cards/last-call/last-call-058-straight-up.png",
+      "filename": "last-call-058-straight-up.png"
+    },
+    {
+      "id": "last-call-059",
+      "page": 167,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Straight Up",
+      "question": "Do any of your friends not like me?",
+      "image": "cards/last-call/last-call-059-straight-up.png",
+      "filename": "last-call-059-straight-up.png"
+    },
+    {
+      "id": "last-call-060",
+      "page": 168,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Straight Up",
+      "question": "Where are we, and what are we doing, in ten years? Are we still on our bullshit?",
+      "image": "cards/last-call/last-call-060-straight-up.png",
+      "filename": "last-call-060-straight-up.png"
+    },
+    {
+      "id": "last-call-061",
+      "page": 169,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "This Round's On Me",
+      "question": "How have you dishonored your parents?",
+      "image": "cards/last-call/last-call-061-this-rounds-on-me.png",
+      "filename": "last-call-061-this-rounds-on-me.png"
+    },
+    {
+      "id": "last-call-062",
+      "page": 170,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Straight Up",
+      "question": "Have you ever become attracted to someone solely because you thought they might be into you?",
+      "image": "cards/last-call/last-call-062-straight-up.png",
+      "filename": "last-call-062-straight-up.png"
+    },
+    {
+      "id": "last-call-063",
+      "page": 171,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Make It a Double",
+      "question": "What’s something I do that you hate?",
+      "image": "cards/last-call/last-call-063-make-it-a-double.png",
+      "filename": "last-call-063-make-it-a-double.png"
+    },
+    {
+      "id": "last-call-064",
+      "page": 172,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "This Round's On Me",
+      "question": "What’s the most unreasonable thing you’ve ever completely lost your cool over?",
+      "image": "cards/last-call/last-call-064-this-rounds-on-me.png",
+      "filename": "last-call-064-this-rounds-on-me.png"
+    },
+    {
+      "id": "last-call-065",
+      "page": 173,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Straight Up",
+      "question": "What do you think I need to just let go of? How would my life improve if I did?",
+      "image": "cards/last-call/last-call-065-straight-up.png",
+      "filename": "last-call-065-straight-up.png"
+    },
+    {
+      "id": "last-call-066",
+      "page": 174,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Straight Up",
+      "question": "What’s the most egregious lie you’ve ever told me?",
+      "image": "cards/last-call/last-call-066-straight-up.png",
+      "filename": "last-call-066-straight-up.png"
+    },
+    {
+      "id": "last-call-067",
+      "page": 175,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "This Round's On Me",
+      "question": "What’s a problem you let go on for too long before you addressed it?",
+      "image": "cards/last-call/last-call-067-this-rounds-on-me.png",
+      "filename": "last-call-067-this-rounds-on-me.png"
+    },
+    {
+      "id": "last-call-068",
+      "page": 176,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Straight Up",
+      "question": "Have you ever broken off plans with me to be with someone else?",
+      "image": "cards/last-call/last-call-068-straight-up.png",
+      "filename": "last-call-068-straight-up.png"
+    },
+    {
+      "id": "last-call-069",
+      "page": 177,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Straight Up",
+      "question": "What’s a way you wish I took better care of myself? Do you think I ever will?",
+      "image": "cards/last-call/last-call-069-straight-up.png",
+      "filename": "last-call-069-straight-up.png"
+    },
+    {
+      "id": "last-call-070",
+      "page": 178,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Straight Up",
+      "question": "Do you consider me a name-dropper? What’s the last name you heard me drop?",
+      "image": "cards/last-call/last-call-070-straight-up.png",
+      "filename": "last-call-070-straight-up.png"
+    },
+    {
+      "id": "last-call-071",
+      "page": 179,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Make It a Double",
+      "question": "If I died tomorrow, what regrets would you have about our relationship?",
+      "image": "cards/last-call/last-call-071-make-it-a-double.png",
+      "filename": "last-call-071-make-it-a-double.png"
+    },
+    {
+      "id": "last-call-072",
+      "page": 180,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Straight Up",
+      "question": "What’s something I talk about so much that you never need to hear about it again? The topic has been sufficiently covered.",
+      "image": "cards/last-call/last-call-072-straight-up.png",
+      "filename": "last-call-072-straight-up.png"
+    },
+    {
+      "id": "last-call-073",
+      "page": 181,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "This Round's On Me",
+      "question": "What ethical boundaries are you happy to cross?",
+      "image": "cards/last-call/last-call-073-this-rounds-on-me.png",
+      "filename": "last-call-073-this-rounds-on-me.png"
+    },
+    {
+      "id": "last-call-074",
+      "page": 182,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Straight Up",
+      "question": "Is there something that’s difficult to talk about among any of us here? Should we clear the air right now?",
+      "image": "cards/last-call/last-call-074-straight-up.png",
+      "filename": "last-call-074-straight-up.png"
+    },
+    {
+      "id": "last-call-075",
+      "page": 183,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Straight Up",
+      "question": "Of the people here, whose job do you think pays the most? Do you think that person should Venmo each of us twenty bucks?",
+      "image": "cards/last-call/last-call-075-straight-up.png",
+      "filename": "last-call-075-straight-up.png"
+    },
+    {
+      "id": "last-call-076",
+      "page": 184,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Straight Up",
+      "question": "Do you have any secrets you keep from me and me only?",
+      "image": "cards/last-call/last-call-076-straight-up.png",
+      "filename": "last-call-076-straight-up.png"
+    },
+    {
+      "id": "last-call-077",
+      "page": 185,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "This Round's On Me",
+      "question": "What’s the most embarrassing thing you’ve had to ask Google?",
+      "image": "cards/last-call/last-call-077-this-rounds-on-me.png",
+      "filename": "last-call-077-this-rounds-on-me.png"
+    },
+    {
+      "id": "last-call-078",
+      "page": 186,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Straight Up",
+      "question": "What’s the meanest thing you’ve ever heard me say about someone else?",
+      "image": "cards/last-call/last-call-078-straight-up.png",
+      "filename": "last-call-078-straight-up.png"
+    },
+    {
+      "id": "last-call-079",
+      "page": 187,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Make It a Double",
+      "question": "What’s the biggest lie you’ve put on a résumé? Or seen on someone else’s?",
+      "image": "cards/last-call/last-call-079-make-it-a-double.png",
+      "filename": "last-call-079-make-it-a-double.png"
+    },
+    {
+      "id": "last-call-080",
+      "page": 188,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "This Round's On Me",
+      "question": "What’s something you think people should never joke about?",
+      "image": "cards/last-call/last-call-080-this-rounds-on-me.png",
+      "filename": "last-call-080-this-rounds-on-me.png"
+    },
+    {
+      "id": "last-call-081",
+      "page": 189,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Straight Up",
+      "question": "What’s the most fundamental difference between us? Should we try to resolve it, or celebrate it?",
+      "image": "cards/last-call/last-call-081-straight-up.png",
+      "filename": "last-call-081-straight-up.png"
+    },
+    {
+      "id": "last-call-082",
+      "page": 190,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Make It a Double",
+      "question": "Have you ever done something you’re not proud of for money? (Outside of an official job.)",
+      "image": "cards/last-call/last-call-082-make-it-a-double.png",
+      "filename": "last-call-082-make-it-a-double.png"
+    },
+    {
+      "id": "last-call-083",
+      "page": 191,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "This Round's On Me",
+      "question": "What’s something you miss about your last serious ex?",
+      "image": "cards/last-call/last-call-083-this-rounds-on-me.png",
+      "filename": "last-call-083-this-rounds-on-me.png"
+    },
+    {
+      "id": "last-call-084",
+      "page": 192,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Straight Up",
+      "question": "Do you think I have a more dominant or more submissive personality? Do you have any examples?",
+      "image": "cards/last-call/last-call-084-straight-up.png",
+      "filename": "last-call-084-straight-up.png"
+    },
+    {
+      "id": "last-call-085",
+      "page": 193,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Make It a Double",
+      "question": "What have you done while intoxicated that you wouldn’t do again?",
+      "image": "cards/last-call/last-call-085-make-it-a-double.png",
+      "filename": "last-call-085-make-it-a-double.png"
+    },
+    {
+      "id": "last-call-086",
+      "page": 194,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Straight Up",
+      "question": "What’s something about me that might seem creepy to others? Should I tone it down?",
+      "image": "cards/last-call/last-call-086-straight-up.png",
+      "filename": "last-call-086-straight-up.png"
+    },
+    {
+      "id": "last-call-087",
+      "page": 195,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Straight Up",
+      "question": "Do you think I have overachieved or underachieved?",
+      "image": "cards/last-call/last-call-087-straight-up.png",
+      "filename": "last-call-087-straight-up.png"
+    },
+    {
+      "id": "last-call-088",
+      "page": 196,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "This Round's On Me",
+      "question": "What’s an unpopular opinion you will never let go of?",
+      "image": "cards/last-call/last-call-088-this-rounds-on-me.png",
+      "filename": "last-call-088-this-rounds-on-me.png"
+    },
+    {
+      "id": "last-call-089",
+      "page": 197,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Straight Up",
+      "question": "What am I too picky about?",
+      "image": "cards/last-call/last-call-089-straight-up.png",
+      "filename": "last-call-089-straight-up.png"
+    },
+    {
+      "id": "last-call-090",
+      "page": 198,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Make It a Double",
+      "question": "What thing do I love that you absolutely hate?",
+      "image": "cards/last-call/last-call-090-make-it-a-double.png",
+      "filename": "last-call-090-make-it-a-double.png"
+    },
+    {
+      "id": "last-call-091",
+      "page": 199,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Straight Up",
+      "question": "Do I tend to be too easy on people, or too harsh?",
+      "image": "cards/last-call/last-call-091-straight-up.png",
+      "filename": "last-call-091-straight-up.png"
+    },
+    {
+      "id": "last-call-092",
+      "page": 200,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Straight Up",
+      "question": "Do you think I ever stir up drama because I enjoy it? Name an example.",
+      "image": "cards/last-call/last-call-092-straight-up.png",
+      "filename": "last-call-092-straight-up.png"
+    },
+    {
+      "id": "last-call-093",
+      "page": 201,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "This Round's On Me",
+      "question": "What album title describes our relationship?",
+      "image": "cards/last-call/last-call-093-this-rounds-on-me.png",
+      "filename": "last-call-093-this-rounds-on-me.png"
+    },
+    {
+      "id": "last-call-094",
+      "page": 202,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "This Round's On Me",
+      "question": "What’s the most serious crime you’ve ever committed?",
+      "image": "cards/last-call/last-call-094-this-rounds-on-me.png",
+      "filename": "last-call-094-this-rounds-on-me.png"
+    },
+    {
+      "id": "last-call-095",
+      "page": 203,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Straight Up",
+      "question": "What’s the disclaimer you give people before they meet me?",
+      "image": "cards/last-call/last-call-095-straight-up.png",
+      "filename": "last-call-095-straight-up.png"
+    },
+    {
+      "id": "last-call-096",
+      "page": 204,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Straight Up",
+      "question": "Am I more of an unstoppable force or an immovable object?",
+      "image": "cards/last-call/last-call-096-straight-up.png",
+      "filename": "last-call-096-straight-up.png"
+    },
+    {
+      "id": "last-call-097",
+      "page": 205,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Straight Up",
+      "question": "Who here is most likely to believe in supernatural, occult, or mystical stuff?",
+      "image": "cards/last-call/last-call-097-straight-up.png",
+      "filename": "last-call-097-straight-up.png"
+    },
+    {
+      "id": "last-call-098",
+      "page": 206,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Make It a Double",
+      "question": "If you suspected I had been replaced by a bodysnatcher, what question would you ask me to prove my identity?",
+      "image": "cards/last-call/last-call-098-make-it-a-double.png",
+      "filename": "last-call-098-make-it-a-double.png"
+    },
+    {
+      "id": "last-call-099",
+      "page": 207,
+      "group": "Last Call",
+      "groupSlug": "last-call",
+      "type": "Straight Up",
+      "question": "What’s something about which we have such different taste that if I like it, you already know you’ll hate it?",
+      "image": "cards/last-call/last-call-099-straight-up.png",
+      "filename": "last-call-099-straight-up.png"
+    },
+    {
+      "id": "happy-hour-001",
+      "page": 217,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Straight Up",
+      "question": "What’s the weirdest compliment you’ve ever gotten?",
+      "image": "cards/happy-hour/happy-hour-001-straight-up.png",
+      "filename": "happy-hour-001-straight-up.png"
+    },
+    {
+      "id": "happy-hour-002",
+      "page": 218,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Make It a Double",
+      "question": "I can beam you to any single place in the world that you’ve never been. You have 24 hours to visit before being beamed home. Where to?",
+      "image": "cards/happy-hour/happy-hour-002-make-it-a-double.png",
+      "filename": "happy-hour-002-make-it-a-double.png"
+    },
+    {
+      "id": "happy-hour-003",
+      "page": 219,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Straight Up",
+      "question": "Describe a way I’ve impacted your life, but that I may not know about.",
+      "image": "cards/happy-hour/happy-hour-003-straight-up.png",
+      "filename": "happy-hour-003-straight-up.png"
+    },
+    {
+      "id": "happy-hour-004",
+      "page": 220,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Make It a Double",
+      "question": "I’m going to have permanent art deposited into my skin with needles. Pick a design for me. Bonus points if you draw it.",
+      "image": "cards/happy-hour/happy-hour-004-make-it-a-double.png",
+      "filename": "happy-hour-004-make-it-a-double.png"
+    },
+    {
+      "id": "happy-hour-005",
+      "page": 221,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Straight Up",
+      "question": "Close your eyes before asking this question: What color are my eyes?",
+      "image": "cards/happy-hour/happy-hour-005-straight-up.png",
+      "filename": "happy-hour-005-straight-up.png"
+    },
+    {
+      "id": "happy-hour-006",
+      "page": 222,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Straight Up",
+      "question": "What’s the biggest fear you’ve overcome?",
+      "image": "cards/happy-hour/happy-hour-006-straight-up.png",
+      "filename": "happy-hour-006-straight-up.png"
+    },
+    {
+      "id": "happy-hour-007",
+      "page": 223,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Straight Up",
+      "question": "We’re having a night in! Now’s your chance to make me sit and watch that thing you’re desperate for me to see. What is it, and what snack should I bring?",
+      "image": "cards/happy-hour/happy-hour-007-straight-up.png",
+      "filename": "happy-hour-007-straight-up.png"
+    },
+    {
+      "id": "happy-hour-008",
+      "page": 224,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Straight Up",
+      "question": "Have you bragged about me to other people? What did you say?",
+      "image": "cards/happy-hour/happy-hour-008-straight-up.png",
+      "filename": "happy-hour-008-straight-up.png"
+    },
+    {
+      "id": "happy-hour-009",
+      "page": 225,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "This Round's On Me",
+      "question": "If you could instantly gain any skill, what would it be?",
+      "image": "cards/happy-hour/happy-hour-009-this-rounds-on-me.png",
+      "filename": "happy-hour-009-this-rounds-on-me.png"
+    },
+    {
+      "id": "happy-hour-010",
+      "page": 226,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Straight Up",
+      "question": "What would you entrust me with above anyone else?",
+      "image": "cards/happy-hour/happy-hour-010-straight-up.png",
+      "filename": "happy-hour-010-straight-up.png"
+    },
+    {
+      "id": "happy-hour-011",
+      "page": 227,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "This Round's On Me",
+      "question": "What’s the strangest nickname you’ve ever been given?",
+      "image": "cards/happy-hour/happy-hour-011-this-rounds-on-me.png",
+      "filename": "happy-hour-011-this-rounds-on-me.png"
+    },
+    {
+      "id": "happy-hour-012",
+      "page": 228,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Make It a Double",
+      "question": "What would be your cheesy, 20-second, game-show-contestant anecdote?",
+      "image": "cards/happy-hour/happy-hour-012-make-it-a-double.png",
+      "filename": "happy-hour-012-make-it-a-double.png"
+    },
+    {
+      "id": "happy-hour-013",
+      "page": 229,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Straight Up",
+      "question": "What dish do you slay every time you make it?",
+      "image": "cards/happy-hour/happy-hour-013-straight-up.png",
+      "filename": "happy-hour-013-straight-up.png"
+    },
+    {
+      "id": "happy-hour-014",
+      "page": 230,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Straight Up",
+      "question": "What smell takes you back to childhood?",
+      "image": "cards/happy-hour/happy-hour-014-straight-up.png",
+      "filename": "happy-hour-014-straight-up.png"
+    },
+    {
+      "id": "happy-hour-015",
+      "page": 231,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Straight Up",
+      "question": "What discontinued item would you give anything to bring back?",
+      "image": "cards/happy-hour/happy-hour-015-straight-up.png",
+      "filename": "happy-hour-015-straight-up.png"
+    },
+    {
+      "id": "happy-hour-016",
+      "page": 232,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Make It a Double",
+      "question": "When was the last time you laughed so hard you cried?",
+      "image": "cards/happy-hour/happy-hour-016-make-it-a-double.png",
+      "filename": "happy-hour-016-make-it-a-double.png"
+    },
+    {
+      "id": "happy-hour-017",
+      "page": 233,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Straight Up",
+      "question": "What is something you know you’ll accomplish, no matter how many people tell you you can’t?",
+      "image": "cards/happy-hour/happy-hour-017-straight-up.png",
+      "filename": "happy-hour-017-straight-up.png"
+    },
+    {
+      "id": "happy-hour-018",
+      "page": 234,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Straight Up",
+      "question": "What is your happiest memory from when you were a single- digit-aged child?",
+      "image": "cards/happy-hour/happy-hour-018-straight-up.png",
+      "filename": "happy-hour-018-straight-up.png"
+    },
+    {
+      "id": "happy-hour-019",
+      "page": 235,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "This Round's On Me",
+      "question": "What bad habit have you kicked?",
+      "image": "cards/happy-hour/happy-hour-019-this-rounds-on-me.png",
+      "filename": "happy-hour-019-this-rounds-on-me.png"
+    },
+    {
+      "id": "happy-hour-020",
+      "page": 236,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Straight Up",
+      "question": "What are you rooting for me to achieve?",
+      "image": "cards/happy-hour/happy-hour-020-straight-up.png",
+      "filename": "happy-hour-020-straight-up.png"
+    },
+    {
+      "id": "happy-hour-021",
+      "page": 237,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Straight Up",
+      "question": "If I couldn’t reach an itch, would you do me a solid and scratch it?",
+      "image": "cards/happy-hour/happy-hour-021-straight-up.png",
+      "filename": "happy-hour-021-straight-up.png"
+    },
+    {
+      "id": "happy-hour-022",
+      "page": 238,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Make It a Double",
+      "question": "What did you do on your very first date ever?",
+      "image": "cards/happy-hour/happy-hour-022-make-it-a-double.png",
+      "filename": "happy-hour-022-make-it-a-double.png"
+    },
+    {
+      "id": "happy-hour-023",
+      "page": 239,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Straight Up",
+      "question": "Name a dream of yours that you’ve made come true.",
+      "image": "cards/happy-hour/happy-hour-023-straight-up.png",
+      "filename": "happy-hour-023-straight-up.png"
+    },
+    {
+      "id": "happy-hour-024",
+      "page": 240,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "This Round's On Me",
+      "question": "Look at the person to your left. What’s the kindest thing they’ve ever done for you?",
+      "image": "cards/happy-hour/happy-hour-024-this-rounds-on-me.png",
+      "filename": "happy-hour-024-this-rounds-on-me.png"
+    },
+    {
+      "id": "happy-hour-025",
+      "page": 241,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Straight Up",
+      "question": "What positive impact do you think you have on other people?",
+      "image": "cards/happy-hour/happy-hour-025-straight-up.png",
+      "filename": "happy-hour-025-straight-up.png"
+    },
+    {
+      "id": "happy-hour-026",
+      "page": 242,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Straight Up",
+      "question": "What’s the hold music for your brain?",
+      "image": "cards/happy-hour/happy-hour-026-straight-up.png",
+      "filename": "happy-hour-026-straight-up.png"
+    },
+    {
+      "id": "happy-hour-027",
+      "page": 243,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Make It a Double",
+      "question": "What’s your favorite thing to waste money on?",
+      "image": "cards/happy-hour/happy-hour-027-make-it-a-double.png",
+      "filename": "happy-hour-027-make-it-a-double.png"
+    },
+    {
+      "id": "happy-hour-028",
+      "page": 244,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Make It a Double",
+      "question": "What’s something that completely changed you when you encountered it for the first time?",
+      "image": "cards/happy-hour/happy-hour-028-make-it-a-double.png",
+      "filename": "happy-hour-028-make-it-a-double.png"
+    },
+    {
+      "id": "happy-hour-029",
+      "page": 245,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "This Round's On Me",
+      "question": "What’s the best compliment you’ve ever been given?",
+      "image": "cards/happy-hour/happy-hour-029-this-rounds-on-me.png",
+      "filename": "happy-hour-029-this-rounds-on-me.png"
+    },
+    {
+      "id": "happy-hour-030",
+      "page": 246,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Straight Up",
+      "question": "We’re getting matching jackets for this group. What do they look like, and what do they say on the back?",
+      "image": "cards/happy-hour/happy-hour-030-straight-up.png",
+      "filename": "happy-hour-030-straight-up.png"
+    },
+    {
+      "id": "happy-hour-031",
+      "page": 247,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "This Round's On Me",
+      "question": "What’s something you’re proud of that not many people know about?",
+      "image": "cards/happy-hour/happy-hour-031-this-rounds-on-me.png",
+      "filename": "happy-hour-031-this-rounds-on-me.png"
+    },
+    {
+      "id": "happy-hour-032",
+      "page": 248,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Make It a Double",
+      "question": "On what totally meaningless topic could you write a whole dissertation?",
+      "image": "cards/happy-hour/happy-hour-032-make-it-a-double.png",
+      "filename": "happy-hour-032-make-it-a-double.png"
+    },
+    {
+      "id": "happy-hour-033",
+      "page": 249,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "This Round's On Me",
+      "question": "What album have you spun the most times? Be honest. You can consult your music apps for verification.",
+      "image": "cards/happy-hour/happy-hour-033-this-rounds-on-me.png",
+      "filename": "happy-hour-033-this-rounds-on-me.png"
+    },
+    {
+      "id": "happy-hour-034",
+      "page": 250,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Straight Up",
+      "question": "Do you always try to be honest with me, or do you tell me “that haircut looks great” -level white lies to be nice?",
+      "image": "cards/happy-hour/happy-hour-034-straight-up.png",
+      "filename": "happy-hour-034-straight-up.png"
+    },
+    {
+      "id": "happy-hour-035",
+      "page": 251,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Straight Up",
+      "question": "What movie or TV character do I most remind you of?",
+      "image": "cards/happy-hour/happy-hour-035-straight-up.png",
+      "filename": "happy-hour-035-straight-up.png"
+    },
+    {
+      "id": "happy-hour-036",
+      "page": 252,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "This Round's On Me",
+      "question": "What snack do you turn to in times of emotional turmoil?",
+      "image": "cards/happy-hour/happy-hour-036-this-rounds-on-me.png",
+      "filename": "happy-hour-036-this-rounds-on-me.png"
+    },
+    {
+      "id": "happy-hour-037",
+      "page": 253,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Straight Up",
+      "question": "Describe a time you accidentally mortified your parents as a child.",
+      "image": "cards/happy-hour/happy-hour-037-straight-up.png",
+      "filename": "happy-hour-037-straight-up.png"
+    },
+    {
+      "id": "happy-hour-038",
+      "page": 254,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Straight Up",
+      "question": "What’s the best zinger you’ve ever come up with on the fly?",
+      "image": "cards/happy-hour/happy-hour-038-straight-up.png",
+      "filename": "happy-hour-038-straight-up.png"
+    },
+    {
+      "id": "happy-hour-039",
+      "page": 255,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "This Round's On Me",
+      "question": "Describe your first real kiss. Really set the scene for us.",
+      "image": "cards/happy-hour/happy-hour-039-this-rounds-on-me.png",
+      "filename": "happy-hour-039-this-rounds-on-me.png"
+    },
+    {
+      "id": "happy-hour-040",
+      "page": 256,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Make It a Double",
+      "question": "What is the most comforting sound in the world?",
+      "image": "cards/happy-hour/happy-hour-040-make-it-a-double.png",
+      "filename": "happy-hour-040-make-it-a-double.png"
+    },
+    {
+      "id": "happy-hour-041",
+      "page": 257,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Straight Up",
+      "question": "Have you ever been in love? How do you know?",
+      "image": "cards/happy-hour/happy-hour-041-straight-up.png",
+      "filename": "happy-hour-041-straight-up.png"
+    },
+    {
+      "id": "happy-hour-042",
+      "page": 258,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Straight Up",
+      "question": "What’s the most considerate present you’ve ever received? How did you react when you received it?",
+      "image": "cards/happy-hour/happy-hour-042-straight-up.png",
+      "filename": "happy-hour-042-straight-up.png"
+    },
+    {
+      "id": "happy-hour-043",
+      "page": 259,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Make It a Double",
+      "question": "Tell me your favorite joke. If I laugh, I drink.",
+      "image": "cards/happy-hour/happy-hour-043-make-it-a-double.png",
+      "filename": "happy-hour-043-make-it-a-double.png"
+    },
+    {
+      "id": "happy-hour-044",
+      "page": 260,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Make It a Double",
+      "question": "Does your hometown have a notoriously spooky landmark? A haunted barn, an abandoned hospital, Old Man Macready’s underwater sawmill...?",
+      "image": "cards/happy-hour/happy-hour-044-make-it-a-double.png",
+      "filename": "happy-hour-044-make-it-a-double.png"
+    },
+    {
+      "id": "happy-hour-045",
+      "page": 261,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Straight Up",
+      "question": "What’s something you think I’m self-conscious about, but that you think I should stop stressing over?",
+      "image": "cards/happy-hour/happy-hour-045-straight-up.png",
+      "filename": "happy-hour-045-straight-up.png"
+    },
+    {
+      "id": "happy-hour-046",
+      "page": 262,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Straight Up",
+      "question": "What’s the most fun you’ve ever had with strangers? Tell us the story.",
+      "image": "cards/happy-hour/happy-hour-046-straight-up.png",
+      "filename": "happy-hour-046-straight-up.png"
+    },
+    {
+      "id": "happy-hour-047",
+      "page": 263,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Straight Up",
+      "question": "Do you think you are happier—or sadder— than the average person? Why?",
+      "image": "cards/happy-hour/happy-hour-047-straight-up.png",
+      "filename": "happy-hour-047-straight-up.png"
+    },
+    {
+      "id": "happy-hour-048",
+      "page": 264,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Straight Up",
+      "question": "If I were a perfume or cologne, what would my top, heart, and base notes be?",
+      "image": "cards/happy-hour/happy-hour-048-straight-up.png",
+      "filename": "happy-hour-048-straight-up.png"
+    },
+    {
+      "id": "happy-hour-049",
+      "page": 265,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Make It a Double",
+      "question": "What movie title describes your last relationship?",
+      "image": "cards/happy-hour/happy-hour-049-make-it-a-double.png",
+      "filename": "happy-hour-049-make-it-a-double.png"
+    },
+    {
+      "id": "happy-hour-050",
+      "page": 266,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Straight Up",
+      "question": "What movie or TV quote hits a little too close to home?",
+      "image": "cards/happy-hour/happy-hour-050-straight-up.png",
+      "filename": "happy-hour-050-straight-up.png"
+    },
+    {
+      "id": "happy-hour-051",
+      "page": 267,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Make It a Double",
+      "question": "What song is guaranteed to hit you right in the feels, no matter the time or place?",
+      "image": "cards/happy-hour/happy-hour-051-make-it-a-double.png",
+      "filename": "happy-hour-051-make-it-a-double.png"
+    },
+    {
+      "id": "happy-hour-052",
+      "page": 268,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "This Round's On Me",
+      "question": "What’s something you think people should appreciate more about you?",
+      "image": "cards/happy-hour/happy-hour-052-this-rounds-on-me.png",
+      "filename": "happy-hour-052-this-rounds-on-me.png"
+    },
+    {
+      "id": "happy-hour-053",
+      "page": 269,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Straight Up",
+      "question": "If you could plan the perfect night with all of your friends, what would it entail?",
+      "image": "cards/happy-hour/happy-hour-053-straight-up.png",
+      "filename": "happy-hour-053-straight-up.png"
+    },
+    {
+      "id": "happy-hour-054",
+      "page": 270,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Straight Up",
+      "question": "Aside from “moist”, what word can’t you stand the sound of?",
+      "image": "cards/happy-hour/happy-hour-054-straight-up.png",
+      "filename": "happy-hour-054-straight-up.png"
+    },
+    {
+      "id": "happy-hour-055",
+      "page": 271,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Straight Up",
+      "question": "If I offered you $4,300 to call my parents every Sunday for a year and give them an update on my life, would you do it?",
+      "image": "cards/happy-hour/happy-hour-055-straight-up.png",
+      "filename": "happy-hour-055-straight-up.png"
+    },
+    {
+      "id": "happy-hour-056",
+      "page": 272,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "This Round's On Me",
+      "question": "Do you have any scars you want to show us? Pick one and tell us the story behind how you got it.",
+      "image": "cards/happy-hour/happy-hour-056-this-rounds-on-me.png",
+      "filename": "happy-hour-056-this-rounds-on-me.png"
+    },
+    {
+      "id": "happy-hour-057",
+      "page": 273,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Straight Up",
+      "question": "Of the people here, who is overdue for some kind words? Let’s offer some good vibes now.",
+      "image": "cards/happy-hour/happy-hour-057-straight-up.png",
+      "filename": "happy-hour-057-straight-up.png"
+    },
+    {
+      "id": "happy-hour-058",
+      "page": 274,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Straight Up",
+      "question": "If there were no barriers to entry, what job do you think you’d be amazing at?",
+      "image": "cards/happy-hour/happy-hour-058-straight-up.png",
+      "filename": "happy-hour-058-straight-up.png"
+    },
+    {
+      "id": "happy-hour-059",
+      "page": 275,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Make It a Double",
+      "question": "Tell us about a style choice from your past that you’re glad stayed in the past.",
+      "image": "cards/happy-hour/happy-hour-059-make-it-a-double.png",
+      "filename": "happy-hour-059-make-it-a-double.png"
+    },
+    {
+      "id": "happy-hour-060",
+      "page": 276,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Straight Up",
+      "question": "What’s the weirdest way you’ve ever earned money? How much did you get?",
+      "image": "cards/happy-hour/happy-hour-060-straight-up.png",
+      "filename": "happy-hour-060-straight-up.png"
+    },
+    {
+      "id": "happy-hour-061",
+      "page": 277,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "This Round's On Me",
+      "question": "If you could live anyone else’s life, whose would it be?",
+      "image": "cards/happy-hour/happy-hour-061-this-rounds-on-me.png",
+      "filename": "happy-hour-061-this-rounds-on-me.png"
+    },
+    {
+      "id": "happy-hour-062",
+      "page": 278,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Straight Up",
+      "question": "Have you ever been wildly overpaid? Who paid you and why was it so valuable to them?",
+      "image": "cards/happy-hour/happy-hour-062-straight-up.png",
+      "filename": "happy-hour-062-straight-up.png"
+    },
+    {
+      "id": "happy-hour-063",
+      "page": 279,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Straight Up",
+      "question": "What song reminds you of me whenever you hear it?",
+      "image": "cards/happy-hour/happy-hour-063-straight-up.png",
+      "filename": "happy-hour-063-straight-up.png"
+    },
+    {
+      "id": "happy-hour-064",
+      "page": 280,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "This Round's On Me",
+      "question": "What makes you so much fun?",
+      "image": "cards/happy-hour/happy-hour-064-this-rounds-on-me.png",
+      "filename": "happy-hour-064-this-rounds-on-me.png"
+    },
+    {
+      "id": "happy-hour-065",
+      "page": 281,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Straight Up",
+      "question": "What board game are you positive you could destroy us all at?",
+      "image": "cards/happy-hour/happy-hour-065-straight-up.png",
+      "filename": "happy-hour-065-straight-up.png"
+    },
+    {
+      "id": "happy-hour-066",
+      "page": 282,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Straight Up",
+      "question": "What does your ultimate Sunday look like?",
+      "image": "cards/happy-hour/happy-hour-066-straight-up.png",
+      "filename": "happy-hour-066-straight-up.png"
+    },
+    {
+      "id": "happy-hour-067",
+      "page": 283,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Straight Up",
+      "question": "What’s one healthy thing you do that most other people probably don’t? Surely there’s something.",
+      "image": "cards/happy-hour/happy-hour-067-straight-up.png",
+      "filename": "happy-hour-067-straight-up.png"
+    },
+    {
+      "id": "happy-hour-068",
+      "page": 284,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "This Round's On Me",
+      "question": "What’s the most common thing people praise or compliment you for?",
+      "image": "cards/happy-hour/happy-hour-068-this-rounds-on-me.png",
+      "filename": "happy-hour-068-this-rounds-on-me.png"
+    },
+    {
+      "id": "happy-hour-069",
+      "page": 285,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Straight Up",
+      "question": "What’s the most kickass you’ve ever felt?",
+      "image": "cards/happy-hour/happy-hour-069-straight-up.png",
+      "filename": "happy-hour-069-straight-up.png"
+    },
+    {
+      "id": "happy-hour-070",
+      "page": 286,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Straight Up",
+      "question": "What author’s work meant the most to you when you were younger? Do they still?",
+      "image": "cards/happy-hour/happy-hour-070-straight-up.png",
+      "filename": "happy-hour-070-straight-up.png"
+    },
+    {
+      "id": "happy-hour-071",
+      "page": 287,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Make It a Double",
+      "question": "If you were a Care Bear, what would be on your belly?",
+      "image": "cards/happy-hour/happy-hour-071-make-it-a-double.png",
+      "filename": "happy-hour-071-make-it-a-double.png"
+    },
+    {
+      "id": "happy-hour-072",
+      "page": 288,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Straight Up",
+      "question": "If dogs and their owners are supposed to have matching personalities, what type of dog should I get?",
+      "image": "cards/happy-hour/happy-hour-072-straight-up.png",
+      "filename": "happy-hour-072-straight-up.png"
+    },
+    {
+      "id": "happy-hour-073",
+      "page": 289,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "This Round's On Me",
+      "question": "What’s something that you think is better the second time? A cover of a song, reheated leftovers...?",
+      "image": "cards/happy-hour/happy-hour-073-this-rounds-on-me.png",
+      "filename": "happy-hour-073-this-rounds-on-me.png"
+    },
+    {
+      "id": "happy-hour-074",
+      "page": 290,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Straight Up",
+      "question": "Tell me a fact you think I don’t know. If I know it, you have to drink.",
+      "image": "cards/happy-hour/happy-hour-074-straight-up.png",
+      "filename": "happy-hour-074-straight-up.png"
+    },
+    {
+      "id": "happy-hour-075",
+      "page": 291,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "This Round's On Me",
+      "question": "What’s the title of your autobiography? Extra imaginary points if it includes a colon and a subtitle.",
+      "image": "cards/happy-hour/happy-hour-075-this-rounds-on-me.png",
+      "filename": "happy-hour-075-this-rounds-on-me.png"
+    },
+    {
+      "id": "happy-hour-076",
+      "page": 292,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Make It a Double",
+      "question": "What’s something you’ve done to try to be cool? Did you impress anyone?",
+      "image": "cards/happy-hour/happy-hour-076-make-it-a-double.png",
+      "filename": "happy-hour-076-make-it-a-double.png"
+    },
+    {
+      "id": "happy-hour-077",
+      "page": 293,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Straight Up",
+      "question": "Would you trust me to pierce your ear, 80’s-sleepover style?",
+      "image": "cards/happy-hour/happy-hour-077-straight-up.png",
+      "filename": "happy-hour-077-straight-up.png"
+    },
+    {
+      "id": "happy-hour-078",
+      "page": 294,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Straight Up",
+      "question": "If we were flying somewhere together, who would volunteer to sit in the middle seat?",
+      "image": "cards/happy-hour/happy-hour-078-straight-up.png",
+      "filename": "happy-hour-078-straight-up.png"
+    },
+    {
+      "id": "happy-hour-079",
+      "page": 295,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "This Round's On Me",
+      "question": "What song are you most ashamed to admit to me that you love? Reply in song.",
+      "image": "cards/happy-hour/happy-hour-079-this-rounds-on-me.png",
+      "filename": "happy-hour-079-this-rounds-on-me.png"
+    },
+    {
+      "id": "happy-hour-080",
+      "page": 296,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Straight Up",
+      "question": "If someone did me wrong, would you: a) comfort me, b) distract me, or c) get revenge for me?",
+      "image": "cards/happy-hour/happy-hour-080-straight-up.png",
+      "filename": "happy-hour-080-straight-up.png"
+    },
+    {
+      "id": "happy-hour-081",
+      "page": 297,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Make It a Double",
+      "question": "Describe an act of petty protest you waged at work or school.",
+      "image": "cards/happy-hour/happy-hour-081-make-it-a-double.png",
+      "filename": "happy-hour-081-make-it-a-double.png"
+    },
+    {
+      "id": "happy-hour-082",
+      "page": 298,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Straight Up",
+      "question": "What’s a situation that is always improved by my presence?",
+      "image": "cards/happy-hour/happy-hour-082-straight-up.png",
+      "filename": "happy-hour-082-straight-up.png"
+    },
+    {
+      "id": "happy-hour-083",
+      "page": 299,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Straight Up",
+      "question": "What motto would you put on your family crest?",
+      "image": "cards/happy-hour/happy-hour-083-straight-up.png",
+      "filename": "happy-hour-083-straight-up.png"
+    },
+    {
+      "id": "happy-hour-084",
+      "page": 300,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Straight Up",
+      "question": "What’s the greatest fashion risk you’ve taken as an adult? How cool did you feel?",
+      "image": "cards/happy-hour/happy-hour-084-straight-up.png",
+      "filename": "happy-hour-084-straight-up.png"
+    },
+    {
+      "id": "happy-hour-085",
+      "page": 301,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Straight Up",
+      "question": "What hidden talent do you suspect I have? What makes you think so?",
+      "image": "cards/happy-hour/happy-hour-085-straight-up.png",
+      "filename": "happy-hour-085-straight-up.png"
+    },
+    {
+      "id": "happy-hour-086",
+      "page": 302,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Straight Up",
+      "question": "What smell is the most nostalgic for you?",
+      "image": "cards/happy-hour/happy-hour-086-straight-up.png",
+      "filename": "happy-hour-086-straight-up.png"
+    },
+    {
+      "id": "happy-hour-087",
+      "page": 303,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Straight Up",
+      "question": "What type of person have you always wanted to date, but never had the chance?",
+      "image": "cards/happy-hour/happy-hour-087-straight-up.png",
+      "filename": "happy-hour-087-straight-up.png"
+    },
+    {
+      "id": "happy-hour-088",
+      "page": 304,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Make It a Double",
+      "question": "What’s the worst date you’ve ever been on? Tell us all the juicy deets.",
+      "image": "cards/happy-hour/happy-hour-088-make-it-a-double.png",
+      "filename": "happy-hour-088-make-it-a-double.png"
+    },
+    {
+      "id": "happy-hour-089",
+      "page": 305,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Straight Up",
+      "question": "What’s something everyone said you would regret, but you didn’t?",
+      "image": "cards/happy-hour/happy-hour-089-straight-up.png",
+      "filename": "happy-hour-089-straight-up.png"
+    },
+    {
+      "id": "happy-hour-090",
+      "page": 306,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Straight Up",
+      "question": "How would Childhood You describe you now? Would that kid like you?",
+      "image": "cards/happy-hour/happy-hour-090-straight-up.png",
+      "filename": "happy-hour-090-straight-up.png"
+    },
+    {
+      "id": "happy-hour-091",
+      "page": 307,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Straight Up",
+      "question": "Out of all of us, whose eyes would you like to see the world through for a day?",
+      "image": "cards/happy-hour/happy-hour-091-straight-up.png",
+      "filename": "happy-hour-091-straight-up.png"
+    },
+    {
+      "id": "happy-hour-092",
+      "page": 308,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Make It a Double",
+      "question": "What did you think you would hate, but ended up loving?",
+      "image": "cards/happy-hour/happy-hour-092-make-it-a-double.png",
+      "filename": "happy-hour-092-make-it-a-double.png"
+    },
+    {
+      "id": "happy-hour-093",
+      "page": 309,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Straight Up",
+      "question": "Fill in the blank: I don’t care if _________ is for kids, I will still love it until I die. Defend your position.",
+      "image": "cards/happy-hour/happy-hour-093-straight-up.png",
+      "filename": "happy-hour-093-straight-up.png"
+    },
+    {
+      "id": "happy-hour-094",
+      "page": 310,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "This Round's On Me",
+      "question": "Tell us about the one that got away.",
+      "image": "cards/happy-hour/happy-hour-094-this-rounds-on-me.png",
+      "filename": "happy-hour-094-this-rounds-on-me.png"
+    },
+    {
+      "id": "happy-hour-095",
+      "page": 311,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Straight Up",
+      "question": "What’s the bravest thing you’ve ever done?",
+      "image": "cards/happy-hour/happy-hour-095-straight-up.png",
+      "filename": "happy-hour-095-straight-up.png"
+    },
+    {
+      "id": "happy-hour-096",
+      "page": 312,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Straight Up",
+      "question": "How many seconds is the ideal hug? Should we all test your hypothesis?",
+      "image": "cards/happy-hour/happy-hour-096-straight-up.png",
+      "filename": "happy-hour-096-straight-up.png"
+    },
+    {
+      "id": "happy-hour-097",
+      "page": 313,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Make It a Double",
+      "question": "Pay me a sincere and specific compliment.",
+      "image": "cards/happy-hour/happy-hour-097-make-it-a-double.png",
+      "filename": "happy-hour-097-make-it-a-double.png"
+    },
+    {
+      "id": "happy-hour-098",
+      "page": 314,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "This Round's On Me",
+      "question": "What’s the first app you open when you wake up in the morning?",
+      "image": "cards/happy-hour/happy-hour-098-this-rounds-on-me.png",
+      "filename": "happy-hour-098-this-rounds-on-me.png"
+    },
+    {
+      "id": "happy-hour-099",
+      "page": 315,
+      "group": "Happy Hour",
+      "groupSlug": "happy-hour",
+      "type": "Straight Up",
+      "question": "What are you anxious about? Can we reassure you?",
+      "image": "cards/happy-hour/happy-hour-099-straight-up.png",
+      "filename": "happy-hour-099-straight-up.png"
+    },
+    {
+      "id": "extra-dirty-001",
+      "page": 325,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "Straight Up",
+      "question": "What’s the most surprising discovery you’ve made about your own body?",
+      "image": "cards/extra-dirty/extra-dirty-001-straight-up.png",
+      "filename": "extra-dirty-001-straight-up.png"
+    },
+    {
+      "id": "extra-dirty-002",
+      "page": 326,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "Make It a Double",
+      "question": "You can send a message back in time to your teenage self about sex. What advice will you impart?",
+      "image": "cards/extra-dirty/extra-dirty-002-make-it-a-double.png",
+      "filename": "extra-dirty-002-make-it-a-double.png"
+    },
+    {
+      "id": "extra-dirty-003",
+      "page": 327,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "Straight Up",
+      "question": "Are you a good kisser? How do you know?",
+      "image": "cards/extra-dirty/extra-dirty-003-straight-up.png",
+      "filename": "extra-dirty-003-straight-up.png"
+    },
+    {
+      "id": "extra-dirty-004",
+      "page": 328,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "Straight Up",
+      "question": "Have you ever had to contact past partners for... public health reasons?",
+      "image": "cards/extra-dirty/extra-dirty-004-straight-up.png",
+      "filename": "extra-dirty-004-straight-up.png"
+    },
+    {
+      "id": "extra-dirty-005",
+      "page": 329,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "This Round's On Me",
+      "question": "Describe your nipples as vividly as possible. Use a size comparison. Dimes or dinner plates?",
+      "image": "cards/extra-dirty/extra-dirty-005-this-rounds-on-me.png",
+      "filename": "extra-dirty-005-this-rounds-on-me.png"
+    },
+    {
+      "id": "extra-dirty-006",
+      "page": 330,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "Make It a Double",
+      "question": "What’s the sex skill you’re most proud of?",
+      "image": "cards/extra-dirty/extra-dirty-006-make-it-a-double.png",
+      "filename": "extra-dirty-006-make-it-a-double.png"
+    },
+    {
+      "id": "extra-dirty-007",
+      "page": 331,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "Straight Up",
+      "question": "What’s a sexual thing you gave a good try, but just couldn’t get into?",
+      "image": "cards/extra-dirty/extra-dirty-007-straight-up.png",
+      "filename": "extra-dirty-007-straight-up.png"
+    },
+    {
+      "id": "extra-dirty-008",
+      "page": 332,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "Straight Up",
+      "question": "Do you have any porn actually downloaded and saved on your phone? What emergency are you preparing for?",
+      "image": "cards/extra-dirty/extra-dirty-008-straight-up.png",
+      "filename": "extra-dirty-008-straight-up.png"
+    },
+    {
+      "id": "extra-dirty-009",
+      "page": 333,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "Straight Up",
+      "question": "Have you ever had sex with someone who was already in a committed relationship?",
+      "image": "cards/extra-dirty/extra-dirty-009-straight-up.png",
+      "filename": "extra-dirty-009-straight-up.png"
+    },
+    {
+      "id": "extra-dirty-010",
+      "page": 334,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "This Round's On Me",
+      "question": "Have you ever walked in on your parents doing that thing that grownups do when they love each other very much?",
+      "image": "cards/extra-dirty/extra-dirty-010-this-rounds-on-me.png",
+      "filename": "extra-dirty-010-this-rounds-on-me.png"
+    },
+    {
+      "id": "extra-dirty-011",
+      "page": 335,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "Make It a Double",
+      "question": "Give us a passionate example of your dirty talk.",
+      "image": "cards/extra-dirty/extra-dirty-011-make-it-a-double.png",
+      "filename": "extra-dirty-011-make-it-a-double.png"
+    },
+    {
+      "id": "extra-dirty-012",
+      "page": 336,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "Straight Up",
+      "question": "What’s the weirdest porn you’ve ever clicked on? Did you watch the whole thing, or just enough?",
+      "image": "cards/extra-dirty/extra-dirty-012-straight-up.png",
+      "filename": "extra-dirty-012-straight-up.png"
+    },
+    {
+      "id": "extra-dirty-013",
+      "page": 337,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "This Round's On Me",
+      "question": "When was the last time you masturbated? Were you a good lay? Any notes for yourself for next time?",
+      "image": "cards/extra-dirty/extra-dirty-013-this-rounds-on-me.png",
+      "filename": "extra-dirty-013-this-rounds-on-me.png"
+    },
+    {
+      "id": "extra-dirty-014",
+      "page": 338,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "Straight Up",
+      "question": "Do you see yourself committing to one sexual partner for the rest of your life?",
+      "image": "cards/extra-dirty/extra-dirty-014-straight-up.png",
+      "filename": "extra-dirty-014-straight-up.png"
+    },
+    {
+      "id": "extra-dirty-015",
+      "page": 339,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "Straight Up",
+      "question": "If you and I were in a porn together, what would its clickbait title be? Would it live up to that promise?",
+      "image": "cards/extra-dirty/extra-dirty-015-straight-up.png",
+      "filename": "extra-dirty-015-straight-up.png"
+    },
+    {
+      "id": "extra-dirty-016",
+      "page": 340,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "Straight Up",
+      "question": "Tell us about an awkward or unexpected sex dream you’ve had. Was anyone here involved?",
+      "image": "cards/extra-dirty/extra-dirty-016-straight-up.png",
+      "filename": "extra-dirty-016-straight-up.png"
+    },
+    {
+      "id": "extra-dirty-017",
+      "page": 341,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "Make It a Double",
+      "question": "Inadvertent nudity. Tell us about when it happened to you.",
+      "image": "cards/extra-dirty/extra-dirty-017-make-it-a-double.png",
+      "filename": "extra-dirty-017-make-it-a-double.png"
+    },
+    {
+      "id": "extra-dirty-018",
+      "page": 342,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "Straight Up",
+      "question": "Who’s had more sex, you or your parents?",
+      "image": "cards/extra-dirty/extra-dirty-018-straight-up.png",
+      "filename": "extra-dirty-018-straight-up.png"
+    },
+    {
+      "id": "extra-dirty-019",
+      "page": 343,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "Straight Up",
+      "question": "Tell us about the first time you ever saw porn. Did you seek it out, or did you just happen upon it?",
+      "image": "cards/extra-dirty/extra-dirty-019-straight-up.png",
+      "filename": "extra-dirty-019-straight-up.png"
+    },
+    {
+      "id": "extra-dirty-020",
+      "page": 344,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "This Round's On Me",
+      "question": "Describe one of the finest and most memorable orgasms you ever had. What were the conditions?",
+      "image": "cards/extra-dirty/extra-dirty-020-this-rounds-on-me.png",
+      "filename": "extra-dirty-020-this-rounds-on-me.png"
+    },
+    {
+      "id": "extra-dirty-021",
+      "page": 345,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "Straight Up",
+      "question": "Have you ever slid into someone’s DMs? Any techniques you want to share?",
+      "image": "cards/extra-dirty/extra-dirty-021-straight-up.png",
+      "filename": "extra-dirty-021-straight-up.png"
+    },
+    {
+      "id": "extra-dirty-022",
+      "page": 346,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "Straight Up",
+      "question": "Do you find me physically attractive? What if I bat my eyelashes like this?",
+      "image": "cards/extra-dirty/extra-dirty-022-straight-up.png",
+      "filename": "extra-dirty-022-straight-up.png"
+    },
+    {
+      "id": "extra-dirty-023",
+      "page": 347,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "Straight Up",
+      "question": "How much money would a voyeuristic billionaire have to pay us for us to have sex for their entertainment?",
+      "image": "cards/extra-dirty/extra-dirty-023-straight-up.png",
+      "filename": "extra-dirty-023-straight-up.png"
+    },
+    {
+      "id": "extra-dirty-024",
+      "page": 348,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "Make It a Double",
+      "question": "Where’s the strangest place you’ve had sex?",
+      "image": "cards/extra-dirty/extra-dirty-024-make-it-a-double.png",
+      "filename": "extra-dirty-024-make-it-a-double.png"
+    },
+    {
+      "id": "extra-dirty-025",
+      "page": 349,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "Straight Up",
+      "question": "Have you ever gotten down in public?",
+      "image": "cards/extra-dirty/extra-dirty-025-straight-up.png",
+      "filename": "extra-dirty-025-straight-up.png"
+    },
+    {
+      "id": "extra-dirty-026",
+      "page": 350,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "This Round's On Me",
+      "question": "Who do you think has had more sexual partners, you or me?",
+      "image": "cards/extra-dirty/extra-dirty-026-this-rounds-on-me.png",
+      "filename": "extra-dirty-026-this-rounds-on-me.png"
+    },
+    {
+      "id": "extra-dirty-027",
+      "page": 351,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "Straight Up",
+      "question": "Have you ever feared for your life or safety while drinking or on drugs? Take us to the scene.",
+      "image": "cards/extra-dirty/extra-dirty-027-straight-up.png",
+      "filename": "extra-dirty-027-straight-up.png"
+    },
+    {
+      "id": "extra-dirty-028",
+      "page": 352,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "Straight Up",
+      "question": "Describe the perfect foreplay: what activities, and for how long?",
+      "image": "cards/extra-dirty/extra-dirty-028-straight-up.png",
+      "filename": "extra-dirty-028-straight-up.png"
+    },
+    {
+      "id": "extra-dirty-029",
+      "page": 353,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "This Round's On Me",
+      "question": "What’s the maximum number of people you’d be interested in having sex with at once?",
+      "image": "cards/extra-dirty/extra-dirty-029-this-rounds-on-me.png",
+      "filename": "extra-dirty-029-this-rounds-on-me.png"
+    },
+    {
+      "id": "extra-dirty-030",
+      "page": 354,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "Straight Up",
+      "question": "Are you more sexperimental, or less sexperimental, than the average person?",
+      "image": "cards/extra-dirty/extra-dirty-030-straight-up.png",
+      "filename": "extra-dirty-030-straight-up.png"
+    },
+    {
+      "id": "extra-dirty-031",
+      "page": 355,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "Make It a Double",
+      "question": "What would it take for us to have sex, right here, right now? With everyone watching?",
+      "image": "cards/extra-dirty/extra-dirty-031-make-it-a-double.png",
+      "filename": "extra-dirty-031-make-it-a-double.png"
+    },
+    {
+      "id": "extra-dirty-032",
+      "page": 356,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "Straight Up",
+      "question": "What are (or would be) your ground rules for an open relationship?",
+      "image": "cards/extra-dirty/extra-dirty-032-straight-up.png",
+      "filename": "extra-dirty-032-straight-up.png"
+    },
+    {
+      "id": "extra-dirty-033",
+      "page": 357,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "Straight Up",
+      "question": "How confident are you in your sexual orientation? Have you ever experimented ouside of it, or considered it? Do you think you ever will?",
+      "image": "cards/extra-dirty/extra-dirty-033-straight-up.png",
+      "filename": "extra-dirty-033-straight-up.png"
+    },
+    {
+      "id": "extra-dirty-034",
+      "page": 358,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "This Round's On Me",
+      "question": "Have you ever had a one-night stand? Did you know their last name, and do you remember it now?",
+      "image": "cards/extra-dirty/extra-dirty-034-this-rounds-on-me.png",
+      "filename": "extra-dirty-034-this-rounds-on-me.png"
+    },
+    {
+      "id": "extra-dirty-035",
+      "page": 359,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "Straight Up",
+      "question": "What’s your most- complimented anatomical feature (as described by your lovers?)",
+      "image": "cards/extra-dirty/extra-dirty-035-straight-up.png",
+      "filename": "extra-dirty-035-straight-up.png"
+    },
+    {
+      "id": "extra-dirty-036",
+      "page": 360,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "Straight Up",
+      "question": "If you can abstain from sex and masturbation for one full year, you’ll win $27,000 and a nice used car. Will you make it?",
+      "image": "cards/extra-dirty/extra-dirty-036-straight-up.png",
+      "filename": "extra-dirty-036-straight-up.png"
+    },
+    {
+      "id": "extra-dirty-037",
+      "page": 361,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "Straight Up",
+      "question": "How did your parents talk to you about sex? Did you learn more about it from them or elsewhere?",
+      "image": "cards/extra-dirty/extra-dirty-037-straight-up.png",
+      "filename": "extra-dirty-037-straight-up.png"
+    },
+    {
+      "id": "extra-dirty-038",
+      "page": 362,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "Make It a Double",
+      "question": "Food and sex. Tell us about an experience involving both.",
+      "image": "cards/extra-dirty/extra-dirty-038-make-it-a-double.png",
+      "filename": "extra-dirty-038-make-it-a-double.png"
+    },
+    {
+      "id": "extra-dirty-039",
+      "page": 363,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "Straight Up",
+      "question": "List all the illicit drugs you’ve tried. Which others would you like to try?",
+      "image": "cards/extra-dirty/extra-dirty-039-straight-up.png",
+      "filename": "extra-dirty-039-straight-up.png"
+    },
+    {
+      "id": "extra-dirty-040",
+      "page": 364,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "Straight Up",
+      "question": "We’re all making a porn together! Who among us stars, who writes, who directs...? Assign jobs to everyone here.",
+      "image": "cards/extra-dirty/extra-dirty-040-straight-up.png",
+      "filename": "extra-dirty-040-straight-up.png"
+    },
+    {
+      "id": "extra-dirty-041",
+      "page": 365,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "Straight Up",
+      "question": "Have you ever cheated on anyone? What were the circumstances?",
+      "image": "cards/extra-dirty/extra-dirty-041-straight-up.png",
+      "filename": "extra-dirty-041-straight-up.png"
+    },
+    {
+      "id": "extra-dirty-042",
+      "page": 366,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "This Round's On Me",
+      "question": "Eating ass. Have you done it, or had it done to you? Tell us everything.",
+      "image": "cards/extra-dirty/extra-dirty-042-this-rounds-on-me.png",
+      "filename": "extra-dirty-042-this-rounds-on-me.png"
+    },
+    {
+      "id": "extra-dirty-043",
+      "page": 367,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "Straight Up",
+      "question": "Do you need an emotional connection to have great sex? If you’ve had a spectacular hookup that was purely physical, tell us everything.",
+      "image": "cards/extra-dirty/extra-dirty-043-straight-up.png",
+      "filename": "extra-dirty-043-straight-up.png"
+    },
+    {
+      "id": "extra-dirty-044",
+      "page": 368,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "This Round's On Me",
+      "question": "Assuming we were both single, would you hook up with me? How desperate would you have to be?",
+      "image": "cards/extra-dirty/extra-dirty-044-this-rounds-on-me.png",
+      "filename": "extra-dirty-044-this-rounds-on-me.png"
+    },
+    {
+      "id": "extra-dirty-045",
+      "page": 369,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "Straight Up",
+      "question": "Tell us about a time in which a romantic partner just didn’t understand how to do a certain sex thing.",
+      "image": "cards/extra-dirty/extra-dirty-045-straight-up.png",
+      "filename": "extra-dirty-045-straight-up.png"
+    },
+    {
+      "id": "extra-dirty-046",
+      "page": 370,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "Make It a Double",
+      "question": "What’s the best compliment you’ve ever gotten on your sexual performance?",
+      "image": "cards/extra-dirty/extra-dirty-046-make-it-a-double.png",
+      "filename": "extra-dirty-046-make-it-a-double.png"
+    },
+    {
+      "id": "extra-dirty-047",
+      "page": 371,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "This Round's On Me",
+      "question": "How many people have you hooked up with off dating apps?",
+      "image": "cards/extra-dirty/extra-dirty-047-this-rounds-on-me.png",
+      "filename": "extra-dirty-047-this-rounds-on-me.png"
+    },
+    {
+      "id": "extra-dirty-048",
+      "page": 372,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "Straight Up",
+      "question": "If a studio were to make porn specifically for you, tailored to your specific tastes, what would it be like?",
+      "image": "cards/extra-dirty/extra-dirty-048-straight-up.png",
+      "filename": "extra-dirty-048-straight-up.png"
+    },
+    {
+      "id": "extra-dirty-049",
+      "page": 373,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "This Round's On Me",
+      "question": "What’s a sex thing you’ve never been able to try, but wish you could?",
+      "image": "cards/extra-dirty/extra-dirty-049-this-rounds-on-me.png",
+      "filename": "extra-dirty-049-this-rounds-on-me.png"
+    },
+    {
+      "id": "extra-dirty-050",
+      "page": 374,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "Straight Up",
+      "question": "If your sex life was a pie chart, what portion of it would be: satisfactory, unsatisfactory, and mind-blowing?",
+      "image": "cards/extra-dirty/extra-dirty-050-straight-up.png",
+      "filename": "extra-dirty-050-straight-up.png"
+    },
+    {
+      "id": "extra-dirty-051",
+      "page": 375,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "Straight Up",
+      "question": "Have you ever paid for porn? If not, how much do you owe the porn industry? You know those people work hard.",
+      "image": "cards/extra-dirty/extra-dirty-051-straight-up.png",
+      "filename": "extra-dirty-051-straight-up.png"
+    },
+    {
+      "id": "extra-dirty-052",
+      "page": 376,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "This Round's On Me",
+      "question": "Describe the present state of your pubic hair.",
+      "image": "cards/extra-dirty/extra-dirty-052-this-rounds-on-me.png",
+      "filename": "extra-dirty-052-this-rounds-on-me.png"
+    },
+    {
+      "id": "extra-dirty-053",
+      "page": 377,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "Straight Up",
+      "question": "If I cheat on my partner, is it absolutely essential that I tell them? Why or why not?",
+      "image": "cards/extra-dirty/extra-dirty-053-straight-up.png",
+      "filename": "extra-dirty-053-straight-up.png"
+    },
+    {
+      "id": "extra-dirty-054",
+      "page": 378,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "Straight Up",
+      "question": "Would you be (or have you been) a “guest star” in another couple’s bedroom?",
+      "image": "cards/extra-dirty/extra-dirty-054-straight-up.png",
+      "filename": "extra-dirty-054-straight-up.png"
+    },
+    {
+      "id": "extra-dirty-055",
+      "page": 379,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "Make It a Double",
+      "question": "What scared you the most about sex as you were coming of age?",
+      "image": "cards/extra-dirty/extra-dirty-055-make-it-a-double.png",
+      "filename": "extra-dirty-055-make-it-a-double.png"
+    },
+    {
+      "id": "extra-dirty-056",
+      "page": 380,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "Straight Up",
+      "question": "Do you have recurring fantasies that surprise you? Would they surprise us? Try us.",
+      "image": "cards/extra-dirty/extra-dirty-056-straight-up.png",
+      "filename": "extra-dirty-056-straight-up.png"
+    },
+    {
+      "id": "extra-dirty-057",
+      "page": 381,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "Straight Up",
+      "question": "What is your favorite sexual position and why?",
+      "image": "cards/extra-dirty/extra-dirty-057-straight-up.png",
+      "filename": "extra-dirty-057-straight-up.png"
+    },
+    {
+      "id": "extra-dirty-058",
+      "page": 382,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "Make It a Double",
+      "question": "What’s the biggest mess you’ve created during sex? Did you have to clean it up, or did you leave it for someone else?",
+      "image": "cards/extra-dirty/extra-dirty-058-make-it-a-double.png",
+      "filename": "extra-dirty-058-make-it-a-double.png"
+    },
+    {
+      "id": "extra-dirty-059",
+      "page": 383,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "This Round's On Me",
+      "question": "Have you ever sent nudes? How do you compose, frame, and light these images?",
+      "image": "cards/extra-dirty/extra-dirty-059-this-rounds-on-me.png",
+      "filename": "extra-dirty-059-this-rounds-on-me.png"
+    },
+    {
+      "id": "extra-dirty-060",
+      "page": 384,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "Straight Up",
+      "question": "How open are you about your most intimate fantasies with your partner(s)?",
+      "image": "cards/extra-dirty/extra-dirty-060-straight-up.png",
+      "filename": "extra-dirty-060-straight-up.png"
+    },
+    {
+      "id": "extra-dirty-061",
+      "page": 385,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "Straight Up",
+      "question": "Do you think you’re better suited to open relationships or monogamy? Have you tried each?",
+      "image": "cards/extra-dirty/extra-dirty-061-straight-up.png",
+      "filename": "extra-dirty-061-straight-up.png"
+    },
+    {
+      "id": "extra-dirty-062",
+      "page": 386,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "Straight Up",
+      "question": "Have you ever paid for sex work? Would you?",
+      "image": "cards/extra-dirty/extra-dirty-062-straight-up.png",
+      "filename": "extra-dirty-062-straight-up.png"
+    },
+    {
+      "id": "extra-dirty-063",
+      "page": 387,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "Straight Up",
+      "question": "Which of your hookups created the most drama? Was there permanent fallout?",
+      "image": "cards/extra-dirty/extra-dirty-063-straight-up.png",
+      "filename": "extra-dirty-063-straight-up.png"
+    },
+    {
+      "id": "extra-dirty-064",
+      "page": 388,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "This Round's On Me",
+      "question": "Have you ever had a threesome? If you haven’t yet, build your ideal trio.",
+      "image": "cards/extra-dirty/extra-dirty-064-this-rounds-on-me.png",
+      "filename": "extra-dirty-064-this-rounds-on-me.png"
+    },
+    {
+      "id": "extra-dirty-065",
+      "page": 389,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "Straight Up",
+      "question": "Who was the last person (besides your partner or your kids) whose junk you’ve seen?",
+      "image": "cards/extra-dirty/extra-dirty-065-straight-up.png",
+      "filename": "extra-dirty-065-straight-up.png"
+    },
+    {
+      "id": "extra-dirty-066",
+      "page": 390,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "Straight Up",
+      "question": "Have you ever worn someone else’s underwear, accidentally or on purpose? What was the circumstance?",
+      "image": "cards/extra-dirty/extra-dirty-066-straight-up.png",
+      "filename": "extra-dirty-066-straight-up.png"
+    },
+    {
+      "id": "extra-dirty-067",
+      "page": 391,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "Make It a Double",
+      "question": "Are you loud during sex? Demonstrate with a dramatic interpretation of your signature sex sounds.",
+      "image": "cards/extra-dirty/extra-dirty-067-make-it-a-double.png",
+      "filename": "extra-dirty-067-make-it-a-double.png"
+    },
+    {
+      "id": "extra-dirty-068",
+      "page": 392,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "Straight Up",
+      "question": "Have you ever cried after—or during—sex? Were they tears of joy, love, or utter disappointment?",
+      "image": "cards/extra-dirty/extra-dirty-068-straight-up.png",
+      "filename": "extra-dirty-068-straight-up.png"
+    },
+    {
+      "id": "extra-dirty-069",
+      "page": 393,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "This Round's On Me",
+      "question": "What’s the last object you put inside yourself or another person?",
+      "image": "cards/extra-dirty/extra-dirty-069-this-rounds-on-me.png",
+      "filename": "extra-dirty-069-this-rounds-on-me.png"
+    },
+    {
+      "id": "extra-dirty-070",
+      "page": 394,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "This Round's On Me",
+      "question": "Have you ever been caught masturbating or having sex?",
+      "image": "cards/extra-dirty/extra-dirty-070-this-rounds-on-me.png",
+      "filename": "extra-dirty-070-this-rounds-on-me.png"
+    },
+    {
+      "id": "extra-dirty-071",
+      "page": 395,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "This Round's On Me",
+      "question": "Have I gotten sexier since you’ve known me?",
+      "image": "cards/extra-dirty/extra-dirty-071-this-rounds-on-me.png",
+      "filename": "extra-dirty-071-this-rounds-on-me.png"
+    },
+    {
+      "id": "extra-dirty-072",
+      "page": 396,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "Straight Up",
+      "question": "What sex-related word are you not sure how to pronounce?",
+      "image": "cards/extra-dirty/extra-dirty-072-straight-up.png",
+      "filename": "extra-dirty-072-straight-up.png"
+    },
+    {
+      "id": "extra-dirty-073",
+      "page": 397,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "Straight Up",
+      "question": "Have you ever filmed yourself having sex? What did you do with the footage?",
+      "image": "cards/extra-dirty/extra-dirty-073-straight-up.png",
+      "filename": "extra-dirty-073-straight-up.png"
+    },
+    {
+      "id": "extra-dirty-074",
+      "page": 398,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "Make It a Double",
+      "question": "How would your partner (or your most recent ex) describe your sex life with a movie title?",
+      "image": "cards/extra-dirty/extra-dirty-074-make-it-a-double.png",
+      "filename": "extra-dirty-074-make-it-a-double.png"
+    },
+    {
+      "id": "extra-dirty-075",
+      "page": 399,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "Straight Up",
+      "question": "What’s something you wish your ex would have done sexually, but didn’t?",
+      "image": "cards/extra-dirty/extra-dirty-075-straight-up.png",
+      "filename": "extra-dirty-075-straight-up.png"
+    },
+    {
+      "id": "extra-dirty-076",
+      "page": 400,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "Straight Up",
+      "question": "What would it take for you to sleep with someone you’re not at all physically attracted to?",
+      "image": "cards/extra-dirty/extra-dirty-076-straight-up.png",
+      "filename": "extra-dirty-076-straight-up.png"
+    },
+    {
+      "id": "extra-dirty-077",
+      "page": 401,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "Straight Up",
+      "question": "How confident are you in your oral sex skills? What feedback have you gotten?",
+      "image": "cards/extra-dirty/extra-dirty-077-straight-up.png",
+      "filename": "extra-dirty-077-straight-up.png"
+    },
+    {
+      "id": "extra-dirty-078",
+      "page": 402,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "This Round's On Me",
+      "question": "Looking for a weird but true story about an inappropriate boner.",
+      "image": "cards/extra-dirty/extra-dirty-078-this-rounds-on-me.png",
+      "filename": "extra-dirty-078-this-rounds-on-me.png"
+    },
+    {
+      "id": "extra-dirty-079",
+      "page": 403,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "Make It a Double",
+      "question": "Describe your sex life with a movie title, and tell us your reasoning.",
+      "image": "cards/extra-dirty/extra-dirty-079-make-it-a-double.png",
+      "filename": "extra-dirty-079-make-it-a-double.png"
+    },
+    {
+      "id": "extra-dirty-080",
+      "page": 404,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "Make It a Double",
+      "question": "Describe your sex life with a song title.",
+      "image": "cards/extra-dirty/extra-dirty-080-make-it-a-double.png",
+      "filename": "extra-dirty-080-make-it-a-double.png"
+    },
+    {
+      "id": "extra-dirty-081",
+      "page": 405,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "Straight Up",
+      "question": "What’s the most creative you’ve ever had to get in order to smash? What was standing in your way, and how did you solve it?",
+      "image": "cards/extra-dirty/extra-dirty-081-straight-up.png",
+      "filename": "extra-dirty-081-straight-up.png"
+    },
+    {
+      "id": "extra-dirty-082",
+      "page": 406,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "Straight Up",
+      "question": "Imagine we’re your future (or current) children. Tell us how babies are made.",
+      "image": "cards/extra-dirty/extra-dirty-082-straight-up.png",
+      "filename": "extra-dirty-082-straight-up.png"
+    },
+    {
+      "id": "extra-dirty-083",
+      "page": 407,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "This Round's On Me",
+      "question": "Who here do you think you’d be most sexually compatible with? Present and past partners excluded. Remember, this is just hypothetical.",
+      "image": "cards/extra-dirty/extra-dirty-083-this-rounds-on-me.png",
+      "filename": "extra-dirty-083-this-rounds-on-me.png"
+    },
+    {
+      "id": "extra-dirty-084",
+      "page": 408,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "Straight Up",
+      "question": "What did you observe from porn that you later realized was unrealistic? How’d you make this discovery?",
+      "image": "cards/extra-dirty/extra-dirty-084-straight-up.png",
+      "filename": "extra-dirty-084-straight-up.png"
+    },
+    {
+      "id": "extra-dirty-085",
+      "page": 409,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "Make It a Double",
+      "question": "Do you have a go-to sex move? Where did you learn it?",
+      "image": "cards/extra-dirty/extra-dirty-085-make-it-a-double.png",
+      "filename": "extra-dirty-085-make-it-a-double.png"
+    },
+    {
+      "id": "extra-dirty-086",
+      "page": 410,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "Straight Up",
+      "question": "Who was the last person (besides your partner or your doctor) who’s seen your junk?",
+      "image": "cards/extra-dirty/extra-dirty-086-straight-up.png",
+      "filename": "extra-dirty-086-straight-up.png"
+    },
+    {
+      "id": "extra-dirty-087",
+      "page": 411,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "Straight Up",
+      "question": "If you had to write a quick-start guide to getting you off, what are the key bullet points?",
+      "image": "cards/extra-dirty/extra-dirty-087-straight-up.png",
+      "filename": "extra-dirty-087-straight-up.png"
+    },
+    {
+      "id": "extra-dirty-088",
+      "page": 412,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "Straight Up",
+      "question": "What’s the kinkiest thing you’ve asked someone else to do? Did they oblige?",
+      "image": "cards/extra-dirty/extra-dirty-088-straight-up.png",
+      "filename": "extra-dirty-088-straight-up.png"
+    },
+    {
+      "id": "extra-dirty-089",
+      "page": 413,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "Straight Up",
+      "question": "If we were stuck on a desert island, how many days until we fuck out of boredom?",
+      "image": "cards/extra-dirty/extra-dirty-089-straight-up.png",
+      "filename": "extra-dirty-089-straight-up.png"
+    },
+    {
+      "id": "extra-dirty-090",
+      "page": 414,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "This Round's On Me",
+      "question": "Have you ever been injured during sex? Or injured someone else? Heartbreaks don’t count.",
+      "image": "cards/extra-dirty/extra-dirty-090-this-rounds-on-me.png",
+      "filename": "extra-dirty-090-this-rounds-on-me.png"
+    },
+    {
+      "id": "extra-dirty-091",
+      "page": 415,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "Straight Up",
+      "question": "Quick! Name your favorite porn star. And tell us about all the wonderful qualities that make them special.",
+      "image": "cards/extra-dirty/extra-dirty-091-straight-up.png",
+      "filename": "extra-dirty-091-straight-up.png"
+    },
+    {
+      "id": "extra-dirty-092",
+      "page": 416,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "This Round's On Me",
+      "question": "If I had a hot sibling, would they be off-limits, sex-wise?",
+      "image": "cards/extra-dirty/extra-dirty-092-this-rounds-on-me.png",
+      "filename": "extra-dirty-092-this-rounds-on-me.png"
+    },
+    {
+      "id": "extra-dirty-093",
+      "page": 417,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "Straight Up",
+      "question": "If I had a hot parent, would you let them seduce you?",
+      "image": "cards/extra-dirty/extra-dirty-093-straight-up.png",
+      "filename": "extra-dirty-093-straight-up.png"
+    },
+    {
+      "id": "extra-dirty-094",
+      "page": 418,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "Make It a Double",
+      "question": "What will be the sexy nickname they give you when you live at the old-folks’ home?",
+      "image": "cards/extra-dirty/extra-dirty-094-make-it-a-double.png",
+      "filename": "extra-dirty-094-make-it-a-double.png"
+    },
+    {
+      "id": "extra-dirty-095",
+      "page": 419,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "This Round's On Me",
+      "question": "Describe your first time having sex. Include every cringey detail.",
+      "image": "cards/extra-dirty/extra-dirty-095-this-rounds-on-me.png",
+      "filename": "extra-dirty-095-this-rounds-on-me.png"
+    },
+    {
+      "id": "extra-dirty-096",
+      "page": 420,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "This Round's On Me",
+      "question": "When was the last time you were tested for a sexually transmitted infection? What were the results?",
+      "image": "cards/extra-dirty/extra-dirty-096-this-rounds-on-me.png",
+      "filename": "extra-dirty-096-this-rounds-on-me.png"
+    },
+    {
+      "id": "extra-dirty-097",
+      "page": 421,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "Straight Up",
+      "question": "On the spectrum of “sober as a judge” to “falling-down drunk,” where do you have the best sex?",
+      "image": "cards/extra-dirty/extra-dirty-097-straight-up.png",
+      "filename": "extra-dirty-097-straight-up.png"
+    },
+    {
+      "id": "extra-dirty-098",
+      "page": 422,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "Straight Up",
+      "question": "Do you have an age ceiling for a one-night stand?",
+      "image": "cards/extra-dirty/extra-dirty-098-straight-up.png",
+      "filename": "extra-dirty-098-straight-up.png"
+    },
+    {
+      "id": "extra-dirty-099",
+      "page": 423,
+      "group": "Extra Dirty",
+      "groupSlug": "extra-dirty",
+      "type": "This Round's On Me",
+      "question": "Who here would have the best sexual chemistry with me? Based upon what evidence?",
+      "image": "cards/extra-dirty/extra-dirty-099-this-rounds-on-me.png",
+      "filename": "extra-dirty-099-this-rounds-on-me.png"
+    }
+  ]
+}
