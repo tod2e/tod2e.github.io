@@ -944,3 +944,17 @@ textarea:focus {
     grid-column: 3;
   }
 }
+
+.brand-block {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.05;
+}
+
+.byline {
+  margin-top: 0.18rem;
+  font-size: 0.68rem;
+  font-weight: 500;
+  opacity: 0.58;
+  letter-spacing: 0.03em;
+}
