@@ -237,6 +237,12 @@ h2 { letter-spacing:-.04em; }
   min-height:58px;
   margin-top:2px;
 }
+
+/* Keep the private reveal button above the privacy curtain.
+   The curtain intentionally masks the dial, not the active control. */
+#psychicControls {
+  z-index:9;
+}
 .clue-field { width:min(100%,420px); display:grid; gap:6px; color:var(--muted); font-size:.82rem; }
 .position-readout {
   position:absolute;
