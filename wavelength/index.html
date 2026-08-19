@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#11100f" />
+  <title>Same Wavelength</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div class="brand-block">
+        <a class="brand" href="./">Same Wavelength</a>
+        <span class="byline">a spectrum guessing game</span>
+      </div>
+      <nav class="top-actions" aria-label="Game controls">
+        <a class="chip-button link-button" href="../">All games</a>
+        <button class="chip-button" type="button" data-open="setupModal">Teams</button>
+        <button class="chip-button" type="button" data-open="spectraModal">Spectra</button>
+        <button class="chip-button" type="button" data-open="rulesModal">Rules</button>
+      </nav>
+    </header>
+
+    <section class="game-stage">
+      <div class="round-head">
+        <div>
+          <p class="eyebrow" id="roundLabel">Round 1</p>
+          <h1 id="phaseTitle">Set up your teams</h1>
+          <p id="phaseHint" class="phase-hint">Two teams, one shared screen, zero accounts.</p>
+        </div>
+        <div class="score-mini" aria-label="Score">
+          <div>
+            <span id="teamANameMini">Team A</span>
+            <strong id="teamAScoreMini">0</strong>
+          </div>
+          <span class="score-divider">:</span>
+          <div>
+            <strong id="teamBScoreMini">0</strong>
+            <span id="teamBNameMini">Team B</span>
+          </div>
+        </div>
+      </div>
+
+      <section class="spectrum-card" aria-label="Spectrum game board">
+        <div class="spectrum-copy">
+          <span id="leftPole" class="pole pole-left">LEFT</span>
+          <div class="clue-wrap">
+            <span class="micro-label">Clue</span>
+            <strong id="clueDisplay">—</strong>
+          </div>
+          <span id="rightPole" class="pole pole-right">RIGHT</span>
+        </div>
+
+        <div id="privacyCurtain" class="privacy-curtain">
+          <div>
+            <p class="eyebrow">Private view</p>
+            <h2 id="privacyTitle">Only the psychic should look</h2>
+            <p id="privacyText">Everyone else, look away from the screen.</p>
+          </div>
+        </div>
+
+        <svg id="dial" class="dial" viewBox="0 0 600 330" role="img" aria-label="Guessing dial">
+          <path class="dial-track" d="M 60 290 A 240 240 0 0 1 540 290" />
+          <g id="targetGroup" class="target-group hidden" aria-hidden="true">
+            <path id="target2Left" class="target-band score-2" />
+            <path id="target3Left" class="target-band score-3" />
+            <path id="target4" class="target-band score-4" />
+            <path id="target3Right" class="target-band score-3" />
+            <path id="target2Right" class="target-band score-2" />
+          </g>
+
+          <g class="tick-group" aria-hidden="true">
+            <line x1="60" y1="290" x2="68" y2="290" />
+            <line x1="300" y1="50" x2="300" y2="60" />
+            <line x1="540" y1="290" x2="532" y2="290" />
+          </g>
+
+          <line id="needle" class="needle" x1="300" y1="290" x2="300" y2="72" />
+          <circle id="needleHub" class="needle-hub" cx="300" cy="290" r="18" />
+          <circle id="needleGrip" class="needle-grip" cx="300" cy="72" r="15" />
+        </svg>
+
+        <div id="positionReadout" class="position-readout hidden">
+          <span>Dial</span>
+          <strong id="positionPercent">50%</strong>
+        </div>
+
+        <div id="psychicControls" class="phase-controls">
+          <button id="revealPrivateBtn" class="primary-button" type="button">Reveal target privately</button>
+        </div>
+
+        <div id="clueControls" class="phase-controls hidden">
+          <label class="clue-field">
+            <span>Your clue</span>
+            <input id="clueInput" type="text" maxlength="60" placeholder="e.g. airport coffee" autocomplete="off" />
+          </label>
+          <button id="hideTargetBtn" class="primary-button" type="button">Hide target &amp; pass device</button>
+          <button id="newSpectrumBtn" class="secondary-button" type="button">New spectrum</button>
+        </div>
+
+        <div id="guessControls" class="phase-controls hidden">
+          <p class="control-note">Drag the needle. Debate is encouraged.</p>
+          <button id="lockGuessBtn" class="primary-button" type="button">Lock team guess</button>
+        </div>
+
+        <div id="opponentControls" class="phase-controls hidden">
+          <p class="control-note"><strong id="opponentTeamLabel">Other team</strong>: where is the true target relative to the needle?</p>
+          <div class="binary-row">
+            <button class="direction-button" data-direction="left" type="button">← Left</button>
+            <button class="direction-button" data-direction="right" type="button">Right →</button>
+          </div>
+        </div>
+
+        <div id="revealControls" class="phase-controls hidden">
+          <button id="revealScoreBtn" class="primary-button" type="button">Reveal target</button>
+        </div>
+
+        <div id="resultControls" class="phase-controls hidden">
+          <div id="resultBanner" class="result-banner"></div>
+          <button id="nextRoundBtn" class="primary-button" type="button">Next round</button>
+        </div>
+      </section>
+
+      <section class="lower-grid">
+        <article class="panel-card">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">Turn</p>
+              <h2>Who's psychic?</h2>
+            </div>
+            <span id="activeTeamPill" class="soft-pill">Team A</span>
+          </div>
+          <div class="psychic-card">
+            <span id="psychicName">—</span>
+            <small id="psychicRotation">Set up players to rotate automatically.</small>
+          </div>
+        </article>
+
+        <article class="panel-card">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">Match</p>
+              <h2>Scoreboard</h2>
+            </div>
+            <span id="targetScorePill" class="soft-pill">First to 10</span>
+          </div>
+          <div class="scoreboard">
+            <div class="team-score">
+              <span id="teamAName">Team A</span>
+              <strong id="teamAScore">0</strong>
+            </div>
+            <div class="team-score">
+              <span id="teamBName">Team B</span>
+              <strong id="teamBScore">0</strong>
+            </div>
+          </div>
+          <div class="button-row">
+            <button id="undoBtn" class="mini-button" type="button">undo last round</button>
+            <button id="resetBtn" class="mini-button danger-text" type="button">reset match</button>
+          </div>
+        </article>
+      </section>
+    </section>
+  </main>
+
+  <dialog id="setupModal" class="modal-card">
+    <button class="modal-close" type="button" data-close aria-label="Close">×</button>
+    <p class="eyebrow">Before you start</p>
+    <h2>Teams &amp; players</h2>
+    <p class="modal-intro">Players rotate through the psychic role automatically. Two players total is enough.</p>
+
+    <div class="team-setup-grid">
+      <section class="team-setup-card">
+        <label>Team A name
+          <input id="teamANameInput" type="text" maxlength="24" value="Team A" />
+        </label>
+        <label>Players <small>comma or new-line separated</small>
+          <textarea id="teamAPlayersInput" rows="5" placeholder="Ben, Alex, Maya"></textarea>
+        </label>
+      </section>
+      <section class="team-setup-card">
+        <label>Team B name
+          <input id="teamBNameInput" type="text" maxlength="24" value="Team B" />
+        </label>
+        <label>Players <small>comma or new-line separated</small>
+          <textarea id="teamBPlayersInput" rows="5" placeholder="Sam, Jo, Priya"></textarea>
+        </label>
+      </section>
+    </div>
+
+    <div class="settings-row">
+      <label class="field-card">Winning score
+        <input id="winningScoreInput" type="number" min="1" max="50" value="10" />
+      </label>
+      <label class="toggle-card">
+        <input id="catchupInput" type="checkbox" checked />
+        <span>
+          <strong>Catch-up turn</strong>
+          <small>Score 4 while still behind → take another turn.</small>
+        </span>
+      </label>
+    </div>
+
+    <div class="button-row modal-actions">
+      <button id="saveSetupBtn" class="primary-button" type="button">Start match</button>
+    </div>
+    <p id="setupStatus" class="status-line"></p>
+  </dialog>
+
+  <dialog id="spectraModal" class="modal-card wide-modal">
+    <button class="modal-close" type="button" data-close aria-label="Close">×</button>
+    <p class="eyebrow">Prompt deck</p>
+    <h2>Spectrum packs</h2>
+    <p class="modal-intro">These are original prompts for this implementation. Toggle packs or add your own pair.</p>
+
+    <div id="packControls" class="pack-grid"></div>
+
+    <form id="customSpectrumForm" class="custom-spectrum-form">
+      <div>
+        <label>Left pole <input id="customLeftInput" maxlength="40" placeholder="Terrible idea" /></label>
+        <label>Right pole <input id="customRightInput" maxlength="40" placeholder="Brilliant idea" /></label>
+      </div>
+      <button class="secondary-button" type="submit">Add custom spectrum</button>
+    </form>
+    <div id="customSpectrumList" class="custom-list"></div>
+  </dialog>
+
+  <dialog id="rulesModal" class="modal-card">
+    <button class="modal-close" type="button" data-close aria-label="Close">×</button>
+    <p class="eyebrow">How to play</p>
+    <h2>Read the room</h2>
+    <div class="rule-steps">
+      <div><strong>1</strong><span>The psychic privately sees a hidden target on a spectrum.</span></div>
+      <div><strong>2</strong><span>They give one clue that should land near that target.</span></div>
+      <div><strong>3</strong><span>Their team moves the needle without seeing the target.</span></div>
+      <div><strong>4</strong><span>The other team bets whether the target is left or right of the needle.</span></div>
+      <div><strong>5</strong><span>Reveal: active team scores 2–4 for accuracy; the other team can earn 1 for direction.</span></div>
+    </div>
+    <p class="modal-intro legal-note">This is an independently implemented spectrum-clue party game and uses no official artwork or card text.</p>
+  </dialog>
+
+  <dialog id="winnerModal" class="modal-card winner-modal">
+    <p class="eyebrow">Match over</p>
+    <h2 id="winnerTitle">Winner</h2>
+    <p id="winnerText" class="winner-text"></p>
+    <div class="button-row modal-actions">
+      <button id="keepPlayingBtn" class="secondary-button" type="button">Keep playing</button>
+      <button id="newMatchBtn" class="primary-button" type="button">New match</button>
+    </div>
+  </dialog>
+
+  <script src="spectra.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <base href="../" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Truth or Drink</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar" aria-label="Main navigation">
+      <div class="brand-block">
+        <a class="brand" href="truth-or-drink/#top" aria-label="Truth or Drink home">Truth or Drink</a>
+        <span class="byline">Written by Ben Shin</span>
+      </div>
+      <nav class="top-actions" aria-label="Game controls">
+        <a href="./" aria-label="All games" class="chip-button" style="text-decoration:none;display:inline-flex;align-items:center;">All games</a>
+        <button type="button" class="chip-button" data-open-modal="playersModal">Players</button>
+        <button type="button" class="chip-button" data-open-modal="moodModal">Categories</button>
+        <button type="button" class="chip-button" data-open-modal="rulesModal">Rules</button>
+      </nav>
+    </header>
+
+    <section id="top" class="table-stage" aria-labelledby="mainTitle">
+      <div class="stage-copy">
+        <p class="eyebrow" id="roundLabel">Round 1</p>
+        <h1 id="mainTitle"><span id="currentPlayerName">Set up players</span><span class="muted-heading"> draws</span></h1>
+        <p id="turnStatus" class="turn-status">Add players first, then the card becomes the center of the game.</p>
+      </div>
+
+      <section class="card-console" aria-label="Current card and draw controls">
+        <div id="targetPanel" class="target-panel hidden" aria-live="polite">
+          <span class="target-label">Ask</span>
+          <strong id="targetText">—</strong>
+          <button type="button" id="rerollTargetBtn" class="mini-button">reroll</button>
+        </div>
+
+        <div id="cardStage" class="card-stage empty-card" aria-live="polite">
+          <div class="empty-card-copy">
+            <span>Truth or Drink</span>
+            <strong>Set the table</strong>
+            <p>Add players and choose categories. Then draw.</p>
+          </div>
+        </div>
+
+        <div id="currentLabels" class="label-row" aria-label="Current card labels"></div>
+
+        <p id="questionText" class="question-text hidden"></p>
+
+        <div class="primary-actions">
+          <button type="button" id="drawBtn" class="primary-button">Set up players</button>
+          <button type="button" id="showTextBtn" class="secondary-button hidden">Show text</button>
+          <button type="button" id="skipQuestionBtn" class="secondary-button skip-question-button hidden">Skip question</button>
+        </div>
+
+        <div id="cardActionPanel" class="award-panel hidden" aria-live="polite">
+          <div class="award-copy">
+            <h2 id="cardActionTitle">Award the card</h2>
+            <p id="cardActionHint">Pick the answer that wins the point.</p>
+          </div>
+          <div id="awardButtons" class="award-grid"></div>
+          <button type="button" id="noPointBtn" class="secondary-button full-width">No point, next turn</button>
+        </div>
+      </section>
+
+      <section class="quick-strip" aria-label="Game status">
+        <button type="button" class="stat-card" data-open-modal="playersModal">
+          <strong id="playerCountMini">0</strong>
+          <span>players</span>
+        </button>
+        <button type="button" class="stat-card" data-open-modal="settingsModal">
+          <strong id="selectedCount">0</strong>
+          <span>selected</span>
+        </button>
+        <button type="button" id="discardQuickBtn" class="stat-card" data-open-modal="discardModal">
+          <strong id="discardCount">0</strong>
+          <span>discarded</span>
+        </button>
+        <button type="button" id="undoBtn" class="stat-card utility-card">
+          <strong>↶</strong>
+          <span>undo</span>
+        </button>
+      </section>
+    </section>
+
+    <section id="scorePanel" class="lower-panel hidden" aria-labelledby="scoreboardHeading">
+      <div class="panel-card scoreboard-card">
+        <div class="panel-head">
+          <div>
+            <p class="eyebrow">Score</p>
+            <h2 id="scoreboardHeading">Scoreboard</h2>
+          </div>
+          <span id="winTargetLabel" class="soft-pill">First to 7</span>
+        </div>
+        <div id="scoreboardRows" class="scoreboard-rows"></div>
+      </div>
+
+      <div class="panel-card log-card">
+        <div class="panel-head compact-head">
+          <div>
+            <p class="eyebrow">Recent</p>
+            <h2>Game log</h2>
+          </div>
+          <button type="button" id="resetGameBtn" class="mini-button">reset game</button>
+        </div>
+        <div id="gameLog" class="game-log"></div>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="playersModal" class="modal-card" aria-labelledby="playersModalTitle">
+    <button type="button" class="modal-close" data-close-modal aria-label="Close">×</button>
+    <p class="eyebrow">Before you start</p>
+    <h2 id="playersModalTitle">Players and turn order</h2>
+    <p class="modal-intro">Add names in the order people should draw. You can drag the vibe later by randomizing the order.</p>
+
+    <form id="addPlayerForm" class="player-form" autocomplete="off">
+      <label class="sr-only" for="playerNameInput">Player name</label>
+      <input id="playerNameInput" name="playerName" type="text" maxlength="32" placeholder="Add player name" />
+      <button type="submit" class="secondary-button">Add</button>
+    </form>
+
+    <form id="bulkPlayerForm" class="bulk-form" autocomplete="off">
+      <label for="bulkPlayerInput">Add several at once</label>
+      <textarea id="bulkPlayerInput" rows="3" placeholder="Ben, Alex, Maya, Sam"></textarea>
+      <button type="submit" class="mini-button">Add list</button>
+    </form>
+
+    <div id="setupPlayers" class="setup-player-list" aria-live="polite"></div>
+
+    <div class="button-row modal-actions">
+      <button type="button" id="randomizePlayersBtn" class="secondary-button">Randomize order</button>
+      <button type="button" id="clearPlayersBtn" class="secondary-button">Clear</button>
+      <button type="button" id="startGameBtn" class="primary-button">Begin game</button>
+    </div>
+    <p id="setupStatus" class="status-line">Add at least two players to begin.</p>
+  </dialog>
+
+  <dialog id="settingsModal" class="modal-card" aria-labelledby="settingsModalTitle">
+    <button type="button" class="modal-close" data-close-modal aria-label="Close">×</button>
+    <p class="eyebrow">Deck setup</p>
+    <h2 id="settingsModalTitle">Game settings</h2>
+    <p class="modal-intro">Pick the card sets and decide how long the game should run.</p>
+
+    <div class="setting-block">
+      <div class="setting-head">
+        <h3>Categories</h3>
+        <div class="quick-actions">
+          <button type="button" id="selectAllBtn" class="mini-button">all</button>
+          <button type="button" id="clearCatsBtn" class="mini-button">clear</button>
+        </div>
+      </div>
+      <div id="categoryControls" class="category-grid"></div>
+    </div>
+
+    <div class="setting-grid">
+      <label class="field-card" for="winningScoreInput">
+        <span>Winning score</span>
+        <input id="winningScoreInput" type="number" min="1" max="99" step="1" value="7" />
+      </label>
+      <label class="field-card" for="penaltyInput">
+        <span>Pass penalty</span>
+        <input id="penaltyInput" type="text" maxlength="40" value="drink" />
+      </label>
+    </div>
+
+    <div class="button-row modal-actions">
+      <button type="button" id="resetDiscardBtn" class="secondary-button">Reset discard pile</button>
+      <button type="button" id="newRoundBtn" class="secondary-button">New round, same players</button>
+    </div>
+    <p id="deckStatus" class="status-line">Loading deck...</p>
+  </dialog>
+
+  <dialog id="moodModal" class="modal-card" aria-labelledby="moodModalTitle">
+    <button type="button" class="modal-close" data-close-modal aria-label="Close">×</button>
+    <p class="eyebrow">Draw pile</p>
+    <h2 id="moodModalTitle">Choose categories</h2>
+    <p class="modal-intro">Pick one category or mix several together. The draw pile is built only from the sets that are switched on.</p>
+
+    <div class="preset-bar" aria-label="Quick category mixes">
+      <button type="button" class="mini-button" data-preset="happy-hour">Light</button>
+      <button type="button" class="mini-button" data-preset="on-the-rocks">Friends mix</button>
+      <button type="button" class="mini-button" data-preset="last-call">Deep mix</button>
+      <button type="button" class="mini-button" data-preset="extra-dirty">Everything</button>
+    </div>
+
+    <p id="moodSelectionSummary" class="mood-summary">Loading selected categories...</p>
+    <div id="moodCategoryControls" class="mood-category-grid" role="group" aria-label="Category selection"></div>
+
+    <div class="button-row modal-actions">
+      <button type="button" id="selectMoodAllBtn" class="secondary-button">Select all</button>
+      <button type="button" id="clearMoodBtn" class="secondary-button">Clear</button>
+      <button type="button" class="primary-button" data-close-modal>Done</button>
+    </div>
+  </dialog>
+
+  <dialog id="rulesModal" class="modal-card" aria-labelledby="rulesModalTitle">
+    <button type="button" class="modal-close" data-close-modal aria-label="Close">×</button>
+    <p class="eyebrow">How to play</p>
+    <h2 id="rulesModalTitle">Rules and card types</h2>
+    <p class="modal-intro">Answer honestly, or pass by taking the agreed penalty. Alcohol is optional.</p>
+
+    <div class="rule-strip" aria-label="Basic flow">
+      <div><strong>1</strong><span>Add players</span></div>
+      <div><strong>2</strong><span>Draw on your turn</span></div>
+      <div><strong>3</strong><span>Ask, skip, or pass</span></div>
+      <div><strong>4</strong><span>Award the card</span></div>
+    </div>
+
+    <dl class="guide-list rules-guide-list">
+      <div class="guide-row">
+        <dt>Straight Up</dt>
+        <dd>The current player asks one person. If they answer, award that person the card. If they pass, ask someone else.</dd>
+      </div>
+      <div class="guide-row">
+        <dt>Make It a Double</dt>
+        <dd>The current player asks two people. Award the card to whichever answer the asker likes better.</dd>
+      </div>
+      <div class="guide-row">
+        <dt>This Round’s On Me</dt>
+        <dd>Everyone gets a chance to answer or pass. The asker awards the card to their favorite answer.</dd>
+      </div>
+      <div class="guide-row">
+        <dt>Skip question</dt>
+        <dd>If the current player does not want to ask the drawn question, they can skip it. No point is awarded, the card goes to the discard pile, and the next player draws.</dd>
+      </div>
+      <div class="guide-row">
+        <dt>Discard pile</dt>
+        <dd>Once a card is drawn, it cannot be drawn again until the discard pile is reset.</dd>
+      </div>
+    </dl>
+  </dialog>
+
+  <dialog id="discardModal" class="modal-card wide-modal" aria-labelledby="discardModalTitle">
+    <button type="button" class="modal-close" data-close-modal aria-label="Close">×</button>
+    <p class="eyebrow">Used cards</p>
+    <h2 id="discardModalTitle">Discard pile</h2>
+    <p class="modal-intro">Drawn cards stay here and will not repeat until you reset the pile.</p>
+    <div id="discardGrid" class="discard-grid"></div>
+  </dialog>
+
+  <dialog id="winnerModal" class="modal-card winner-modal" aria-labelledby="winnerModalTitle">
+    <button type="button" class="modal-close" data-close-modal aria-label="Close">×</button>
+    <p class="eyebrow">Game over</p>
+    <h2 id="winnerModalTitle">Winner</h2>
+    <p id="winnerText" class="winner-text"></p>
+    <div class="button-row modal-actions">
+      <button type="button" id="winnerContinueBtn" class="secondary-button">Keep playing</button>
+      <button type="button" id="winnerResetBtn" class="primary-button">New round</button>
+    </div>
+  </dialog>
+
+  <script src="manifest.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
