@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#11100f"><title>Impostor Word</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main class="shell">
+<header class="topbar">
+<a class="brand" href="./">Impostor Word<small>one person does not know the word</small></a>
+<nav class="nav"><a class="pill" href="../">All games</a><button class="pill" id="rulesBtn" type="button">Rules</button><button class="pill" id="resetBtn" type="button">Reset</button></nav>
+</header>
+
+<section class="hero"><p class="eyebrow">Social deduction · one hidden impostor</p><h1>Impostor Word</h1><p class="lede">Everyone gets the secret word except one person. Give clues that prove you know it without teaching it to the impostor.</p></section>
+<section class="panel stack">
+<div class="row between"><div><p class="eyebrow" id="roundLabel">Setup</p><h2 id="phase">Assemble the group</h2></div><div class="scorebar" id="scoreboard"></div></div>
+<div id="setup" class="stack"><label class="field">Players<textarea id="players" rows="5" placeholder="Ben, Maya, Alex, Sam, Jo"></textarea></label><label class="field">Word category<select id="category"><option value="mixed">Mixed</option><option value="food">Food</option><option value="places">Places</option><option value="objects">Objects</option><option value="science">Science & nerdy</option></select></label><div class="actions"><button id="start" class="primary">Start round</button></div><p class="status" id="status"></p></div>
+<div id="pass" class="private hidden"><div><p class="eyebrow">Private role</p><div class="role" id="passName"></div><p class="muted">Pass the screen, then reveal.</p><button id="reveal" class="primary">Reveal my role</button></div></div>
+<div id="roleView" class="private hidden"><div><p class="eyebrow" id="roleLabel"></p><div class="role" id="roleWord"></div><p class="muted" id="roleHint"></p><button id="hideRole" class="primary">Hide & pass on</button></div></div>
+<div id="clueView" class="private hidden"><div><p class="eyebrow">Clue round</p><div class="role">Give one clue each</div><p class="muted" id="clueOrder"></p><button id="beginVoting" class="primary">Begin secret voting</button></div></div>
+<div id="votePass" class="private hidden"><div><p class="eyebrow">Secret vote</p><div class="role" id="voterName"></div><p class="muted">Who do you think is the impostor?</p><button id="voteReady" class="primary">Vote privately</button></div></div>
+<div id="voteView" class="hidden stack"><div class="option-grid" id="voteOptions"></div></div>
+<div id="impostorGuess" class="private hidden"><div><p class="eyebrow">One last chance</p><div class="role" id="caughtName"></div><p class="muted">The impostor was caught. Guess the secret word for a bonus point.</p><input id="wordGuess" placeholder="Secret word"><div class="actions"><button id="submitGuess" class="primary">Submit guess</button></div></div></div>
+<div id="results" class="hidden stack"><div class="big-card"><div><div class="prompt" id="resultTitle"></div><div class="sub" id="resultSub"></div></div></div><div id="tally" class="rank-list"></div><div class="actions"><button id="nextRound" class="primary">Next round</button></div></div>
+</section>
+</main>
+<dialog id="rulesModal" class="modal"><button class="close" data-close type="button">×</button><div id="rulesContent"></div></dialog>
+<script src="script.js"></script>
+</body></html>

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#11100f"><title>Telephone Drawing</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main class="shell">
+<header class="topbar">
+<a class="brand" href="./">Telephone Drawing<small>watch one idea mutate around the table</small></a>
+<nav class="nav"><a class="pill" href="../">All games</a><button class="pill" id="rulesBtn" type="button">Rules</button><button class="pill" id="resetBtn" type="button">Reset</button></nav>
+</header>
+
+<section class="hero"><p class="eyebrow">Phrase → drawing → description</p><h1>Telephone Drawing</h1><p class="lede">A single idea mutates as the device goes around the table. Nobody gets to see more than the immediately previous step.</p></section>
+<section class="panel stack">
+<div class="row between"><div><p class="eyebrow" id="roundLabel">Setup</p><h2 id="phase">Build the chain</h2></div><span class="badge" id="stepBadge"></span></div>
+<div id="setup" class="stack"><label class="field">Players <small>Order matters: the device passes down this list</small><textarea id="players" rows="5" placeholder="Ben, Maya, Alex, Sam, Jo"></textarea></label><div class="actions"><button id="start" class="primary">Start chain</button></div><p class="status" id="status"></p></div>
+<div id="pass" class="private hidden"><div><p class="eyebrow" id="passAction"></p><div class="role" id="passName"></div><p class="muted">Pass the device. Previous steps stay hidden.</p><button id="ready" class="primary">I'm ready</button></div></div>
+<div id="textInputView" class="hidden stack"><div class="big-card"><div><div class="prompt" id="textContext"></div><div class="sub" id="textInstruction"></div></div></div><label class="field">Your text<textarea id="textEntry" rows="4" maxlength="180"></textarea></label><div class="actions"><button id="submitText" class="primary">Lock & pass</button></div></div>
+<div id="drawView" class="hidden stack"><div class="big-card" style="min-height:auto"><div><div class="prompt" style="font-size:2rem" id="drawPrompt"></div><div class="sub">Draw this. No letters or numbers.</div></div></div><div class="canvas-wrap"><canvas id="canvas" width="900" height="540"></canvas></div><div class="row"><label class="field" style="max-width:180px">Brush size<input id="brush" type="range" min="2" max="28" value="7"></label><button id="clearCanvas" class="secondary">Clear</button></div><div class="actions"><button id="submitDrawing" class="primary">Lock drawing & pass</button></div></div>
+<div id="revealView" class="hidden stack"><div class="big-card"><div><div class="prompt">What happened?</div><div class="sub">Replay the mutation from the original phrase to the final interpretation.</div></div></div><div class="chain" id="chain"></div><div class="actions"><button id="newChain" class="primary">New chain</button></div></div>
+</section>
+</main>
+<dialog id="rulesModal" class="modal"><button class="close" data-close type="button">×</button><div id="rulesContent"></div></dialog>
+<script src="script.js"></script>
+</body></html>

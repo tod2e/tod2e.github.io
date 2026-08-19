@@ -1,0 +1,23 @@
+(() => {
+const $=id=>document.getElementById(id), starter=["The Moon","Sherlock Holmes","A microwave","Taylor Swift","A penguin","The Titanic","A dentist","The Great Wall of China","Wi-Fi","A traffic cone","Harry Potter","A cactus","The Olympics","A lab coat","A burrito","A vampire","A roller coaster","A group chat"];
+const rules=["Describe freely — no part of the phrase.","Exactly one clue word.","Charades only — no words or sounds."];
+let s={teams:[{name:"Team A",players:[],score:0,idx:0},{name:"Team B",players:[],score:0,idx:0}],all:[],deck:[],round:0,active:0,seconds:60,running:false,time:60,current:null};
+let tick=null;
+function parse(v){return v.split(/[,\n]/).map(x=>x.trim()).filter(Boolean)}
+function shuffle(a){a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function show(id){["setupView","handoffView","turnView","betweenRoundView","gameOverView"].forEach(x=>$(x).classList.toggle("hidden",x!==id))}
+function score(){scores.innerHTML=s.teams.map(t=>`<span class="scorechip">${t.name} <strong>${t.score}</strong></span>`).join("")}
+function psychic(){let t=s.teams[s.active];return t.players[t.idx%t.players.length]}
+function handoff(){show("handoffView");roundEyebrow.textContent=`Round ${s.round+1} of 3`;phaseTitle.textContent=rules[s.round];handoffRound.textContent=`${s.teams[s.active].name} · ${rules[s.round]}`;handoffText.textContent=`Pass to ${psychic()}`;handoffHint.textContent=`${s.deck.length} phrase${s.deck.length===1?"":"s"} remain in the bowl.`;score()}
+function begin(){s.running=true;s.time=s.seconds;show("turnView");phaseTitle.textContent=`${psychic()} is up`;roundRule.textContent=rules[s.round];draw();paintTimer();clearInterval(tick);tick=setInterval(()=>{s.time--;paintTimer();if(s.time<=0)endTurn()},1000)}
+function paintTimer(){timer.textContent=s.time;timer.className="timer"+(s.time<=10?" low":"")+(s.time<=0?" out":"");remaining.textContent=`${s.deck.length} left`}
+function draw(){if(!s.deck.length){completeRound();return}s.current=s.deck.shift();currentPhrase.textContent=s.current;remaining.textContent=`${s.deck.length+1} left`}
+function correct(){if(!s.running)return;s.teams[s.active].score++;score();s.current=null;if(!s.deck.length){completeRound();return}draw()}
+function skipPhrase(){if(!s.running||!s.current||s.deck.length<1)return;s.deck.push(s.current);draw()}
+function endTurn(){if(!s.running)return;s.running=false;clearInterval(tick);if(s.current){s.deck.push(s.current);s.current=null}s.teams[s.active].idx=(s.teams[s.active].idx+1)%s.teams[s.active].players.length;s.active=1-s.active;handoff()}
+function completeRound(){s.running=false;clearInterval(tick);s.current=null;if(s.round===2){finish();return}show("betweenRoundView");roundCompleteTitle.textContent=`Round ${s.round+1} done`;roundCompleteText.textContent=`Next: ${rules[s.round+1]}`;s.round++;s.deck=shuffle(s.all);s.active=1-s.active;score()}
+function finish(){show("gameOverView");let [a,b]=s.teams;winner.textContent=a.score===b.score?"It's a tie":`${a.score>b.score?a.name:b.name} wins`;finalScores.textContent=`${a.name} ${a.score} · ${b.name} ${b.score}`;score()}
+startGame.onclick=()=>{let a=parse(playersA.value),b=parse(playersB.value),p=parse(phrases.value);if(seed.value==="yes")p=[...p,...starter];p=[...new Set(p)];if(!a.length||!b.length){setupStatus.textContent="Add at least one player to each team.";return}if(p.length<8){setupStatus.textContent="Add at least 8 phrases.";return}s.teams=[{name:teamA.value.trim()||"Team A",players:a,score:0,idx:0},{name:teamB.value.trim()||"Team B",players:b,score:0,idx:0}];s.all=p;s.deck=shuffle(p);s.round=0;s.active=0;s.seconds=Math.max(15,Math.min(180,+seconds.value||60));setupStatus.textContent="";handoff()};
+startTurn.onclick=begin;gotIt.onclick=correct;$("skip").onclick=skipPhrase;nextRound.onclick=handoff;newGame.onclick=()=>location.reload();resetBtn.onclick=()=>{if(confirm("Reset Fishbowl?"))location.reload()};
+rulesBtn.onclick=()=>{rulesContent.innerHTML="<p class=eyebrow>How to play</p><h2>Three passes through the same bowl</h2><p class=muted>Teams alternate timed turns. Correct phrases leave the bowl; skipped phrases go back in. When the bowl empties, every phrase returns for the next harder round.</p><div class=stack><div class=card><strong>1 · Describe</strong><p class=muted>Say anything except the phrase or part of it.</p></div><div class=card><strong>2 · One word</strong><p class=muted>Exactly one clue word per phrase.</p></div><div class=card><strong>3 · Charades</strong><p class=muted>No speech or sound effects.</p></div></div>";rulesModal.showModal()};document.querySelector("[data-close]").onclick=()=>rulesModal.close();score();
+})();

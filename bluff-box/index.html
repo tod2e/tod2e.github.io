@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#11100f"><title>Bluff Box</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main class="shell">
+<header class="topbar">
+<a class="brand" href="./">Bluff Box<small>make the lie more believable than the truth</small></a>
+<nav class="nav"><a class="pill" href="../">All games</a><button class="pill" id="rulesBtn" type="button">Rules</button><button class="pill" id="resetBtn" type="button">Reset</button></nav>
+</header>
+
+<section class="hero"><p class="eyebrow">Trivia · deception · anonymous answers</p><h1>Bluff Box</h1><p class="lede">Invent a plausible fake answer, then try to spot the truth among everyone's bluffs.</p></section>
+<section class="panel stack">
+<div class="row between"><div><p class="eyebrow" id="roundLabel">Setup</p><h2 id="phase">Who's bluffing?</h2></div><div class="scorebar" id="scores"></div></div>
+<div id="setup" class="stack"><label class="field">Players<textarea id="players" rows="5" placeholder="Ben, Maya, Alex, Sam"></textarea></label><label class="field">Rounds<input id="rounds" type="number" min="1" max="20" value="7"></label><div class="actions"><button id="start" class="primary">Start Bluff Box</button></div><p class="status" id="status"></p></div>
+<div id="questionView" class="private hidden"><div><p class="eyebrow">Question</p><div class="role" id="question"></div><p class="muted">Everyone will privately invent an answer.</p><button id="beginBluffs" class="primary">Start bluff submissions</button></div></div>
+<div id="pass" class="private hidden"><div><p class="eyebrow" id="passLabel">Write a bluff</p><div class="role" id="passName"></div><p class="muted" id="passHint"></p><button id="ready" class="primary">I'm ready</button></div></div>
+<div id="bluffView" class="hidden stack"><div class="big-card"><div><div class="prompt" id="bluffQuestion"></div><div class="sub">Write a believable wrong answer.</div></div></div><label class="field">Your bluff<input id="bluffInput" maxlength="80"></label><div class="actions"><button id="submitBluff" class="primary">Submit privately</button></div><p class="status" id="bluffStatus"></p></div>
+<div id="voteView" class="hidden stack"><div class="big-card"><div><div class="prompt" id="voteQuestion"></div><div class="sub">Which answer is actually true?</div></div></div><div id="answers" class="option-grid"></div></div>
+<div id="results" class="hidden stack"><div class="big-card"><div><div class="prompt" id="truth"></div><div class="sub" id="explanation"></div></div></div><div id="resultRows" class="rank-list"></div><div class="actions"><button id="next" class="primary">Next question</button></div></div>
+<div id="gameOver" class="private hidden"><div><p class="eyebrow">Game over</p><div class="role" id="winner"></div><p class="muted" id="final"></p><button id="again" class="primary">New game</button></div></div>
+</section>
+</main>
+<dialog id="rulesModal" class="modal"><button class="close" data-close type="button">×</button><div id="rulesContent"></div></dialog>
+<script src="script.js"></script>
+</body></html>

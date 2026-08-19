@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#11100f"><title>Fishbowl</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main class="shell">
+<header class="topbar">
+<a class="brand" href="./">Fishbowl<small>three rounds, one increasingly familiar bowl</small></a>
+<nav class="nav"><a class="pill" href="../">All games</a><button class="pill" id="rulesBtn" type="button">Rules</button><button class="pill" id="resetBtn" type="button">Reset</button></nav>
+</header>
+
+<section class="hero"><p class="eyebrow">Three rounds · same words</p><h1>Fishbowl</h1><p class="lede">Describe it. Say one word. Then act it out. The same phrase pool gets harder every round.</p></section>
+<section class="panel stack">
+  <div class="row between">
+    <div><p class="eyebrow" id="roundEyebrow">Setup</p><h2 id="phaseTitle">Build the bowl</h2></div>
+    <div class="scorebar" id="scores"></div>
+  </div>
+  <div id="setupView" class="stack">
+    <div class="grid2">
+      <label class="field">Team A name<input id="teamA" value="Team A"></label>
+      <label class="field">Team B name<input id="teamB" value="Team B"></label>
+    </div>
+    <div class="grid2">
+      <label class="field">Team A players<textarea id="playersA" rows="3" placeholder="Ben, Maya"></textarea></label>
+      <label class="field">Team B players<textarea id="playersB" rows="3" placeholder="Alex, Sam"></textarea></label>
+    </div>
+    <label class="field">Phrases <small>comma or new-line separated; aim for 20–50</small><textarea id="phrases" rows="8" placeholder="Taylor Swift&#10;The Eiffel Tower&#10;Photosynthesis"></textarea></label>
+    <div class="grid2">
+      <label class="field">Seconds per turn<input id="seconds" type="number" min="15" max="180" value="60"></label>
+      <label class="field">Seed with starter phrases<select id="seed"><option value="yes">Yes — add 18 starters</option><option value="no">No — only ours</option></select></label>
+    </div>
+    <div class="actions"><button class="primary" id="startGame">Start Fishbowl</button></div><p class="status" id="setupStatus"></p>
+  </div>
+  <div id="handoffView" class="private hidden"><div><p class="eyebrow" id="handoffRound"></p><div class="role" id="handoffText"></div><p class="muted" id="handoffHint"></p><button class="primary" id="startTurn">Start turn</button></div></div>
+  <div id="turnView" class="hidden stack">
+    <div class="row between"><div class="timer" id="timer">60</div><span class="badge" id="remaining"></span></div>
+    <div class="big-card"><div><div class="prompt" id="currentPhrase"></div><div class="sub" id="roundRule"></div></div></div>
+    <div class="actions"><button class="secondary" id="skip">Skip</button><button class="primary" id="gotIt">Got it +1</button></div>
+  </div>
+  <div id="betweenRoundView" class="private hidden"><div><p class="eyebrow">Round complete</p><div class="role" id="roundCompleteTitle"></div><p class="muted" id="roundCompleteText"></p><button class="primary" id="nextRound">Next round</button></div></div>
+  <div id="gameOverView" class="private hidden"><div><p class="eyebrow">Game over</p><div class="role" id="winner"></div><p class="muted" id="finalScores"></p><button class="primary" id="newGame">New game</button></div></div>
+</section>
+</main>
+<dialog id="rulesModal" class="modal"><button class="close" data-close type="button">×</button><div id="rulesContent"></div></dialog>
+<script src="script.js"></script>
+</body></html>

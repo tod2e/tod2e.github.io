@@ -1,0 +1,22 @@
+(() => {
+const $=id=>document.getElementById(id),cv=$("canvas"),ctx=cv.getContext("2d");
+let s={players:[],idx:0,steps:[],starter:0},drawing=false,last=null;
+function parse(v){return [...new Set(v.split(/[,\n]/).map(x=>x.trim()).filter(Boolean))]}
+function show(id){["setup","pass","textInputView","drawView","revealView"].forEach(x=>$(x).classList.toggle("hidden",x!==id))}
+function current(){return s.players[s.idx]}
+function actionType(){if(s.idx===0)return"text";return s.idx%2===1?"draw":"describe"}
+function passScreen(){if(s.idx>=s.players.length){revealChain();return}show("pass");let a=actionType();passAction.textContent=a==="text"?"Start with a phrase":a==="draw"?"Draw what you receive":"Describe what you receive";passName.textContent=current();stepBadge.textContent=`${s.idx+1}/${s.players.length}`;phase.textContent="Pass the device"}
+function readyFn(){let a=actionType();if(a==="draw")openDraw();else openText()}
+function openText(){show("textInputView");phase.textContent=s.idx===0?"Write the seed phrase":"Describe the drawing";textEntry.value="";if(s.idx===0){textContext.textContent="Write something vivid and drawable";textInstruction.textContent="Nobody else will see this exact phrase again."}else{let prev=s.steps[s.steps.length-1];textContext.innerHTML=`<img src="${prev.value}" alt="Previous drawing" style="max-width:100%;max-height:330px;object-fit:contain;border-radius:14px">`;textInstruction.textContent="Describe only what you see in the drawing."}}
+function openDraw(){show("drawView");phase.textContent="Draw it";drawPrompt.textContent=s.steps[s.steps.length-1].value;clear()}
+function submitTextFn(){let v=textEntry.value.trim();if(!v)return;s.steps.push({type:s.idx===0?"phrase":"description",player:current(),value:v});s.idx++;passScreen()}
+function clear(){ctx.fillStyle="#f5f1eb";ctx.fillRect(0,0,cv.width,cv.height)}
+function pos(e){let r=cv.getBoundingClientRect(),p=e.touches?e.touches[0]:e;return{x:(p.clientX-r.left)*cv.width/r.width,y:(p.clientY-r.top)*cv.height/r.height}}
+function down(e){e.preventDefault();drawing=true;last=pos(e)}
+function move(e){if(!drawing)return;e.preventDefault();let p=pos(e);ctx.strokeStyle="#171513";ctx.lineWidth=+brush.value;ctx.lineCap="round";ctx.lineJoin="round";ctx.beginPath();ctx.moveTo(last.x,last.y);ctx.lineTo(p.x,p.y);ctx.stroke();last=p}
+function up(){drawing=false}
+function submitDrawingFn(){s.steps.push({type:"drawing",player:current(),value:cv.toDataURL("image/png")});s.idx++;passScreen()}
+function revealChain(){show("revealView");phase.textContent="Reveal the chain";stepBadge.textContent=`${s.steps.length} steps`;chain.innerHTML=s.steps.map((st,i)=>`<div class="chain-step"><div class="row between"><strong>${i+1}. ${st.player}</strong><span class="badge">${st.type}</span></div>${st.type==="drawing"?`<img src="${st.value}" alt="Drawing by ${st.player}">`:`<p style="font-size:1.35rem;margin:12px 0 0">${escapeHtml(st.value)}</p>`}</div>`).join("")}
+function escapeHtml(v){return v.replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]))}
+start.onclick=()=>{s.players=parse(players.value);if(s.players.length<4){$("status").textContent="Add at least 4 players.";return}s.idx=0;s.steps=[];$("status").textContent="";passScreen()};ready.onclick=readyFn;submitText.onclick=submitTextFn;clearCanvas.onclick=clear;submitDrawing.onclick=submitDrawingFn;["mousedown","touchstart"].forEach(ev=>cv.addEventListener(ev,down,{passive:false}));["mousemove","touchmove"].forEach(ev=>cv.addEventListener(ev,move,{passive:false}));["mouseup","mouseleave","touchend","touchcancel"].forEach(ev=>cv.addEventListener(ev,up));newChain.onclick=()=>{s.idx=0;s.steps=[];s.players.push(s.players.shift());passScreen()};resetBtn.onclick=()=>{if(confirm("Reset Telephone Drawing?"))location.reload()};rulesBtn.onclick=()=>{rulesContent.innerHTML="<p class=eyebrow>How to play</p><h2>Only look one step back</h2><p class=muted>The first player writes a phrase. The next player sees only that phrase and draws it. The next sees only the drawing and describes it. Continue alternating until everyone has contributed, then reveal the whole mutation chain.</p>";rulesModal.showModal()};document.querySelector("[data-close]").onclick=()=>rulesModal.close();clear();
+})();

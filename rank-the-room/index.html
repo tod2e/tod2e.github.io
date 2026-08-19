@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#11100f"><title>Rank the Room</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main class="shell">
+<header class="topbar">
+<a class="brand" href="./">Rank the Room<small>how does the room really see everyone?</small></a>
+<nav class="nav"><a class="pill" href="../">All games</a><button class="pill" id="rulesBtn" type="button">Rules</button><button class="pill" id="resetBtn" type="button">Reset</button></nav>
+</header>
+
+<section class="hero"><p class="eyebrow">Private rankings · group reveal</p><h1>Rank the Room</h1><p class="lede">Everyone ranks the people at the table for the same ridiculous prompt. Then the room's consensus is exposed.</p></section>
+<section class="panel stack">
+<div class="row between"><div><p class="eyebrow" id="roundLabel">Setup</p><h2 id="title">Who's at the table?</h2></div><span class="badge" id="progress"></span></div>
+<div id="setup" class="stack"><label class="field">Players<textarea id="players" rows="5" placeholder="Ben, Maya, Alex, Sam"></textarea></label><label class="field">Prompt pack<select id="pack"><option value="mixed">Mixed chaos</option><option value="social">Social</option><option value="life">Life choices</option><option value="nerdy">Nerdy</option></select></label><div class="actions"><button id="start" class="primary">Start ranking</button></div><p class="status" id="status"></p></div>
+<div id="pass" class="private hidden"><div><p class="eyebrow">Private vote</p><div class="role" id="passName"></div><p class="muted">Pass the device. Only this player should rank.</p><button id="ready" class="primary">I'm ready</button></div></div>
+<div id="vote" class="hidden stack"><div class="big-card"><div><div class="prompt" id="prompt"></div><div class="sub">Tap people from MOST to LEAST. Tap a chosen name to undo.</div></div></div><div><p class="eyebrow">Your ranking</p><div id="chosen" class="rank-list"></div></div><div><p class="eyebrow">People left</p><div id="choices" class="option-grid"></div></div><div class="actions"><button id="submit" class="primary" disabled>Lock ranking</button></div></div>
+<div id="results" class="hidden stack"><div class="big-card"><div><div class="prompt" id="resultPrompt"></div><div class="sub">Group consensus · lowest average rank wins</div></div></div><div id="ranking" class="rank-list"></div><div class="card"><strong>Most disputed</strong><p class="muted" id="disputed"></p></div><div class="actions"><button id="next" class="primary">Next prompt</button></div></div>
+</section>
+</main>
+<dialog id="rulesModal" class="modal"><button class="close" data-close type="button">×</button><div id="rulesContent"></div></dialog>
+<script src="script.js"></script>
+</body></html>
