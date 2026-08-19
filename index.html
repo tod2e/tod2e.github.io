@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#11100f" />
+  <meta name="description" content="Games and useful little tools by Ben Shin." />
+  <title>Ben's Games & Tools</title>
+  <link rel="stylesheet" href="hub.css" />
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <a class="wordmark" href="./" aria-label="Games and tools home">
+        <span class="wordmark-dot"></span>
+        <span>Ben's Games &amp; Tools</span>
+      </a>
+
+      <div class="top-actions">
+        <button id="randomBtn" class="quiet-button" type="button" title="Open a random game">Surprise me</button>
+        <a class="quiet-button" href="https://github.com/tod2e/tod2e.github.io" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+    </header>
+
+    <section class="hero">
+      <p class="eyebrow">Pick something</p>
+      <h1>Games for the table.<br><span>Tools for everything else.</span></h1>
+      <p class="lede">Small browser things that run without accounts, installs, or unnecessary ceremony.</p>
+
+      <div class="command-row">
+        <label class="search-box">
+          <span class="search-icon" aria-hidden="true">⌕</span>
+          <input id="searchInput" type="search" placeholder="Search games and tools…" autocomplete="off" />
+          <kbd>/</kbd>
+        </label>
+
+        <div class="filter-row" role="group" aria-label="Filter catalogue">
+          <button class="filter active" data-filter="all" type="button">All</button>
+          <button class="filter" data-filter="game" type="button">Games</button>
+          <button class="filter" data-filter="tool" type="button">Tools</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="catalog-section" aria-labelledby="catalogTitle">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Collection</p>
+          <h2 id="catalogTitle">Choose your poison</h2>
+        </div>
+        <span id="catalogCount" class="count-pill">—</span>
+      </div>
+
+      <div id="catalogGrid" class="catalog-grid" aria-live="polite"></div>
+
+      <div id="emptyState" class="empty-state hidden">
+        <strong>Nothing here yet.</strong>
+        <span>Try another filter or search.</span>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span>Built for a browser, not an app store.</span>
+      <span id="footerCount"></span>
+    </footer>
+  </main>
+
+  <template id="catalogCardTemplate">
+    <a class="catalog-card" href="#">
+      <div class="card-art">
+        <span class="art-label"></span>
+        <span class="art-mark"></span>
+        <div class="art-orbit"></div>
+      </div>
+
+      <div class="card-body">
+        <div class="card-meta">
+          <span class="kind-pill"></span>
+          <span class="meta-text"></span>
+        </div>
+        <h3 class="card-title"></h3>
+        <p class="card-description"></p>
+        <div class="card-foot">
+          <span class="card-detail"></span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </div>
+      </div>
+    </a>
+  </template>
+
+  <script src="apps.js"></script>
+  <script src="hub.js"></script>
+</body>
+</html>
