@@ -238,11 +238,8 @@ h2 { letter-spacing:-.04em; }
   margin-top:2px;
 }
 
-/* Keep the private reveal button above the privacy curtain.
-   The curtain intentionally masks the dial, not the active control. */
-#psychicControls {
-  z-index:9;
-}
+/* The privacy curtain masks the dial, not the active reveal control. */
+#psychicControls { z-index:9; }
 .clue-field { width:min(100%,420px); display:grid; gap:6px; color:var(--muted); font-size:.82rem; }
 .position-readout {
   position:absolute;
@@ -399,4 +396,59 @@ h2 { letter-spacing:-.04em; }
   .custom-spectrum-form > div { grid-template-columns:1fr; }
   .result-banner { grid-template-columns:1fr; }
   .direction-button { min-width:120px; }
+}
+
+
+/* --- v2: competitive / cooperative setup --- */
+.mode-grid {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:10px;
+  margin:14px 0 12px;
+}
+.mode-option {
+  position:relative;
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+  min-height:84px;
+  padding:14px;
+  border:1px solid var(--line);
+  border-radius:16px;
+  background:rgba(255,255,255,.025);
+  cursor:pointer;
+  transition:160ms ease;
+}
+.mode-option:hover {
+  border-color:var(--line-strong);
+  background:rgba(255,255,255,.045);
+}
+.mode-option:has(input:checked) {
+  border-color:rgba(209,154,106,.55);
+  background:var(--accent-soft);
+  box-shadow:0 0 0 1px rgba(209,154,106,.12) inset;
+}
+.mode-option input {
+  width:auto;
+  margin:3px 0 0;
+  accent-color:var(--accent-strong);
+}
+.mode-option span {
+  display:grid;
+  gap:4px;
+}
+.mode-option strong { color:var(--ink); }
+.mode-option small {
+  color:var(--muted);
+  line-height:1.35;
+}
+#coopMathHint {
+  margin:8px 2px 0;
+}
+#coopMathHint.warning { color:#e0ae63; }
+#coopMathHint.impossible { color:#d58b7e; }
+#coopMathHint.good { color:#89b6ad; }
+
+@media (max-width:760px) {
+  .mode-grid { grid-template-columns:1fr; }
 }

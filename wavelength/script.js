@@ -1,6 +1,7 @@
 (() => {
   const packs = window.SPECTRUM_PACKS || [];
-  const STORAGE_KEY = "sameWavelengthState:v1";
+  const STORAGE_KEY = "sameWavelengthState:v2";
+  const LEGACY_STORAGE_KEY = "sameWavelengthState:v1";
 
   const $ = (id) => document.getElementById(id);
   const els = {
@@ -53,21 +54,35 @@
     teamBScore: $("teamBScore"),
     undoBtn: $("undoBtn"),
     resetBtn: $("resetBtn"),
+
     setupModal: $("setupModal"),
+    setupTitle: $("setupTitle"),
+    setupIntro: $("setupIntro"),
+    teamACard: $("teamACard"),
+    teamBCard: $("teamBCard"),
+    teamANameLabel: $("teamANameLabel"),
+    teamAPlayersLabel: $("teamAPlayersLabel"),
     teamANameInput: $("teamANameInput"),
     teamBNameInput: $("teamBNameInput"),
     teamAPlayersInput: $("teamAPlayersInput"),
     teamBPlayersInput: $("teamBPlayersInput"),
+    competitiveSettings: $("competitiveSettings"),
+    cooperativeSettings: $("cooperativeSettings"),
     winningScoreInput: $("winningScoreInput"),
     catchupInput: $("catchupInput"),
+    coopTargetInput: $("coopTargetInput"),
+    coopRoundsInput: $("coopRoundsInput"),
+    coopMathHint: $("coopMathHint"),
     saveSetupBtn: $("saveSetupBtn"),
     setupStatus: $("setupStatus"),
+
     spectraModal: $("spectraModal"),
     packControls: $("packControls"),
     customSpectrumForm: $("customSpectrumForm"),
     customLeftInput: $("customLeftInput"),
     customRightInput: $("customRightInput"),
     customSpectrumList: $("customSpectrumList"),
+
     rulesModal: $("rulesModal"),
     winnerModal: $("winnerModal"),
     winnerTitle: $("winnerTitle"),
@@ -77,6 +92,7 @@
   };
 
   const defaultState = {
+    mode: "competitive",
     teams: [
       { name: "Team A", players: [], score: 0, psychicIndex: 0 },
       { name: "Team B", players: [], score: 0, psychicIndex: 0 }
@@ -85,6 +101,9 @@
     round: 1,
     winningScore: 10,
     catchup: true,
+    coopTargetScore: 20,
+    coopRoundLimit: 8,
+    coopChallengeEnded: false,
     selectedPacks: packs.map(p => p.id),
     customSpectra: [],
     phase: "setup",
@@ -101,18 +120,35 @@
   let dragging = false;
 
   function clone(v) { return JSON.parse(JSON.stringify(v)); }
+  function isCoop() { return state.mode === "cooperative"; }
 
   function loadState() {
     try {
-      const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
-      if (!saved) return clone(defaultState);
+      const v2 = localStorage.getItem(STORAGE_KEY);
+      const legacy = localStorage.getItem(LEGACY_STORAGE_KEY);
+      const raw = v2 || legacy;
+      if (!raw) return clone(defaultState);
+
+      const saved = JSON.parse(raw);
       const merged = { ...clone(defaultState), ...saved };
-      if (!Array.isArray(merged.teams) || merged.teams.length !== 2) merged.teams = clone(defaultState.teams);
-      merged.selectedPacks = Array.isArray(merged.selectedPacks)
-        ? merged.selectedPacks.filter(id => packs.some(p => p.id === id))
+      if (!Array.isArray(merged.teams) || merged.teams.length !== 2) {
+        merged.teams = clone(defaultState.teams);
+      }
+
+      // A v1 save predates the expanded prompt packs, so enable every pack on migration.
+      merged.selectedPacks = v2 && Array.isArray(saved.selectedPacks)
+        ? saved.selectedPacks.filter(id => packs.some(p => p.id === id))
         : packs.map(p => p.id);
+
+      if (!merged.selectedPacks.length) merged.selectedPacks = packs.map(p => p.id);
       merged.customSpectra = Array.isArray(merged.customSpectra) ? merged.customSpectra : [];
-      if (!["setup","psychic","clue","guess","opponent","reveal","result"].includes(merged.phase)) merged.phase = "setup";
+      merged.mode = merged.mode === "cooperative" ? "cooperative" : "competitive";
+      merged.coopTargetScore = positiveInt(merged.coopTargetScore, 20, 200);
+      merged.coopRoundLimit = positiveInt(merged.coopRoundLimit, 8, 50);
+      if (!["setup","psychic","clue","guess","opponent","reveal","result"].includes(merged.phase)) {
+        merged.phase = "setup";
+      }
+      if (merged.mode === "cooperative" && merged.phase === "opponent") merged.phase = "reveal";
       return merged;
     } catch {
       return clone(defaultState);
@@ -123,8 +159,16 @@
     localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
   }
 
+  function positiveInt(value, fallback, max = 999) {
+    const n = Math.floor(Number(value));
+    return Number.isFinite(n) && n > 0 ? Math.min(max, n) : fallback;
+  }
+
   function parsePlayers(text) {
-    return text.split(/[,\n]/).map(s => s.trim().replace(/\s+/g, " ")).filter(Boolean).slice(0, 20);
+    return text.split(/[,\n]/)
+      .map(s => s.trim().replace(/\s+/g, " "))
+      .filter(Boolean)
+      .slice(0, 30);
   }
 
   function cleanName(value, fallback) {
@@ -132,11 +176,17 @@
     return x || fallback;
   }
 
-  function activeTeam() { return state.teams[state.activeTeam]; }
-  function otherTeam() { return state.teams[1 - state.activeTeam]; }
+  function activeTeam() {
+    return state.teams[isCoop() ? 0 : state.activeTeam];
+  }
 
-  function psychicFor(teamIndex = state.activeTeam) {
-    const team = state.teams[teamIndex];
+  function otherTeam() {
+    return state.teams[1 - state.activeTeam];
+  }
+
+  function psychicFor(teamIndex = null) {
+    const idx = isCoop() ? 0 : (teamIndex ?? state.activeTeam);
+    const team = state.teams[idx];
     if (!team.players.length) return "Psychic";
     return team.players[team.psychicIndex % team.players.length];
   }
@@ -144,11 +194,13 @@
   function allSpectra() {
     const selected = new Set(state.selectedPacks);
     const builtIn = packs.flatMap(pack =>
-      selected.has(pack.id) ? pack.spectra.map(([left,right], i) => ({
-        id: `${pack.id}-${i}`, left, right, pack: pack.id
-      })) : []
+      selected.has(pack.id)
+        ? pack.spectra.map(([left, right], i) => ({
+            id: `${pack.id}-${i}`, left, right, pack: pack.id
+          }))
+        : []
     );
-    const custom = state.customSpectra.map((s,i) => ({
+    const custom = state.customSpectra.map((s, i) => ({
       id: `custom-${i}-${s.left}-${s.right}`, ...s, pack: "custom"
     }));
     return [...builtIn, ...custom];
@@ -157,15 +209,13 @@
   function randomSpectrum() {
     const deck = allSpectra();
     if (!deck.length) return { id: "fallback", left: "Bad", right: "Good", pack: "fallback" };
-    let choices = deck;
-    if (state.currentSpectrum && deck.length > 1) {
-      choices = deck.filter(s => s.id !== state.currentSpectrum.id);
-    }
+    const choices = state.currentSpectrum && deck.length > 1
+      ? deck.filter(s => s.id !== state.currentSpectrum.id)
+      : deck;
     return choices[Math.floor(Math.random() * choices.length)];
   }
 
   function randomTarget() {
-    // Keep the full scoring band comfortably inside the visible semicircle.
     return 0.15 + Math.random() * 0.70;
   }
 
@@ -177,12 +227,14 @@
     state.opponentGuess = null;
     state.phase = "psychic";
     state.winnerDismissed = false;
+    state.coopChallengeEnded = false;
     saveState();
     render();
   }
 
   function snapshotBeforeScore() {
     return clone({
+      mode: state.mode,
       teams: state.teams,
       activeTeam: state.activeTeam,
       round: state.round,
@@ -190,7 +242,8 @@
       target: state.target,
       needle: state.needle,
       clue: state.clue,
-      opponentGuess: state.opponentGuess
+      opponentGuess: state.opponentGuess,
+      coopChallengeEnded: state.coopChallengeEnded
     });
   }
 
@@ -207,7 +260,32 @@
     const distance = Math.abs(state.needle - state.target);
     const activePoints = scoreForDistance(distance);
     const trueDirection = state.target < state.needle ? "left" : "right";
-    const opponentPoints = (activePoints === 4) ? 0 : (state.opponentGuess === trueDirection ? 1 : 0);
+
+    if (isCoop()) {
+      state.teams[0].score += activePoints;
+      state._roundOutcome = {
+        activePoints,
+        opponentPoints: 0,
+        trueDirection,
+        challengeSuccess: state.teams[0].score >= state.coopTargetScore
+      };
+      state.phase = "result";
+
+      if (state.teams[0].score >= state.coopTargetScore || state.round >= state.coopRoundLimit) {
+        state.coopChallengeEnded = true;
+      }
+
+      saveState();
+      render();
+
+      if (state.coopChallengeEnded && !state.winnerDismissed) {
+        showCoopEnd(state.teams[0].score >= state.coopTargetScore);
+      }
+      return;
+    }
+
+    const opponentPoints =
+      activePoints === 4 ? 0 : (state.opponentGuess === trueDirection ? 1 : 0);
 
     const activeIndex = state.activeTeam;
     const otherIndex = 1 - activeIndex;
@@ -225,21 +303,39 @@
   }
 
   function winningTeam() {
-    const [a,b] = state.teams;
+    if (isCoop()) return null;
+    const [a, b] = state.teams;
     if (a.score < state.winningScore && b.score < state.winningScore) return null;
     if (a.score === b.score) return null;
     return a.score > b.score ? 0 : 1;
   }
 
+  function rotatePsychic(teamIndex) {
+    const team = state.teams[teamIndex];
+    if (team.players.length) {
+      team.psychicIndex = (team.psychicIndex + 1) % team.players.length;
+    }
+  }
+
   function advanceRound() {
+    if (isCoop()) {
+      if (state.coopChallengeEnded) {
+        resetMatch(true);
+        return;
+      }
+      rotatePsychic(0);
+      state.round += 1;
+      delete state._roundOutcome;
+      startRound(true);
+      return;
+    }
+
     const outcome = state._roundOutcome || {};
     const active = state.activeTeam;
-    const getsCatchup = state.catchup && outcome.activePoints === 4 && outcome.stillBehind;
+    const getsCatchup =
+      state.catchup && outcome.activePoints === 4 && outcome.stillBehind;
 
-    // Rotate psychic every time that team completes a turn.
-    const team = state.teams[active];
-    if (team.players.length) team.psychicIndex = (team.psychicIndex + 1) % team.players.length;
-
+    rotatePsychic(active);
     if (!getsCatchup) state.activeTeam = 1 - active;
     state.round += 1;
     delete state._roundOutcome;
@@ -249,6 +345,8 @@
   function undoRound() {
     const snap = state.lastRoundSnapshot;
     if (!snap) return;
+
+    state.mode = snap.mode;
     state.teams = clone(snap.teams);
     state.activeTeam = snap.activeTeam;
     state.round = snap.round;
@@ -257,36 +355,57 @@
     state.needle = snap.needle;
     state.clue = snap.clue;
     state.opponentGuess = snap.opponentGuess;
+    state.coopChallengeEnded = false;
     state.phase = "reveal";
     state.lastRoundSnapshot = null;
     delete state._roundOutcome;
+
+    if (els.winnerModal.open) els.winnerModal.close();
     saveState();
     render();
   }
 
-  function resetMatch(keepTeams = true) {
-    const teams = keepTeams ? state.teams.map(t => ({ ...t, score: 0, psychicIndex: 0 })) : clone(defaultState.teams);
-    const selectedPacks = clone(state.selectedPacks);
-    const customSpectra = clone(state.customSpectra);
-    const winningScore = state.winningScore;
-    const catchup = state.catchup;
-    state = clone(defaultState);
-    state.teams = teams;
-    state.selectedPacks = selectedPacks;
-    state.customSpectra = customSpectra;
-    state.winningScore = winningScore;
-    state.catchup = catchup;
-    if (teams.every(t => t.players.length)) startRound(true);
-    else {
+  function resetMatch(keepPlayers = true) {
+    const oldMode = state.mode;
+    const oldTeams = keepPlayers
+      ? state.teams.map(t => ({ ...t, score: 0, psychicIndex: 0 }))
+      : clone(defaultState.teams);
+
+    const preserve = {
+      mode: oldMode,
+      teams: oldTeams,
+      selectedPacks: clone(state.selectedPacks),
+      customSpectra: clone(state.customSpectra),
+      winningScore: state.winningScore,
+      catchup: state.catchup,
+      coopTargetScore: state.coopTargetScore,
+      coopRoundLimit: state.coopRoundLimit
+    };
+
+    state = { ...clone(defaultState), ...preserve };
+    state.activeTeam = 0;
+    state.round = 1;
+
+    const enoughPlayers = isCoop()
+      ? state.teams[0].players.length >= 2
+      : state.teams.every(t => t.players.length >= 1);
+
+    if (enoughPlayers) {
+      startRound(true);
+    } else {
       saveState();
       render();
+      populateSetup();
       openModal(els.setupModal);
     }
   }
 
   function polar(norm, radius) {
     const theta = Math.PI * (1 - norm);
-    return { x: 300 + radius * Math.cos(theta), y: 290 - radius * Math.sin(theta) };
+    return {
+      x: 300 + radius * Math.cos(theta),
+      y: 290 - radius * Math.sin(theta)
+    };
   }
 
   function ringSegment(startNorm, endNorm, innerR = 196, outerR = 284) {
@@ -296,6 +415,7 @@
     const p2 = polar(b, outerR);
     const p3 = polar(b, innerR);
     const p4 = polar(a, innerR);
+
     return [
       `M ${p1.x.toFixed(2)} ${p1.y.toFixed(2)}`,
       `A ${outerR} ${outerR} 0 0 1 ${p2.x.toFixed(2)} ${p2.y.toFixed(2)}`,
@@ -307,12 +427,11 @@
 
   function updateTargetPaths() {
     const c = state.target;
-    // Non-overlapping bands: 2 | 3 | 4 | 3 | 2
-    els.target2Left.setAttribute("d", ringSegment(c-.125,c-.075));
-    els.target3Left.setAttribute("d", ringSegment(c-.075,c-.03));
-    els.target4.setAttribute("d", ringSegment(c-.03,c+.03));
-    els.target3Right.setAttribute("d", ringSegment(c+.03,c+.075));
-    els.target2Right.setAttribute("d", ringSegment(c+.075,c+.125));
+    els.target2Left.setAttribute("d", ringSegment(c - .125, c - .075));
+    els.target3Left.setAttribute("d", ringSegment(c - .075, c - .03));
+    els.target4.setAttribute("d", ringSegment(c - .03, c + .03));
+    els.target3Right.setAttribute("d", ringSegment(c + .03, c + .075));
+    els.target2Right.setAttribute("d", ringSegment(c + .075, c + .125));
   }
 
   function updateNeedle() {
@@ -342,27 +461,63 @@
   }
 
   function hideAllControls() {
-    [els.psychicControls,els.clueControls,els.guessControls,els.opponentControls,els.revealControls,els.resultControls]
-      .forEach(el => el.classList.add("hidden"));
+    [
+      els.psychicControls,
+      els.clueControls,
+      els.guessControls,
+      els.opponentControls,
+      els.revealControls,
+      els.resultControls
+    ].forEach(el => el.classList.add("hidden"));
+  }
+
+  function roundsRemaining() {
+    return Math.max(0, state.coopRoundLimit - state.round + 1);
+  }
+
+  function renderScoreboards() {
+    if (isCoop()) {
+      const team = state.teams[0];
+      [els.teamAName, els.teamANameMini].forEach(el => el.textContent = team.name);
+      [els.teamAScore, els.teamAScoreMini].forEach(el => el.textContent = team.score);
+      [els.teamBName, els.teamBNameMini].forEach(el => el.textContent = "Goal");
+      [els.teamBScore, els.teamBScoreMini].forEach(el => el.textContent = state.coopTargetScore);
+      els.targetScorePill.textContent = `Round ${Math.min(state.round, state.coopRoundLimit)} of ${state.coopRoundLimit}`;
+      els.activeTeamPill.textContent = "Co-op";
+    } else {
+      const [a, b] = state.teams;
+      [els.teamAName, els.teamANameMini].forEach(el => el.textContent = a.name);
+      [els.teamAScore, els.teamAScoreMini].forEach(el => el.textContent = a.score);
+      [els.teamBName, els.teamBNameMini].forEach(el => el.textContent = b.name);
+      [els.teamBScore, els.teamBScoreMini].forEach(el => el.textContent = b.score);
+      els.targetScorePill.textContent = `First to ${state.winningScore}`;
+      els.activeTeamPill.textContent = activeTeam().name;
+    }
   }
 
   function render() {
-    const a = state.teams[0], b = state.teams[1];
-    [els.teamAName,els.teamANameMini].forEach(el => el.textContent = a.name);
-    [els.teamBName,els.teamBNameMini].forEach(el => el.textContent = b.name);
-    [els.teamAScore,els.teamAScoreMini].forEach(el => el.textContent = a.score);
-    [els.teamBScore,els.teamBScoreMini].forEach(el => el.textContent = b.score);
-    els.targetScorePill.textContent = `First to ${state.winningScore}`;
-    els.roundLabel.textContent = `Round ${state.round}`;
-    els.activeTeamPill.textContent = activeTeam().name;
+    renderScoreboards();
+
+    els.roundLabel.textContent = isCoop()
+      ? `Round ${state.round} / ${state.coopRoundLimit}`
+      : `Round ${state.round}`;
+
     els.psychicName.textContent = psychicFor();
-    els.psychicRotation.textContent = activeTeam().players.length
-      ? `${activeTeam().name} · ${activeTeam().players.length} player${activeTeam().players.length === 1 ? "" : "s"}`
-      : "Set up players to rotate automatically.";
-    els.opponentTeamLabel.textContent = otherTeam().name;
+
+    if (isCoop()) {
+      const remaining = roundsRemaining();
+      els.psychicRotation.textContent =
+        `${state.teams[0].players.length} player${state.teams[0].players.length === 1 ? "" : "s"} · ${remaining} round${remaining === 1 ? "" : "s"} remaining`;
+    } else {
+      els.psychicRotation.textContent = activeTeam().players.length
+        ? `${activeTeam().name} · ${activeTeam().players.length} player${activeTeam().players.length === 1 ? "" : "s"}`
+        : "Set up players to rotate automatically.";
+      els.opponentTeamLabel.textContent = otherTeam().name;
+    }
+
     els.undoBtn.disabled = !state.lastRoundSnapshot;
 
-    const spectrum = state.currentSpectrum || { left:"LEFT", right:"RIGHT" };
+    const spectrum = state.currentSpectrum || { left: "LEFT", right: "RIGHT" };
     els.leftPole.textContent = spectrum.left;
     els.rightPole.textContent = spectrum.right;
     els.clueDisplay.textContent = state.clue || "—";
@@ -372,15 +527,21 @@
     updateNeedle();
     hideAllControls();
 
-    els.positionReadout.classList.toggle("hidden", !["guess","opponent","reveal","result"].includes(state.phase));
+    els.positionReadout.classList.toggle(
+      "hidden",
+      !["guess","opponent","reveal","result"].includes(state.phase)
+    );
 
     if (state.phase === "setup") {
-      setPhaseText("Set up your teams", "Two teams, one shared screen, zero accounts.");
+      setPhaseText(
+        "Set up the table",
+        "Competitive teams or one cooperative score challenge."
+      );
       els.privacyCurtain.classList.remove("hidden");
       els.privacyTitle.textContent = "Ready when you are";
-      els.privacyText.textContent = "Add players to begin.";
+      els.privacyText.textContent = "Add players and choose a mode to begin.";
       els.psychicControls.classList.remove("hidden");
-      els.revealPrivateBtn.textContent = "Set up teams";
+      els.revealPrivateBtn.textContent = "Open setup";
       els.targetGroup.classList.add("hidden");
       return;
     }
@@ -388,7 +549,12 @@
     els.revealPrivateBtn.textContent = "Reveal target privately";
 
     if (state.phase === "psychic") {
-      setPhaseText(`${psychicFor()}, you're the psychic`, `${activeTeam().name} is giving the clue this round.`);
+      setPhaseText(
+        `${psychicFor()}, you're the psychic`,
+        isCoop()
+          ? `${state.teams[0].name} is playing together this round.`
+          : `${activeTeam().name} is giving the clue this round.`
+      );
       els.privacyCurtain.classList.remove("hidden");
       els.privacyTitle.textContent = `Pass the screen to ${psychicFor()}`;
       els.privacyText.textContent = "Everyone else should look away.";
@@ -397,67 +563,130 @@
     }
 
     if (state.phase === "clue") {
-      setPhaseText("Find the clue", "Your team will only see the spectrum and your clue.");
+      setPhaseText(
+        "Find the clue",
+        isCoop()
+          ? "Give everyone else one clue for the hidden position."
+          : "Your team will only see the spectrum and your clue."
+      );
       els.privacyCurtain.classList.add("hidden");
       els.targetGroup.classList.remove("hidden");
       els.clueControls.classList.remove("hidden");
     }
 
     if (state.phase === "guess") {
-      setPhaseText(`${activeTeam().name}, place the dial`, `What did ${psychicFor()} mean by “${state.clue || "that clue"}”?`);
+      setPhaseText(
+        isCoop() ? `${state.teams[0].name}, place the dial` : `${activeTeam().name}, place the dial`,
+        `What did ${psychicFor()} mean by “${state.clue || "that clue"}”?`
+      );
       els.privacyCurtain.classList.add("hidden");
       els.targetGroup.classList.add("hidden");
       els.guessControls.classList.remove("hidden");
+      els.lockGuessBtn.textContent = isCoop() ? "Lock guess" : "Lock team guess";
     }
 
-    if (state.phase === "opponent") {
-      setPhaseText(`${otherTeam().name}, left or right?`, "The active team's dial is locked. Read the psychic one step further.");
+    if (state.phase === "opponent" && !isCoop()) {
+      setPhaseText(
+        `${otherTeam().name}, left or right?`,
+        "The active team's dial is locked. Read the psychic one step further."
+      );
       els.privacyCurtain.classList.add("hidden");
       els.targetGroup.classList.add("hidden");
       els.opponentControls.classList.remove("hidden");
     }
 
     if (state.phase === "reveal") {
-      setPhaseText("Final answer locked", "Reveal the hidden target and score the round.");
+      setPhaseText(
+        "Final answer locked",
+        isCoop()
+          ? "Reveal the hidden target and add the points to your shared score."
+          : "Reveal the hidden target and score the round."
+      );
       els.privacyCurtain.classList.add("hidden");
       els.targetGroup.classList.add("hidden");
       els.revealControls.classList.remove("hidden");
     }
 
     if (state.phase === "result") {
-      setPhaseText("How close were you?", "The target is revealed.");
+      setPhaseText(
+        isCoop() ? "How close were you?" : "How close were you?",
+        isCoop()
+          ? `${state.teams[0].score} of ${state.coopTargetScore} points after round ${state.round}.`
+          : "The target is revealed."
+      );
       els.privacyCurtain.classList.add("hidden");
       els.targetGroup.classList.remove("hidden");
       els.resultControls.classList.remove("hidden");
-      const o = state._roundOutcome || { activePoints:0, opponentPoints:0, trueDirection:"—" };
-      els.resultBanner.innerHTML = `
-        <div class="result-piece">
-          <span>${escapeHtml(activeTeam().name)}</span>
-          <strong>+${o.activePoints} point${o.activePoints === 1 ? "" : "s"}</strong>
-        </div>
-        <div class="result-piece">
-          <span>${escapeHtml(otherTeam().name)} · ${escapeHtml((state.opponentGuess || "—").toUpperCase())}</span>
-          <strong>+${o.opponentPoints} point${o.opponentPoints === 1 ? "" : "s"}</strong>
-        </div>`;
+
+      const o = state._roundOutcome || {
+        activePoints: 0,
+        opponentPoints: 0,
+        trueDirection: "—"
+      };
+
+      if (isCoop()) {
+        const pct = Math.min(100, Math.round((state.teams[0].score / state.coopTargetScore) * 100));
+        els.resultBanner.innerHTML = `
+          <div class="result-piece">
+            <span>Round ${state.round}</span>
+            <strong>+${o.activePoints} point${o.activePoints === 1 ? "" : "s"}</strong>
+          </div>
+          <div class="result-piece">
+            <span>Challenge progress</span>
+            <strong>${state.teams[0].score}/${state.coopTargetScore} · ${pct}%</strong>
+          </div>`;
+        els.nextRoundBtn.textContent = state.coopChallengeEnded ? "New challenge" : "Next round";
+      } else {
+        els.resultBanner.innerHTML = `
+          <div class="result-piece">
+            <span>${escapeHtml(activeTeam().name)}</span>
+            <strong>+${o.activePoints} point${o.activePoints === 1 ? "" : "s"}</strong>
+          </div>
+          <div class="result-piece">
+            <span>${escapeHtml(otherTeam().name)} · ${escapeHtml((state.opponentGuess || "—").toUpperCase())}</span>
+            <strong>+${o.opponentPoints} point${o.opponentPoints === 1 ? "" : "s"}</strong>
+          </div>`;
+        els.nextRoundBtn.textContent = "Next round";
+      }
     }
   }
 
   function escapeHtml(value) {
-    return String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
+    return String(value).replace(
+      /[&<>"']/g,
+      c => ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#039;" }[c])
+    );
   }
 
   function openModal(dialog) {
-    if (!dialog.open) dialog.showModal();
+    if (dialog && !dialog.open) dialog.showModal();
   }
 
   function closeModal(dialog) {
-    if (dialog.open) dialog.close();
+    if (dialog && dialog.open) dialog.close();
   }
 
   function showWinner(index) {
     const team = state.teams[index];
     els.winnerTitle.textContent = `${team.name} wins`;
     els.winnerText.textContent = `${state.teams[0].score}–${state.teams[1].score}.`;
+    els.keepPlayingBtn.textContent = "Keep playing";
+    els.newMatchBtn.textContent = "New match";
+    openModal(els.winnerModal);
+  }
+
+  function showCoopEnd(success) {
+    if (success) {
+      els.winnerTitle.textContent = "Challenge complete";
+      els.winnerText.textContent =
+        `${state.teams[0].name} reached ${state.teams[0].score}/${state.coopTargetScore} points in ${state.round} round${state.round === 1 ? "" : "s"}.`;
+    } else {
+      els.winnerTitle.textContent = "Challenge over";
+      els.winnerText.textContent =
+        `${state.teams[0].name} finished on ${state.teams[0].score}/${state.coopTargetScore} points after ${state.coopRoundLimit} rounds.`;
+    }
+    els.keepPlayingBtn.textContent = "Close";
+    els.newMatchBtn.textContent = "New challenge";
     openModal(els.winnerModal);
   }
 
@@ -466,6 +695,7 @@
     for (const pack of packs) {
       const label = document.createElement("label");
       label.className = "pack-toggle";
+
       const input = document.createElement("input");
       input.type = "checkbox";
       input.checked = state.selectedPacks.includes(pack.id);
@@ -477,8 +707,11 @@
         }
         saveState();
       });
+
       const copy = document.createElement("span");
-      copy.innerHTML = `<strong>${escapeHtml(pack.name)}</strong><small>${escapeHtml(pack.description)} · ${pack.spectra.length} spectra</small>`;
+      copy.innerHTML =
+        `<strong>${escapeHtml(pack.name)}</strong><small>${escapeHtml(pack.description)} · ${pack.spectra.length} spectra</small>`;
+
       label.append(input, copy);
       els.packControls.appendChild(label);
     }
@@ -486,25 +719,92 @@
 
   function renderCustomList() {
     els.customSpectrumList.innerHTML = "";
-    state.customSpectra.forEach((s,i) => {
+    state.customSpectra.forEach((s, i) => {
       const item = document.createElement("div");
       item.className = "custom-item";
-      item.innerHTML = `<span><strong>${escapeHtml(s.left)}</strong> ↔ <strong>${escapeHtml(s.right)}</strong></span>`;
+      item.innerHTML =
+        `<span><strong>${escapeHtml(s.left)}</strong> ↔ <strong>${escapeHtml(s.right)}</strong></span>`;
+
       const btn = document.createElement("button");
       btn.className = "mini-button";
       btn.type = "button";
       btn.textContent = "remove";
       btn.addEventListener("click", () => {
-        state.customSpectra.splice(i,1);
+        state.customSpectra.splice(i, 1);
         saveState();
         renderCustomList();
       });
+
       item.appendChild(btn);
       els.customSpectrumList.appendChild(item);
     });
   }
 
-  // Modal wiring
+  function selectedModeFromSetup() {
+    return document.querySelector('input[name="gameMode"]:checked')?.value === "cooperative"
+      ? "cooperative"
+      : "competitive";
+  }
+
+  function updateCoopMathHint() {
+    const rounds = positiveInt(els.coopRoundsInput.value, 8, 50);
+    const target = positiveInt(els.coopTargetInput.value, 20, 200);
+    const max = 4 * rounds;
+    const avg = target / rounds;
+
+    els.coopMathHint.classList.remove("hidden", "warning", "impossible", "good");
+
+    if (target > max) {
+      els.coopMathHint.classList.add("impossible");
+      els.coopMathHint.textContent =
+        `Impossible as set: ${rounds} rounds can score at most ${max} points.`;
+    } else if (avg > 3) {
+      els.coopMathHint.classList.add("warning");
+      els.coopMathHint.textContent =
+        `Hard challenge: you need ${avg.toFixed(1)} points per round on average (maximum is 4).`;
+    } else {
+      els.coopMathHint.classList.add("good");
+      els.coopMathHint.textContent =
+        `You need ${avg.toFixed(1)} points per round on average; maximum possible is ${max}.`;
+    }
+  }
+
+  function syncSetupMode() {
+    const mode = selectedModeFromSetup();
+    const coop = mode === "cooperative";
+
+    els.teamBCard.classList.toggle("hidden", coop);
+    els.competitiveSettings.classList.toggle("hidden", coop);
+    els.cooperativeSettings.classList.toggle("hidden", !coop);
+    els.coopMathHint.classList.toggle("hidden", !coop);
+
+    els.teamANameLabel.textContent = coop ? "Group name" : "Team A name";
+    els.teamAPlayersLabel.textContent = coop ? "Players" : "Team A players";
+    els.setupTitle.textContent = coop ? "Cooperative challenge" : "Competitive match";
+    els.setupIntro.textContent = coop
+      ? "Everyone shares one score. Psychics rotate through the group while you chase a target within a fixed number of rounds."
+      : "Two teams alternate psychics and race to the winning score.";
+
+    els.saveSetupBtn.textContent = coop ? "Start challenge" : "Start match";
+    if (coop) updateCoopMathHint();
+  }
+
+  function populateSetup() {
+    const radio = document.querySelector(`input[name="gameMode"][value="${state.mode}"]`);
+    if (radio) radio.checked = true;
+
+    els.teamANameInput.value = state.teams[0].name;
+    els.teamBNameInput.value = state.teams[1].name;
+    els.teamAPlayersInput.value = state.teams[0].players.join(", ");
+    els.teamBPlayersInput.value = state.teams[1].players.join(", ");
+    els.winningScoreInput.value = state.winningScore;
+    els.catchupInput.checked = state.catchup;
+    els.coopTargetInput.value = state.coopTargetScore;
+    els.coopRoundsInput.value = state.coopRoundLimit;
+    els.setupStatus.textContent = "";
+    syncSetupMode();
+  }
+
   document.querySelectorAll("[data-open]").forEach(btn => {
     btn.addEventListener("click", () => {
       const dialog = document.getElementById(btn.dataset.open);
@@ -516,34 +816,78 @@
       openModal(dialog);
     });
   });
+
   document.querySelectorAll("[data-close]").forEach(btn => {
     btn.addEventListener("click", () => closeModal(btn.closest("dialog")));
   });
 
-  function populateSetup() {
-    els.teamANameInput.value = state.teams[0].name;
-    els.teamBNameInput.value = state.teams[1].name;
-    els.teamAPlayersInput.value = state.teams[0].players.join(", ");
-    els.teamBPlayersInput.value = state.teams[1].players.join(", ");
-    els.winningScoreInput.value = state.winningScore;
-    els.catchupInput.checked = state.catchup;
-    els.setupStatus.textContent = "";
-  }
+  document.querySelectorAll('input[name="gameMode"]').forEach(input => {
+    input.addEventListener("change", syncSetupMode);
+  });
+  els.coopTargetInput.addEventListener("input", updateCoopMathHint);
+  els.coopRoundsInput.addEventListener("input", updateCoopMathHint);
 
   els.saveSetupBtn.addEventListener("click", () => {
+    const mode = selectedModeFromSetup();
     const pA = parsePlayers(els.teamAPlayersInput.value);
     const pB = parsePlayers(els.teamBPlayersInput.value);
-    if (!pA.length || !pB.length) {
-      els.setupStatus.textContent = "Add at least one player to each team.";
-      return;
+
+    if (mode === "cooperative") {
+      if (pA.length < 2) {
+        els.setupStatus.textContent = "Add at least two players for cooperative mode.";
+        return;
+      }
+
+      const rounds = positiveInt(els.coopRoundsInput.value, 8, 50);
+      const target = positiveInt(els.coopTargetInput.value, 20, 200);
+      if (target > rounds * 4) {
+        els.setupStatus.textContent =
+          `That target is impossible: ${rounds} rounds can score at most ${rounds * 4} points.`;
+        return;
+      }
+
+      state.mode = "cooperative";
+      state.teams[0] = {
+        name: cleanName(els.teamANameInput.value, "Everyone"),
+        players: pA,
+        score: 0,
+        psychicIndex: 0
+      };
+      state.teams[1] = {
+        name: cleanName(els.teamBNameInput.value, "Team B"),
+        players: pB,
+        score: 0,
+        psychicIndex: 0
+      };
+      state.coopTargetScore = target;
+      state.coopRoundLimit = rounds;
+    } else {
+      if (!pA.length || !pB.length) {
+        els.setupStatus.textContent = "Add at least one player to each team.";
+        return;
+      }
+
+      state.mode = "competitive";
+      state.teams[0] = {
+        name: cleanName(els.teamANameInput.value, "Team A"),
+        players: pA,
+        score: 0,
+        psychicIndex: 0
+      };
+      state.teams[1] = {
+        name: cleanName(els.teamBNameInput.value, "Team B"),
+        players: pB,
+        score: 0,
+        psychicIndex: 0
+      };
+      state.winningScore = positiveInt(els.winningScoreInput.value, 10, 50);
+      state.catchup = els.catchupInput.checked;
     }
-    state.teams[0] = { name: cleanName(els.teamANameInput.value,"Team A"), players:pA, score:0, psychicIndex:0 };
-    state.teams[1] = { name: cleanName(els.teamBNameInput.value,"Team B"), players:pB, score:0, psychicIndex:0 };
-    state.winningScore = Math.max(1, Math.min(50, Number(els.winningScoreInput.value) || 10));
-    state.catchup = els.catchupInput.checked;
+
     state.activeTeam = 0;
     state.round = 1;
     state.lastRoundSnapshot = null;
+    state.coopChallengeEnded = false;
     closeModal(els.setupModal);
     startRound(true);
   });
@@ -587,36 +931,39 @@
     els.clueInput.focus();
   });
 
-  // Dial pointer interaction
-  els.dial.addEventListener("pointerdown", (e) => {
+  els.dial.addEventListener("pointerdown", event => {
     if (state.phase !== "guess") return;
     dragging = true;
     els.dial.classList.add("dragging");
-    els.dial.setPointerCapture?.(e.pointerId);
-    setNeedleFromPointer(e);
+    els.dial.setPointerCapture?.(event.pointerId);
+    setNeedleFromPointer(event);
   });
-  els.dial.addEventListener("pointermove", (e) => {
+
+  els.dial.addEventListener("pointermove", event => {
     if (!dragging || state.phase !== "guess") return;
-    setNeedleFromPointer(e);
+    setNeedleFromPointer(event);
   });
-  function endDrag(e) {
+
+  function endDrag(event) {
     if (!dragging) return;
     dragging = false;
     els.dial.classList.remove("dragging");
-    try { els.dial.releasePointerCapture?.(e.pointerId); } catch {}
+    try { els.dial.releasePointerCapture?.(event.pointerId); } catch {}
     saveState();
   }
+
   els.dial.addEventListener("pointerup", endDrag);
   els.dial.addEventListener("pointercancel", endDrag);
 
   els.lockGuessBtn.addEventListener("click", () => {
-    state.phase = "opponent";
+    state.phase = isCoop() ? "reveal" : "opponent";
     saveState();
     render();
   });
 
   document.querySelectorAll("[data-direction]").forEach(btn => {
     btn.addEventListener("click", () => {
+      if (isCoop()) return;
       state.opponentGuess = btn.dataset.direction;
       state.phase = "reveal";
       saveState();
@@ -627,15 +974,18 @@
   els.revealScoreBtn.addEventListener("click", revealAndScore);
   els.nextRoundBtn.addEventListener("click", advanceRound);
   els.undoBtn.addEventListener("click", undoRound);
+
   els.resetBtn.addEventListener("click", () => {
-    if (confirm("Reset scores and start a new match with the same teams?")) resetMatch(true);
+    const noun = isCoop() ? "challenge" : "match";
+    if (confirm(`Reset the ${noun} with the same players?`)) resetMatch(true);
   });
 
-  els.customSpectrumForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const left = cleanName(els.customLeftInput.value,"");
-    const right = cleanName(els.customRightInput.value,"");
+  els.customSpectrumForm.addEventListener("submit", event => {
+    event.preventDefault();
+    const left = cleanName(els.customLeftInput.value, "");
+    const right = cleanName(els.customRightInput.value, "");
     if (!left || !right) return;
+
     state.customSpectra.push({ left, right });
     els.customLeftInput.value = "";
     els.customRightInput.value = "";
@@ -654,11 +1004,15 @@
     resetMatch(true);
   });
 
-  // Close dialogs by clicking the backdrop.
   document.querySelectorAll("dialog").forEach(dialog => {
-    dialog.addEventListener("click", (e) => {
+    dialog.addEventListener("click", event => {
       const rect = dialog.getBoundingClientRect();
-      const inside = e.clientX >= rect.left && e.clientX <= rect.right && e.clientY >= rect.top && e.clientY <= rect.bottom;
+      const inside =
+        event.clientX >= rect.left &&
+        event.clientX <= rect.right &&
+        event.clientY >= rect.top &&
+        event.clientY <= rect.bottom;
+
       if (!inside) dialog.close();
     });
   });

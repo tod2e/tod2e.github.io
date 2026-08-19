@@ -1,68 +1,44 @@
-# Same Wavelength
+# Same Wavelength v2
 
-A static, GitHub-Pages-ready spectrum guessing party game.
+Static GitHub Pages spectrum-clue party game.
 
-## What this version does
+## Modes
 
-- Two-team pass-the-device play
-- Automatic psychic rotation through player lists
-- Private target reveal for the psychic
-- Touch/mouse draggable semicircle dial
-- 2 / 3 / 4 point accuracy bands
-- Opposing team's left/right bonus guess
-- Optional catch-up turn after a 4-point hit while behind
-- First-to-N match scoring
-- Original spectrum prompt packs
-- Custom user-added spectrum pairs
-- `localStorage` persistence
-- Undo last scored round
-- No frameworks, build step, account, server, or external assets
+### Competitive
+Two teams alternate psychics, score 0/2/3/4 for dial accuracy, and the opposing team can earn a 1-point left/right prediction bonus.
 
-## Drop it into your existing repo
+### Cooperative
+Everyone shares one score. Psychics rotate through the group. Choose:
+- a target number of points
+- a round limit
 
-Copy this directory into:
+The goal is to reach the target within the round limit. The setup screen warns if the target is impossible (`target > 4 × rounds`).
 
-    /wavelength/
+## Prompt packs
 
-Then it will be available at:
+v2 includes 10 original packs / 120 built-in spectra:
 
-    https://tod2e.github.io/wavelength/
+- Everyday
+- Food & drink
+- People
+- Chaos
+- Dating & romance
+- Work & ambition
+- Internet & culture
+- Travel
+- Science & nerdy
+- British life
 
-The "All games" button points to `../`, so it will return to your repository root.
+Custom spectra are still supported.
 
-## Suggested repo structure when you add more games
+## Upload
 
-    /
-    ├── index.html              # game chooser / arcade home
-    ├── shared/
-    │   ├── hub.css
-    │   └── ...
-    ├── truth-or-drink/
-    │   ├── index.html
-    │   ├── styles.css
-    │   ├── script.js
-    │   └── cards/
-    └── wavelength/
-        ├── index.html
-        ├── styles.css
-        ├── spectra.js
-        └── script.js
+Replace the contents of your repository's `/wavelength/` folder with:
 
-For the least disruptive first step, keep Truth or Drink at the root for now and only add `/wavelength/`.
-When you are ready to add a third game, move Truth or Drink into `/truth-or-drink/` and turn `/index.html` into the launcher.
+- `index.html`
+- `styles.css`
+- `script.js`
+- `spectra.js`
+- `README.md`
 
-## Local test
-
-From the repository root:
-
-    python3 -m http.server 8000
-
-Then visit:
-
-    http://localhost:8000/wavelength/
-
-## Notes on prompts / branding
-
-The prompt deck in `spectra.js` was written specifically for this implementation rather than copied from a commercial card deck. The UI also uses no official artwork or assets.
-
-If you publish this broadly, consider branding the project as "Same Wavelength", "Spectrum", or another original title while describing it as a spectrum-clue party game.
+Then hard-refresh the page (`Ctrl+Shift+R`) because GitHub Pages/browser CSS and JS may be cached.

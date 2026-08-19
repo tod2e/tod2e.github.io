@@ -16,7 +16,7 @@
       </div>
       <nav class="top-actions" aria-label="Game controls">
         <a class="chip-button link-button" href="../">All games</a>
-        <button class="chip-button" type="button" data-open="setupModal">Teams</button>
+        <button class="chip-button" type="button" data-open="setupModal">Setup</button>
         <button class="chip-button" type="button" data-open="spectraModal">Spectra</button>
         <button class="chip-button" type="button" data-open="rulesModal">Rules</button>
       </nav>
@@ -167,29 +167,46 @@
   <dialog id="setupModal" class="modal-card">
     <button class="modal-close" type="button" data-close aria-label="Close">×</button>
     <p class="eyebrow">Before you start</p>
-    <h2>Teams &amp; players</h2>
-    <p class="modal-intro">Players rotate through the psychic role automatically. Two players total is enough.</p>
+    <h2 id="setupTitle">Game setup</h2>
+    <p id="setupIntro" class="modal-intro">Choose competitive or cooperative play, then add the people at the table.</p>
+
+    <div class="mode-grid" role="radiogroup" aria-label="Game mode">
+      <label class="mode-option">
+        <input type="radio" name="gameMode" value="competitive" checked />
+        <span>
+          <strong>Competitive</strong>
+          <small>Two teams race to a winning score.</small>
+        </span>
+      </label>
+      <label class="mode-option">
+        <input type="radio" name="gameMode" value="cooperative" />
+        <span>
+          <strong>Cooperative</strong>
+          <small>Everyone tries to hit a target score within a fixed number of rounds.</small>
+        </span>
+      </label>
+    </div>
 
     <div class="team-setup-grid">
-      <section class="team-setup-card">
-        <label>Team A name
+      <section id="teamACard" class="team-setup-card">
+        <label><span id="teamANameLabel">Team A name</span>
           <input id="teamANameInput" type="text" maxlength="24" value="Team A" />
         </label>
-        <label>Players <small>comma or new-line separated</small>
+        <label><span id="teamAPlayersLabel">Team A players</span> <small>comma or new-line separated</small>
           <textarea id="teamAPlayersInput" rows="5" placeholder="Ben, Alex, Maya"></textarea>
         </label>
       </section>
-      <section class="team-setup-card">
+      <section id="teamBCard" class="team-setup-card">
         <label>Team B name
           <input id="teamBNameInput" type="text" maxlength="24" value="Team B" />
         </label>
-        <label>Players <small>comma or new-line separated</small>
+        <label>Team B players <small>comma or new-line separated</small>
           <textarea id="teamBPlayersInput" rows="5" placeholder="Sam, Jo, Priya"></textarea>
         </label>
       </section>
     </div>
 
-    <div class="settings-row">
+    <div id="competitiveSettings" class="settings-row">
       <label class="field-card">Winning score
         <input id="winningScoreInput" type="number" min="1" max="50" value="10" />
       </label>
@@ -201,6 +218,16 @@
         </span>
       </label>
     </div>
+
+    <div id="cooperativeSettings" class="settings-row hidden">
+      <label class="field-card">Target points
+        <input id="coopTargetInput" type="number" min="1" max="200" value="20" />
+      </label>
+      <label class="field-card">Rounds
+        <input id="coopRoundsInput" type="number" min="1" max="50" value="8" />
+      </label>
+    </div>
+    <p id="coopMathHint" class="status-line hidden"></p>
 
     <div class="button-row modal-actions">
       <button id="saveSetupBtn" class="primary-button" type="button">Start match</button>
@@ -230,13 +257,21 @@
     <button class="modal-close" type="button" data-close aria-label="Close">×</button>
     <p class="eyebrow">How to play</p>
     <h2>Read the room</h2>
+
+    <h3>Every round</h3>
     <div class="rule-steps">
       <div><strong>1</strong><span>The psychic privately sees a hidden target on a spectrum.</span></div>
       <div><strong>2</strong><span>They give one clue that should land near that target.</span></div>
-      <div><strong>3</strong><span>Their team moves the needle without seeing the target.</span></div>
-      <div><strong>4</strong><span>The other team bets whether the target is left or right of the needle.</span></div>
-      <div><strong>5</strong><span>Reveal: active team scores 2–4 for accuracy; the other team can earn 1 for direction.</span></div>
+      <div><strong>3</strong><span>Everyone else moves the needle without seeing the target.</span></div>
+      <div><strong>4</strong><span>Reveal: the guessing side scores 2–4 points depending on accuracy.</span></div>
     </div>
+
+    <h3>Competitive</h3>
+    <p class="modal-intro">Two teams alternate. Before the reveal, the other team predicts whether the target is left or right of the locked needle; a correct prediction earns 1 point unless the active team hit the 4-point centre.</p>
+
+    <h3>Cooperative</h3>
+    <p class="modal-intro">Everyone shares one score. The psychic rotates through the whole group. There is no opponent prediction: your challenge is to reach the chosen point target within the chosen number of rounds.</p>
+
     <p class="modal-intro legal-note">This is an independently implemented spectrum-clue party game and uses no official artwork or card text.</p>
   </dialog>
 
