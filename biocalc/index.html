@@ -1,0 +1,62 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>BioCalc</title><link rel="stylesheet" href="styles.css"></head>
+<body><main class="shell"><header class="topbar"><a class="brand" href="./">BioCalc<small>bench calculations without the napkin maths</small></a><nav class="nav"><a class="pill" href="../">All games & tools</a><button class="pill" id="helpBtn">Notes</button></nav></header>
+<section class="hero"><p class="eyebrow">Lab utility</p><h1>BioCalc</h1><p class="lede">Recipes, multicomponent mixtures, Beer–Lambert concentration, sequence-derived A280 estimates, and the small calculations that otherwise end up scattered across notebooks.</p></section>
+<div class="tooltabs">
+<button class="tabbtn active" data-tab="recipes">Recipes</button><button class="tabbtn" data-tab="mix">Mix builder</button><button class="tabbtn" data-tab="a280">A280 / concentration</button><button class="tabbtn" data-tab="quick">Quick calculators</button>
+</div>
+
+<section class="panel tabview" id="tab-recipes">
+<div class="row between"><div><p class="eyebrow">Scalable formulations</p><h2>Recipe library</h2></div><div class="actions"><button class="secondary" id="exportRecipes">Export custom recipes</button><button class="primary" id="addRecipeBtn">Add custom recipe</button></div></div>
+<div class="notice warn">The built-in recipes are common starter formulations, not a claim about your lab's exact protocol. When you provide your protocols/theses, these can be replaced or supplemented with the formulations actually used in your work.</div>
+<div class="grid2">
+<div class="stack"><label class="field">Filter recipes<input id="recipeSearch" placeholder="PBS, M9, broth…"></label><div class="recipe-list" id="recipeList"></div></div>
+<div class="stack">
+<div class="grid2"><label class="field">Target volume<input id="recipeVolume" type="number" min="0.001" step="any" value="500"></label><label class="field">Unit<select id="recipeVolumeUnit"><option>mL</option><option>µL</option><option>L</option></select></label></div>
+<div class="subpanel"><p class="eyebrow" id="recipeCategory"></p><h2 id="recipeName">Choose a recipe</h2><p class="muted" id="recipeNote"></p><div id="recipeSubrecipe" class="notice hidden"></div></div>
+<div class="tablewrap"><table><thead><tr><th>Component</th><th>For target volume</th><th>Notes</th></tr></thead><tbody id="recipeTable"></tbody></table></div>
+<div class="subpanel"><h3>Procedure</h3><ol id="recipeInstructions" class="muted"></ol></div>
+</div></div>
+</section>
+
+<section class="panel tabview hidden" id="tab-mix">
+<div class="row between"><div><p class="eyebrow">C1V1, but for an entire tube</p><h2>Multicomponent mix builder</h2></div><button class="primary" id="addMixRow">Add component</button></div>
+<div class="segment" style="max-width:600px"><button class="active" data-mixmode="target">Final concentrations → volumes</button><button data-mixmode="reverse">Volumes → final concentrations</button></div>
+<div class="grid3"><label class="field">Final total volume<input id="mixTotalVolume" type="number" value="500" min="0" step="any"></label><label class="field">Volume unit<select id="mixTotalUnit"><option>µL</option><option>mL</option><option>L</option></select></label><div class="field"><span>Rule</span><div class="notice">Mass ↔ molar conversion is supported when molecular weight is supplied.</div></div></div>
+<div class="tablewrap"><table><thead><tr><th>Component</th><th>Stock</th><th>Stock unit</th><th>MW (kDa)</th><th id="mixGoalHead">Wanted final</th><th id="mixGoalUnitHead">Final unit</th><th id="mixVolHead">Volume to add (µL)</th><th></th></tr></thead><tbody id="mixRows"></tbody></table></div>
+<div id="mixWarning" class="notice"></div>
+<div class="statgrid"><div class="stat"><span>Components</span><strong id="mixComponentCount">0</strong></div><div class="stat"><span>Stock volume</span><strong id="mixStockTotal">0 µL</strong></div><div class="stat"><span>Diluent</span><strong id="mixDiluent">—</strong></div><div class="stat"><span>Total</span><strong id="mixFinalTotal">—</strong></div></div>
+<div class="actions"><button class="secondary" id="copyMix">Copy recipe</button><button class="secondary" id="downloadMix">Download CSV</button></div>
+</section>
+
+<section class="panel tabview hidden" id="tab-a280">
+<div class="grid2">
+<div class="stack"><div><p class="eyebrow">Beer–Lambert</p><h2>Absorbance → concentration</h2></div>
+<div class="grid2"><label class="field">Measured absorbance A<input id="absA" type="number" step="any" value="0.8"></label><label class="field">Blank absorbance<input id="absBlank" type="number" step="any" value="0"></label></div>
+<div class="grid2"><label class="field">Path length (cm)<input id="absPath" type="number" step="any" value="1"></label><label class="field">Dilution factor<input id="absDilution" type="number" step="any" value="1"></label></div>
+<div class="grid2"><label class="field">Molar extinction coefficient ε <small>M⁻¹ cm⁻¹</small><input id="absEpsilon" type="number" step="any" value="14900"></label><label class="field">Molecular weight (kDa)<input id="absMw" type="number" step="any" value="15"></label></div>
+<div class="statgrid"><div class="stat"><span>Concentration</span><strong id="absUM">— µM</strong></div><div class="stat"><span>Mass concentration</span><strong id="absMgMl">— mg/mL</strong></div><div class="stat"><span>Corrected A</span><strong id="absCorrected">—</strong></div><div class="stat"><span>Molar</span><strong id="absMolar">— M</strong></div></div>
+<div id="absWarn" class="notice"></div></div>
+
+<div class="stack"><div><p class="eyebrow">Sequence helper</p><h2>Estimate ε280 & MW from sequence</h2></div>
+<label class="field">Protein sequence<textarea id="seqInput" rows="8" placeholder="Paste one-letter amino-acid sequence; whitespace/numbers are ignored"></textarea></label>
+<label class="field">Cysteine treatment<select id="cysMode"><option value="reduced">Reduced cysteines (no cystine contribution)</option><option value="pairs">Assume cysteines form maximal disulfide pairs</option></select></label>
+<div class="statgrid"><div class="stat"><span>Residues</span><strong id="seqN">0</strong></div><div class="stat"><span>Trp / Tyr / Cys</span><strong id="seqCounts">0 / 0 / 0</strong></div><div class="stat"><span>Estimated ε280</span><strong id="seqEpsilon">0</strong></div><div class="stat"><span>Estimated MW</span><strong id="seqMw">0 kDa</strong></div></div>
+<div class="actions"><button class="primary" id="useSequence">Use sequence values above</button></div>
+<div class="notice">Sequence estimates use average residue masses plus terminal water and the common protein A280 approximation ε280 = 5500·Trp + 1490·Tyr + 125·cystine. For quantitative work, use the extinction coefficient appropriate to your protein's actual oxidation state and experimental conditions.</div></div>
+</div>
+</section>
+
+<section class="panel tabview hidden" id="tab-quick">
+<div><p class="eyebrow">Bench arithmetic</p><h2>Quick calculators</h2></div>
+<div class="grid2">
+<div class="subpanel stack"><h3>Dilution: solve V1</h3><div class="grid2"><label class="field">Stock concentration<input id="qC1" type="number" value="500"></label><label class="field">Final concentration<input id="qC2" type="number" value="50"></label><label class="field">Final volume<input id="qV2" type="number" value="500"></label><label class="field">Volume unit<select id="qVUnit"><option>µL</option><option>mL</option></select></label></div><div class="bigresult"><span>Stock volume</span><strong id="qV1">50 µL</strong></div></div>
+<div class="subpanel stack"><h3>µM ↔ mg/mL</h3><div class="grid2"><label class="field">Concentration (µM)<input id="qUM" type="number" value="100"></label><label class="field">MW (kDa)<input id="qMW" type="number" value="25"></label></div><div class="bigresult"><span>Mass concentration</span><strong id="qMass">2.5 mg/mL</strong></div></div>
+<div class="subpanel stack"><h3>Molecules in a sample</h3><div class="grid2"><label class="field">Concentration (µM)<input id="qMolConc" type="number" value="50"></label><label class="field">Volume (µL)<input id="qMolVol" type="number" value="200"></label></div><div class="bigresult"><span>Number of molecules</span><strong id="qMolecules">—</strong></div></div>
+<div class="subpanel stack"><h3>Serial dilution</h3><div class="grid3"><label class="field">Starting concentration<input id="serialStart" type="number" value="1000"></label><label class="field">Fold dilution<input id="serialFold" type="number" value="2"></label><label class="field">Steps<input id="serialSteps" type="number" value="8"></label></div><div class="notice" id="serialOut"></div></div>
+</div>
+</section>
+</main>
+
+<dialog class="modal" id="helpModal"><button class="close" data-close>×</button><p class="eyebrow">Design note</p><h2>BioCalc is intentionally extensible</h2><p class="muted">The generic formulations live in <span class="kbd">recipes.js</span>. Custom recipes are stored in your browser. Once your lab protocols and theses are supplied, the built-in library can be rebuilt around the exact recipes you use, including preparation order, stock sub-recipes, sterilisation notes, pH, supplements and citations back to the source protocol.</p></dialog>
+<dialog class="modal" id="recipeModal"><button class="close" data-close>×</button><p class="eyebrow">Custom formulation</p><h2>Add recipe</h2><div class="stack"><label class="field">Name<input id="customRecipeName"></label><div class="grid2"><label class="field">Base volume<input id="customRecipeBase" type="number" value="1000"></label><label class="field">Base unit<select id="customRecipeBaseUnit"><option>mL</option><option>L</option></select></label></div><label class="field">Components <small>One per line: name | amount | unit | optional note</small><textarea id="customRecipeComponents" rows="7" placeholder="NaCl | 8 | g |&#10;Tris | 3.03 | g | 25 mM"></textarea></label><label class="field">Instructions <small>One step per line</small><textarea id="customRecipeInstructions" rows="5"></textarea></label><button class="primary" id="saveCustomRecipe">Save recipe</button><p id="customRecipeStatus" class="status"></p></div></dialog>
+<script src="recipes.js"></script><script src="script.js"></script></body></html>
