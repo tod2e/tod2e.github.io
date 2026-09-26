@@ -18,7 +18,7 @@
 
     <main>
       <div class="intro">
-        <p>A few games. A few useful tools.</p>
+        <p>Games and useful tools for your browser.</p>
         <button id="randomBtn" class="text-button" type="button" hidden>Random game <span aria-hidden="true">↗</span></button>
       </div>
 
@@ -36,13 +36,14 @@
             <kbd aria-hidden="true">/</kbd>
           </label>
         </div>
-        <p id="catalogCount" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></p>
+        <p id="catalogCount" class="catalog-count" role="status" aria-live="polite" aria-atomic="true"></p>
         <p id="pinStatus" class="pin-status" role="status" hidden></p>
         <div id="catalogGroups"></div>
+        <button id="catalogMore" class="text-button catalog-more" type="button" aria-controls="catalogGroups" aria-expanded="false" hidden>Show all</button>
         <div id="emptyState" class="empty-state" hidden>
           <h2 id="emptyTitle">No matches.</h2>
           <p id="emptyHelp">Try a different search or choose another category.</p>
-          <button id="resetBtn" class="text-button" type="button">Show everything <span aria-hidden="true">↗</span></button>
+          <button id="resetBtn" class="text-button" type="button">Clear search and filters <span aria-hidden="true">↗</span></button>
         </div>
         <noscript>
           <section class="fallback">
