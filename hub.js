@@ -4,6 +4,9 @@
   const search = document.getElementById("searchInput");
   const count = document.getElementById("catalogCount");
   const empty = document.getElementById("emptyState");
+  const more = document.getElementById("catalogMore");
+  const previewLimit = 6;
+  let expanded = false;
   const randomBtn = document.getElementById("randomBtn");
   const pinStatus = document.getElementById("pinStatus");
   const filters = [...document.querySelectorAll("[data-filter]")];
@@ -39,6 +42,7 @@
 
   function entryFor(item) {
     const entry = element("li", "entry");
+    entry.dataset.appId = item.id;
     const link = element("a", "entry-link");
     link.href = item.href;
     link.append(
@@ -89,14 +93,30 @@
     return group;
   }
 
+  function preview(items) {
+    if (activeFilter !== "all") return items.slice(0, previewLimit);
+    // Keep both categories discoverable in the six-entry overview.
+    const selected = new Set([
+      ...items.filter(item => item.type === "game").slice(0, 4),
+      ...items.filter(item => item.type === "tool").slice(0, 2)
+    ]);
+    for (const item of items) {
+      if (selected.size >= previewLimit) break;
+      selected.add(item);
+    }
+    return items.filter(item => selected.has(item));
+  }
+
   function render() {
     const query = lower(search.value).trim();
     const items = catalog.filter(item => {
       const matchesType = activeFilter === "all" || item.type === activeFilter || (activeFilter === "pinned" && pinned.has(item.id));
       return matchesType && (!query || searchText.get(item.id).includes(query));
     });
+    const canExpand = !query && items.length > previewLimit;
+    const visible = canExpand && !expanded ? preview(items) : items;
     groups.replaceChildren(...sections.flatMap(section => {
-      const matches = items.filter(item => item.type === section.type);
+      const matches = visible.filter(item => item.type === section.type);
       return matches.length ? [groupFor(section, matches)] : [];
     }));
     empty.hidden = items.length !== 0;
@@ -105,17 +125,37 @@
     document.getElementById("emptyHelp").textContent = noPins ? "Use the star next to a game or tool to keep it here." : "Try a different search or choose another category.";
     const games = items.filter(item => item.type === "game").length;
     const tools = items.filter(item => item.type === "tool").length;
-    count.textContent = items.length ? `${plural(games, "game")} and ${plural(tools, "tool")} shown.` : (noPins ? "Nothing pinned yet." : "No matches.");
+    const kind = activeFilter === "game" ? "games" : activeFilter === "tool" ? "tools" : "games and tools";
+    count.textContent = visible.length < items.length
+      ? `Showing ${visible.length} of ${items.length} ${kind}.`
+      : items.length ? `${plural(games, "game")} and ${plural(tools, "tool")} shown.` : (noPins ? "Nothing pinned yet." : "No matches.");
+    more.hidden = !canExpand;
+    more.textContent = expanded ? "Show fewer" : `Show all ${items.length}`;
+    more.setAttribute("aria-expanded", String(canExpand && expanded));
     filters.forEach(button => button.setAttribute("aria-pressed", String(button.dataset.filter === activeFilter)));
   }
 
+  more.addEventListener("click", () => {
+    const previousIds = new Set([...groups.querySelectorAll(".entry")].map(entry => entry.dataset.appId));
+    expanded = !expanded;
+    render();
+    if (expanded) {
+      // Start keyboard reading at the first newly revealed entry.
+      [...groups.querySelectorAll(".entry")].find(entry => !previousIds.has(entry.dataset.appId))?.querySelector(".entry-link").focus();
+    }
+  });
   filters.forEach(button => button.addEventListener("click", () => {
+    expanded = false;
     activeFilter = button.dataset.filter;
     render();
   }));
-  search.addEventListener("input", render);
+  search.addEventListener("input", () => {
+    expanded = false;
+    render();
+  });
   document.getElementById("resetBtn").addEventListener("click", () => {
     search.value = "";
+    expanded = false;
     activeFilter = "all";
     render();
     search.focus();
@@ -128,6 +168,7 @@
       search.focus();
     }
     if (event.key === "Escape" && document.activeElement === search) {
+      expanded = false;
       search.value = "";
       render();
       search.blur();

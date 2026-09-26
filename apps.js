@@ -1,52 +1,52 @@
 window.APP_CATALOG = [
   {
     id: "truth-or-drink", type: "game", title: "Truth or Drink", href: "./truth-or-drink/",
-    meta: "2+ players · questions", description: "Draw a question and choose who answers. How honest are you feeling?",
+    meta: "2+ players · questions", description: "Draw a question and choose who answers.",
     detail: "396 cards · saves your session"
   },
   {
     id: "same-wavelength", type: "game", title: "Same Wavelength", href: "./wavelength/",
-    meta: "4+ recommended · teams", description: "One clue, two extremes. Try to land the dial where your teammate is thinking.",
+    meta: "4+ recommended · teams", description: "Use one clue to place the dial where your teammate is thinking.",
     detail: "Teams or co-op"
   },
   {
     id: "fishbowl", type: "game", title: "Fishbowl", href: "./fishbowl/",
-    meta: "4+ players · teams", description: "Describe it, say one word, then act it out. The same phrases get harder each round.",
+    meta: "4+ players · teams", description: "Guess the same phrases across three rounds of descriptions, one-word clues, and acting.",
     detail: "Timed turns · add your own phrases"
   },
   {
     id: "rank-the-room", type: "game", title: "Rank the Room", href: "./rank-the-room/",
-    meta: "3+ players · rankings", description: "Rank your friends in private, then compare answers. Someone will disagree.",
+    meta: "3+ players · rankings", description: "Rank your friends in private, then compare answers.",
     detail: "Private rankings · group results"
   },
   {
     id: "impostor-word", type: "game", title: "Impostor Word", href: "./impostor-word/",
-    meta: "4+ players · deduction", description: "Everyone gets the same word. One person gets nothing. Find out who's bluffing.",
+    meta: "4+ players · deduction", description: "Give clues to a shared word and catch the player bluffing without it.",
     detail: "Secret roles · clues · voting"
   },
   {
     id: "telephone-drawing", type: "game", title: "Telephone Drawing", href: "./telephone-drawing/",
-    meta: "4+ players · drawing", description: "Write a phrase, pass it on, draw what you read. See what survives by the end.",
+    meta: "4+ players · drawing", description: "Pass a phrase around through drawings and guesses, then reveal what survived.",
     detail: "Draw on screen · reveal the chain"
   },
   {
     id: "bluff-box", type: "game", title: "Bluff Box", href: "./bluff-box/",
-    meta: "3+ players · trivia", description: "Make up a believable answer to an obscure question. Get points when people fall for it.",
+    meta: "3+ players · trivia", description: "Invent answers to obscure questions and score points when others believe them.",
     detail: "20 questions · fake answers welcome"
   },
   {
     id: "categories", type: "game", title: "Categories", href: "./categories/",
-    meta: "2+ players · quick thinking", description: "One letter, five categories, and a ticking clock. Compare answers when time runs out.",
+    meta: "2+ players · quick thinking", description: "Race to fill five categories with one starting letter, then compare answers.",
     detail: "General · science · baseball · custom categories"
   },
   {
     id: "codebreaker", type: "game", title: "Codebreaker", href: "./codebreaker/",
-    meta: "Solo · logic", description: "Crack a four-digit code. Each guess tells you which digits are right and which are in the wrong place.",
+    meta: "Solo · logic", description: "Crack a four-digit code using feedback on correct and misplaced digits.",
     detail: "Daily puzzle · random practice · saved daily progress"
   },
   {
     id: "connect-four", type: "game", title: "Connect Four", href: "./connect-four/",
-    meta: "1–2 players · strategy", description: "Get four in a row before your opponent. Play the computer or someone next to you.",
+    meta: "1–2 players · strategy", description: "Get four in a row against the computer or someone next to you.",
     detail: "Match scores · three computer difficulties"
   },
   {
@@ -71,7 +71,7 @@ window.APP_CATALOG = [
   },
   {
     id: "lab-timers", type: "tool", title: "Lab Timers", href: "./lab-timers/",
-    meta: "Lab · timing", description: "Keep track of several incubations at once with named timers that remember where you left off.",
+    meta: "Lab · timing", description: "Run several named incubation timers that remember where you left off.",
     detail: "Quick presets · multiple timers · optional sound"
   },
   {
