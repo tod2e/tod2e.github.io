@@ -2,6 +2,7 @@
   const manifest = window.CARD_MANIFEST;
   const cards = manifest.cards;
   const categories = manifest.categories;
+  const cardsById = new Map(cards.map(card => [card.id, card]));
   const storageKey = 'truthOrDrinkState:v4';
 
   const categoryDescriptions = {
@@ -72,6 +73,7 @@
     deckStatus: document.getElementById('deckStatus'),
 
     discardGrid: document.getElementById('discardGrid'),
+    discardModal: document.getElementById('discardModal'),
     winnerModal: document.getElementById('winnerModal'),
     winnerText: document.getElementById('winnerText'),
     winnerContinueBtn: document.getElementById('winnerContinueBtn'),
@@ -98,6 +100,9 @@
   };
 
   let state = loadState();
+  let storageNotice = null;
+  let storageWarningShown = false;
+  let renderedDiscardKey = null;
 
   function clone(value) {
     return JSON.parse(JSON.stringify(value));
@@ -132,7 +137,25 @@
   }
 
   function saveState() {
-    localStorage.setItem(storageKey, JSON.stringify(state));
+    try {
+      localStorage.setItem(storageKey, JSON.stringify(state));
+      storageNotice?.remove();
+      storageNotice = null;
+      return true;
+    } catch (error) {
+      if (!storageWarningShown) {
+        console.warn('Truth or Drink: browser storage is unavailable; the game can continue in memory.', error);
+        storageWarningShown = true;
+      }
+      if (!storageNotice) {
+        storageNotice = document.createElement('p');
+        storageNotice.className = 'status-line';
+        storageNotice.setAttribute('role', 'status');
+        document.querySelector('.topbar')?.insertAdjacentElement('afterend', storageNotice);
+        storageNotice.textContent = 'This game is not being saved in this browser. You can keep playing, but reloading may lose progress.';
+      }
+      return false;
+    }
   }
 
   function positiveInt(value, fallback) {
@@ -163,7 +186,7 @@
   }
 
   function byId(id) {
-    return cards.find(card => card.id === id);
+    return cardsById.get(id);
   }
 
   function categoryBySlug(slug) {
@@ -494,8 +517,6 @@
     state.selectedCategories = cleaned;
     state.lastActionMessage = label;
     saveState();
-    renderCategories();
-    renderMoodCategories();
     update();
   }
 
@@ -564,6 +585,7 @@
     els.currentLabels.innerHTML = '';
 
     if (!card) {
+      delete els.cardStage.dataset.cardId;
       els.cardStage.className = 'card-stage empty-card';
       els.cardStage.innerHTML = `
         <div class="empty-card-copy">
@@ -581,7 +603,15 @@
 
     const cat = categoryBySlug(card.groupSlug);
     els.cardStage.className = 'card-stage';
-    els.cardStage.innerHTML = `<img src="${card.image}" alt="${escapeHtml(card.group)} card: ${escapeHtml(card.question)}" />`;
+    // Keep the decoded image in place when only scores, targets, or text change.
+    if (els.cardStage.dataset.cardId !== card.id) {
+      const image = document.createElement('img');
+      image.src = card.image;
+      image.alt = `${card.group} card: ${card.question}`;
+      image.decoding = 'async';
+      els.cardStage.replaceChildren(image);
+      els.cardStage.dataset.cardId = card.id;
+    }
 
     const groupPill = document.createElement('span');
     groupPill.className = 'pill';
@@ -813,6 +843,9 @@
   }
 
   function renderDiscard() {
+    const key = JSON.stringify(state.discardIds);
+    if (key === renderedDiscardKey) return;
+    renderedDiscardKey = key;
     const ids = [...state.discardIds].reverse();
     els.discardGrid.innerHTML = '';
     if (ids.length === 0) {
@@ -833,6 +866,7 @@
       img.src = card.image;
       img.alt = 'Discarded card';
       img.loading = 'lazy';
+      img.decoding = 'async';
 
       const label = document.createElement('span');
       label.textContent = `${card.group} · ${card.type} — ${card.question}`;
@@ -883,7 +917,8 @@
     renderScoreboard();
     renderCategories();
     renderMoodCategories();
-    renderDiscard();
+    // A long history should not rebuild hidden image nodes on each turn.
+    if (els.discardModal?.open) renderDiscard();
     updateStats();
   }
 
@@ -899,6 +934,7 @@
 
   function openModal(dialog) {
     if (!dialog) return;
+    if (dialog === els.discardModal) renderDiscard();
     if (typeof dialog.showModal === 'function' && !dialog.open) dialog.showModal();
     else dialog.setAttribute('open', '');
   }
@@ -1000,7 +1036,5 @@
   });
 
   setupModals();
-  renderCategories();
-  renderMoodCategories();
   update();
 })();

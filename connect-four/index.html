@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#191a19"><meta name="description" content="Connect Four with three computer difficulties, local two-player games, and a match scoreboard."><title>Connect Four · Ben's toolbox</title><link rel="stylesheet" href="../toolkit.css"><link rel="stylesheet" href="styles.css"><script src="engine.js" defer></script><script src="script.js" defer></script>
+</head>
+<body><main class="shell">
+<header class="topbar"><a class="brand" href="../">All games &amp; tools</a><span class="muted">1–2 players · Strategy</span></header>
+<section class="intro"><h1>Connect Four</h1><p class="lede">Four in a row. Watch the diagonals.</p></section>
+<div class="game-layout">
+<section class="panel play-panel" aria-label="Connect Four game">
+  <div class="match-score" aria-label="Match score"><div><span id="score1-label">You</span><strong id="score1">0</strong></div><div><span>Draws</span><strong id="score-draws">0</strong></div><div><span id="score2-label">Computer</span><strong id="score2">0</strong></div></div>
+  <p id="status" class="status" role="status">Your turn. Drop a coral disc.</p>
+  <div id="drop-buttons" class="drop-buttons" role="group" aria-label="Choose a column to drop a disc"></div>
+  <table id="board" class="board"><caption class="sr-only">Connect Four board, six rows from top to bottom and seven columns from left to right. Use the seven Drop buttons above the board to play.</caption><tbody id="board-body"></tbody></table>
+  <div class="legend"><span><span class="legend-disc p1" aria-hidden="true">1</span><span id="p1-label">You · Coral</span></span><span><span class="legend-disc p2" aria-hidden="true">2</span><span id="p2-label">Computer · Sage</span></span></div>
+  <div class="round-actions"><button id="restart" class="button secondary" type="button">Restart round</button><span id="match-label" class="muted">Normal · Scores for this visit</span></div>
+</section>
+<details class="panel rules"><summary>Options &amp; rules</summary>
+  <label class="field" for="mode">Opponent<select id="mode"><option value="computer">Computer</option><option value="local">Another player, same screen</option></select></label>
+  <label class="field" id="difficulty-field" for="difficulty">Difficulty<select id="difficulty"><option value="easy">Easy</option><option value="normal" selected>Normal</option><option value="hard">Hard</option></select></label>
+  <p id="starter-note" class="muted">You go first. Scores are separate for each difficulty.</p>
+  <ol><li>Pick a column. Your disc falls into its lowest empty space.</li><li>Take turns. Four in a row wins: across, down, or diagonally.</li><li>A full board without a winner is a draw.</li></ol>
+  <p class="muted">Keyboard: Tab to a column, then Enter or Space to drop. Use ← and → to move between columns.</p>
+  <button id="reset-match" class="button secondary" type="button">Reset match score</button>
+</details>
+</div><noscript><p class="panel">Enable JavaScript to play Connect Four.</p></noscript>
+</main></body></html>

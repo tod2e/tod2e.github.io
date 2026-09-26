@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#191a19"><meta name="description" content="Five categories, one letter, and a shared timer. General, science, and baseball rounds for two or more players."><title>Categories · Ben's toolbox</title><link rel="stylesheet" href="../toolkit.css"><link rel="stylesheet" href="styles.css"><script src="script.js" defer></script>
+</head>
+<body><main class="shell">
+<header class="topbar"><a class="brand" href="../">All games &amp; tools</a><span class="muted">2+ players · Pen &amp; paper</span></header>
+<section class="intro"><h1>Categories</h1><p class="lede">One letter. Five categories. Beat the clock.</p></section>
+<div class="game-layout">
+<section class="panel round-panel" aria-label="Current round">
+  <div class="round-heading"><div><p class="eyebrow" id="round-number">Round 1</p><span class="round-letter" id="letter" aria-label="Round letter"></span></div><div class="clock-wrap"><span class="muted">Time left</span><div id="timer" class="clock" role="timer" aria-live="off">1:30</div></div></div>
+  <ol id="prompts" class="prompts"></ol>
+  <p id="status" class="status" role="status">Get your paper ready, then start the timer.</p>
+  <div class="actions"><button type="button" class="button primary" id="start">Start</button><button type="button" class="button secondary" id="pause" disabled>Pause</button><button type="button" class="button secondary" id="reset">Reset timer</button></div>
+  <button type="button" class="button secondary next-round" id="next">Next round</button>
+</section>
+<div class="stack">
+  <details class="panel"><summary>Round settings</summary>
+    <label class="field" for="theme">Theme<select id="theme"><option value="general">General</option><option value="science">Science</option><option value="baseball">Baseball</option></select></label>
+    <p id="theme-note" class="muted" role="status">Theme changes apply to the next round.</p>
+    <label class="field" for="duration">Round length<select id="duration"><option value="60">60 seconds</option><option value="90" selected>90 seconds</option><option value="120">2 minutes</option><option value="180">3 minutes</option></select></label>
+    <p class="muted">The clock runs while you switch apps. Pause for a break.</p>
+    <label class="field" for="custom">Add categories, one per line<textarea id="custom" rows="3" maxlength="2400" placeholder="Something found in our lab"></textarea></label>
+    <p class="muted">Up to 20 join your chosen theme next round.</p><p id="custom-status" class="muted" role="status"></p>
+  </details>
+  <details class="panel rules"><summary>How to play &amp; score</summary><ol><li>Everyone writes one answer per category, starting with the round's letter.</li><li>When time is up, read your answers aloud.</li><li>A valid answer nobody else wrote scores <strong>2 points</strong>. A shared answer scores <strong>1</strong>. A blank or rejected answer scores <strong>0</strong>.</li><li>Judge disputed answers together and keep scores on paper. First to 30 wins, or choose a finish line.</li></ol><p class="muted">Agree on names, abbreviations, and whether titles may ignore “A,” “An,” and “The.” Themes use common starting letters. Your group judges the answers.</p></details>
+</div>
+</div><noscript><p class="panel">Enable JavaScript to generate a round and use the timer.</p></noscript>
+</main></body></html>
