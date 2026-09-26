@@ -5,7 +5,6 @@
   --muted: #aaada5;
   --line: #3a3c38;
   --accent: #f39876;
-  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-family: var(--sans);
   background: var(--bg);
   color: var(--ink);
@@ -28,7 +27,7 @@ h1, h2, h3, p { margin: 0; }
 .skip-link { position: absolute; left: 24px; top: -100px; z-index: 10; padding: 12px; background: var(--ink); color: var(--bg); }
 .skip-link:focus { top: 12px; }
 .topbar { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 96px; padding: 16px 0; }
-.topbar h1 { min-width: 0; font-size: 1.75rem; font-weight: 600; line-height: 1.2; letter-spacing: -.02em; }
+.topbar h1 { min-width: 0; font-size: 2.25rem; font-weight: 400; line-height: 1.2; letter-spacing: -.02em; }
 .wordmark { display: inline-flex; align-items: center; min-height: 44px; text-decoration: none; }
 .source-link { display: inline-flex; align-items: center; flex-shrink: 0; min-height: 44px; color: var(--muted); font-size: .8125rem; text-decoration: none; padding: 10px 0; }
 .source-link:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 4px; }
@@ -48,12 +47,12 @@ h1, h2, h3, p { margin: 0; }
 .search-box input:focus-visible { outline-offset: 1px; }
 kbd { border: 1px solid var(--line); padding: 2px 7px; color: var(--muted); font: .75rem/1.2 monospace; }
 .catalog-group { margin-top: 30px; }
-.group-heading { display: flex; align-items: baseline; gap: 10px; margin-bottom: 18px; font-size: 1.375rem; font-weight: 600; line-height: 1.2; }
-.group-count { color: var(--muted); font-size: .75rem; font-weight: 400; }
+.group-heading { display: flex; align-items: baseline; gap: 10px; margin-bottom: 18px; font-size: 1.75rem; font-weight: 400; line-height: 1.2; }
+.group-count { font-family: var(--sans); color: var(--muted); font-size: .75rem; font-weight: 400; }
 .entry-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 40px; margin: 0; padding: 0; list-style: none; }
 .entry { display: flex; align-items: flex-start; min-width: 0; border-top: 1px solid var(--line); }
 .entry-link { display: block; flex: 1; min-width: 0; padding: 18px 0 20px; text-decoration: none; }
-.entry-title { font-size: 1.125rem; font-weight: 500; line-height: 1.2; }
+.entry-title { font-size: 1.375rem; font-weight: 400; line-height: 1.2; }
 .entry-link:hover .entry-title { color: var(--accent); text-decoration: underline; text-underline-offset: 4px; }
 .entry-description { margin-top: 8px; color: var(--muted); font-size: .9375rem; line-height: 1.65; }
 .entry-meta { margin-top: 10px; color: var(--muted); font-size: .75rem; line-height: 1.65; }
@@ -61,7 +60,7 @@ kbd { border: 1px solid var(--line); padding: 2px 7px; color: var(--muted); font
 .pin-button:hover, .pin-button[aria-pressed="true"] { color: var(--accent); }
 .pin-status { margin-top: 16px; color: var(--muted); font-size: .875rem; line-height: 1.5; }
 .empty-state { padding: 50px 0; }
-.empty-state h2 { font-size: 1.375rem; font-weight: 600; line-height: 1.2; }
+.empty-state h2 { font-size: 1.75rem; font-weight: 400; line-height: 1.2; }
 .empty-state p { color: var(--muted); font-size: .9375rem; line-height: 1.6; margin: 12px 0; }
 .footer { display: flex; justify-content: space-between; gap: 16px; margin-top: 32px; border-top: 1px solid var(--line); padding: 24px 0 32px; color: var(--muted); font-size: .75rem; line-height: 1.5; }
 .fallback { padding-top: 30px; line-height: 1.8; }

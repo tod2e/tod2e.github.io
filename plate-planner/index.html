@@ -1,6 +1,10 @@
 <!doctype html>
 <html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#191a19"><meta name="description" content="A simple 96-well plate planner with sample labels, condition colors, autosave, and CSV export."><title>Plate Planner · Ben's Games &amp; Tools</title><link rel="stylesheet" href="../toolkit.css"><link rel="stylesheet" href="styles.css"></head>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#191a19"><meta name="description" content="A simple 96-well plate planner with sample labels, condition colors, autosave, and CSV export."><title>Plate Planner · Ben's Games &amp; Tools</title><link rel="stylesheet" href="../toolkit.css"><link rel="stylesheet" href="styles.css">
+  <link rel="preload" href="../assets/fonts/instrument-serif-latin-400.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="../assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="../typography.css" />
+</head>
 <body><main class="shell"><header class="topbar"><a class="brand" href="../">Ben's Games &amp; Tools</a><nav class="nav" aria-label="Main"><a href="../">All games & tools</a></nav></header>
 <section class="intro"><h1>Plate Planner</h1><p class="lede">Label a 96-well plate and export the layout.</p></section>
 <section class="panel stack" aria-label="Plate details"><div class="plate-heading"><label class="field">Plate name<input id="plateName" maxlength="120" placeholder="FapC kinetics · plate 1" autocomplete="off"></label><button class="secondary" id="exportPlate">Export CSV</button></div><p class="muted small" id="storageStatus">Your layout saves in this browser.</p></section>
