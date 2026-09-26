@@ -117,7 +117,11 @@
   };
 
   let state = loadState();
+  let storageNotice = null;
+  let storageWarningShown = false;
   let dragging = false;
+  let saveTimer = null;
+  let needleFrame = null;
 
   function clone(v) { return JSON.parse(JSON.stringify(v)); }
   function isCoop() { return state.mode === "cooperative"; }
@@ -156,8 +160,42 @@
   }
 
   function saveState() {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    if (saveTimer !== null) clearTimeout(saveTimer);
+    saveTimer = null;
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+      storageNotice?.remove();
+      storageNotice = null;
+      return true;
+    } catch (error) {
+      if (!storageWarningShown) {
+        console.warn('Same Wavelength: browser storage is unavailable; the game can continue in memory.', error);
+        storageWarningShown = true;
+      }
+      if (!storageNotice) {
+        storageNotice = document.createElement('p');
+        storageNotice.className = 'status-line';
+        storageNotice.setAttribute('role', 'status');
+        document.querySelector('.topbar')?.insertAdjacentElement('afterend', storageNotice);
+        storageNotice.textContent = 'This game is not being saved in this browser. You can keep playing, but reloading may lose progress.';
+      }
+      return false;
+    }
   }
+
+  function queueSaveState() {
+    if (saveTimer !== null) clearTimeout(saveTimer);
+    saveTimer = setTimeout(saveState, 180);
+  }
+
+  function flushPendingState() {
+    if (saveTimer !== null || dragging) saveState();
+  }
+
+  window.addEventListener("pagehide", flushPendingState);
+  document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "hidden") flushPendingState();
+  });
 
   function positiveInt(value, fallback, max = 999) {
     const n = Math.floor(Number(value));
@@ -452,7 +490,12 @@
     let theta = Math.atan2(dy, dx);
     theta = Math.max(0, Math.min(Math.PI, theta));
     state.needle = Math.max(0, Math.min(1, 1 - theta / Math.PI));
-    updateNeedle();
+    if (needleFrame === null) {
+      needleFrame = requestAnimationFrame(() => {
+        needleFrame = null;
+        updateNeedle();
+      });
+    }
   }
 
   function setPhaseText(title, hint) {
@@ -907,7 +950,7 @@
   els.clueInput.addEventListener("input", () => {
     state.clue = els.clueInput.value.trim();
     els.clueDisplay.textContent = state.clue || "—";
-    saveState();
+    queueSaveState();
   });
 
   els.hideTargetBtn.addEventListener("click", () => {
@@ -947,6 +990,9 @@
   function endDrag(event) {
     if (!dragging) return;
     dragging = false;
+    if (needleFrame !== null) cancelAnimationFrame(needleFrame);
+    needleFrame = null;
+    updateNeedle();
     els.dial.classList.remove("dragging");
     try { els.dial.releasePointerCapture?.(event.pointerId); } catch {}
     saveState();
@@ -1023,6 +1069,8 @@
   render();
 
   if (state.phase === "setup") {
-    setTimeout(() => openModal(els.setupModal), 250);
+    setTimeout(() => {
+      if (state.phase === "setup") openModal(els.setupModal);
+    }, 250);
   }
 })();

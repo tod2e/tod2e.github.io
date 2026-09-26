@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#191a19"><meta name="description" content="A daily four-digit logic puzzle, with unlimited practice codes."><title>Codebreaker · Ben's toolbox</title><link rel="stylesheet" href="../toolkit.css"><link rel="stylesheet" href="styles.css"><script src="script.js" defer></script>
+</head>
+<body><main class="shell">
+<header class="topbar"><a class="brand" href="../">All games &amp; tools</a><span class="muted">Solo · Logic</span></header>
+<section class="intro"><h1>Codebreaker</h1><p class="lede">Four digits. Make a guess, follow the clues.</p></section>
+<div class="game-layout">
+<section class="panel">
+  <p id="challenge-label" class="muted"></p>
+  <div class="secret" id="secret" aria-label="Secret code is hidden">? ? ? ?</div>
+  <p id="status" class="status" role="status">Make your first guess.</p>
+  <p id="save-note" class="muted" role="status" hidden></p>
+  <form id="guess-form" novalidate>
+    <label class="field" for="guess">Your guess<input id="guess" type="text" inputmode="numeric" pattern="[0-9]{4}" maxlength="4" autocomplete="off" autocapitalize="off" spellcheck="false" aria-describedby="guess-help error" placeholder="e.g. 0123"></label>
+    <p class="muted" id="guess-help">Four different digits. Zero can come first.</p>
+    <p id="error" class="error" role="alert"></p>
+    <div class="actions"><button type="submit" id="submit" class="button primary">Check</button><button type="button" id="give-up" class="button secondary">Reveal</button><button type="button" id="new" class="button secondary">Practice</button></div>
+  </form>
+  <div id="empty" class="empty">Your clues will appear here.</div>
+  <div id="history-wrap" class="history-wrap hidden"><table><caption class="sr-only">Guess history. Exact means the digit and position match. Misplaced means a correct digit in the wrong position.</caption><thead><tr><th scope="col">#</th><th scope="col">Guess</th><th scope="col">Exact</th><th scope="col">Misplaced</th></tr></thead><tbody id="history"></tbody></table></div>
+</section>
+<details class="panel rules"><summary>Options &amp; rules</summary>
+  <label class="field" for="mode">Puzzle<select id="mode"><option value="daily">Daily challenge</option><option value="practice">Random practice</option></select></label>
+  <p class="muted">Daily changes at midnight on your device. Your daily guesses and result stay in this browser. Practice as often as you like.</p>
+  <ul><li>The code has four different digits, including a possible leading zero.</li><li><strong>Exact:</strong> right digit, right position.</li><li><strong>Misplaced:</strong> right digit, wrong position.</li><li>Guesses are unlimited. Fewer is better.</li></ul>
+  <p class="muted">Example only: secret <strong>0123</strong>, guess <strong>0324</strong> → 2 exact, 1 misplaced. Hints never identify the individual matching digits.</p>
+</details>
+</div><noscript><p class="panel">Enable JavaScript to play Codebreaker.</p></noscript>
+</main></body></html>
