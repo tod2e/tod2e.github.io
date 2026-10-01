@@ -3,30 +3,29 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#11100f" />
+  <meta name="theme-color" content="#ffffff" />
   <title>Same Wavelength</title>
   <link rel="stylesheet" href="styles.css" />
-
-  <link rel="preload" href="../assets/fonts/instrument-serif-latin-400.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="../assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="../typography.css" />
 </head>
 <body>
+<a class="skip-link" href="#mainContent">Skip to content</a>
   <main class="app-shell">
     <header class="topbar">
       <div class="brand-block">
-        <a class="brand" href="./">Same Wavelength</a>
-        <span class="byline">a spectrum guessing game</span>
+        <a class="brand" href="../">Ben’s games &amp; tools</a><span class="page-name">Same Wavelength</span>
+
       </div>
       <nav class="top-actions" aria-label="Game controls">
-        <a class="chip-button link-button" href="../">All games</a>
+
         <button class="chip-button" type="button" data-open="setupModal">Setup</button>
         <button class="chip-button" type="button" data-open="spectraModal">Spectra</button>
         <button class="chip-button" type="button" data-open="rulesModal">Rules</button>
       </nav>
     </header>
 
-    <section class="game-stage">
+    <section id="mainContent" tabindex="-1" class="game-stage">
       <div class="round-head">
         <div>
           <p class="eyebrow" id="roundLabel">Round 1</p>

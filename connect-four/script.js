@@ -24,23 +24,23 @@
     for (let c = 0; c < G.COLS; c++) {const cell = document.createElement('td'); const disc = document.createElement('span'); disc.className = 'disc'; disc.setAttribute('aria-hidden', 'true'); cell.append(disc); row.append(cell); cells.push({cell, disc});}
     $('board-body').append(row);
   }
-  function playerName(player) {return mode === 'computer' ? player === 1 ? 'You' : 'Computer' : player === 1 ? 'Coral' : 'Sage';}
+  function playerName(player) {return mode === 'computer' ? player === 1 ? 'You' : 'Computer' : player === 1 ? 'Blue' : 'Gold';}
   function render() {
     const won = new Set(G.winningCells(board));
     cells.forEach(({cell, disc}, i) => {
       const value = board[i];
       disc.className = `disc${value ? ` p${value}` : ''}${last === i ? ' last' : ''}${won.has(i) ? ' winning' : ''}`;
       disc.textContent = value || '';
-      cell.setAttribute('aria-label', `Row ${Math.floor(i / G.COLS) + 1}, column ${i % G.COLS + 1}: ${value ? value === 1 ? 'Coral, player 1' : 'Sage, player 2' : 'empty'}${won.has(i) ? ', winning line' : ''}${last === i ? ', last move' : ''}`);
+      cell.setAttribute('aria-label', `Row ${Math.floor(i / G.COLS) + 1}, column ${i % G.COLS + 1}: ${value ? value === 1 ? 'Blue, player 1' : 'Gold, player 2' : 'empty'}${won.has(i) ? ', winning line' : ''}${last === i ? ', last move' : ''}`);
     });
     buttons.forEach((button, c) => {button.disabled = ended || thinking || board[c] !== 0 || (mode === 'computer' && turn === 2); button.setAttribute('aria-label', board[c] !== 0 ? `Column ${c + 1} is full` : `Drop a disc in column ${c + 1}`);});
-    $('p1-label').textContent = mode === 'computer' ? 'You · Coral' : 'Player 1 · Coral';
-    $('p2-label').textContent = mode === 'computer' ? 'Computer · Sage' : 'Player 2 · Sage';
+    $('p1-label').textContent = mode === 'computer' ? 'You · Blue' : 'Player 1 · Blue';
+    $('p2-label').textContent = mode === 'computer' ? 'Computer · Gold' : 'Player 2 · Gold';
     $('score1-label').textContent = playerName(1); $('score2-label').textContent = playerName(2);
     $('score1').textContent = score()[1]; $('score2').textContent = score()[2]; $('score-draws').textContent = score().draws;
     $('board').setAttribute('aria-busy', thinking ? 'true' : 'false');
     $('difficulty-field').hidden = mode === 'local';
-    $('starter-note').textContent = mode === 'computer' ? 'You go first. Scores are separate for each difficulty.' : 'Coral starts the first round. After each finished round, the other player goes first.';
+    $('starter-note').textContent = mode === 'computer' ? 'You go first. Scores are separate for each difficulty.' : 'Blue starts the first round. After each finished round, the other player goes first.';
     $('match-label').textContent = `${mode === 'local' ? 'Local match' : difficulty[0].toUpperCase() + difficulty.slice(1)} · Scores for this visit`;
     $('restart').textContent = ended ? 'Play again' : 'Restart round';
   }
@@ -49,7 +49,7 @@
     stopComputer(); version++; board = G.emptyBoard();
     if (mode === 'computer') starter = 1; else if (rematch) starter = 3 - starter;
     turn = starter; ended = false; last = -1;
-    $('status').textContent = mode === 'computer' ? 'Your turn. Drop a coral disc.' : `${playerName(starter)} goes first. Drop a disc in any column.`;
+    $('status').textContent = mode === 'computer' ? 'Your turn. Drop a blue disc.' : `${playerName(starter)} goes first. Drop a disc in any column.`;
     render();
   }
   function completeComputer(id, column) {

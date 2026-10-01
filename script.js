@@ -567,6 +567,8 @@
 
     els.roundLabel.textContent = state.gameStarted ? `Round ${state.roundNumber}` : 'Ready when you are';
     els.currentPlayerName.textContent = player ? player.name : 'Set up players';
+    const turnVerb = document.getElementById('turnVerb');
+    if (turnVerb) turnVerb.hidden = !player;
 
     if (!state.gameStarted) {
       els.turnStatus.textContent = state.lastActionMessage || 'Add players first. Then draw from the card in the center.';
@@ -1024,7 +1026,7 @@
   window.addEventListener('keydown', event => {
     const tag = document.activeElement?.tagName;
     const modalOpen = Boolean(document.querySelector('dialog[open]'));
-    if (modalOpen || ['BUTTON', 'INPUT', 'TEXTAREA', 'SELECT'].includes(tag)) return;
+    if (modalOpen || event.defaultPrevented || event.ctrlKey || event.metaKey || event.altKey || event.isComposing || document.activeElement?.isContentEditable || ['A', 'BUTTON', 'INPUT', 'TEXTAREA', 'SELECT', 'SUMMARY'].includes(tag)) return;
     if ((event.key === ' ' || event.key === 'Enter') && !els.drawBtn.disabled) {
       event.preventDefault();
       drawCard();

@@ -2,21 +2,20 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#11100f"><title>Fishbowl</title>
+<meta name="theme-color" content="#ffffff"><title>Fishbowl</title>
 <link rel="stylesheet" href="styles.css">
-
-  <link rel="preload" href="../assets/fonts/instrument-serif-latin-400.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="../assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="../typography.css" />
 </head>
 <body>
+<a class="skip-link" href="#mainContent">Skip to content</a>
 <main class="shell">
 <header class="topbar">
-<a class="brand" href="./">Fishbowl<small>three rounds, one increasingly familiar bowl</small></a>
-<nav class="nav"><a class="pill" href="../">All games</a><button class="pill" id="rulesBtn" type="button">Rules</button><button class="pill" id="resetBtn" type="button">Reset</button></nav>
+<a class="brand" href="../">Ben’s games &amp; tools</a>
+<nav class="nav" aria-label="Page controls"><button class="pill" id="rulesBtn" type="button">Rules</button><button class="pill" id="resetBtn" type="button">Reset</button></nav>
 </header>
 
-<section class="hero"><p class="eyebrow">Three rounds · same words</p><h1>Fishbowl</h1><p class="lede">Describe it. Say one word. Then act it out. The same phrase pool gets harder every round.</p></section>
+<section id="mainContent" tabindex="-1" class="hero"><h1>Fishbowl</h1><p class="lede">Describe the phrase, give a one-word clue, then act it out. Three rounds with the same words.</p></section>
 <section class="panel stack">
   <div class="row between">
     <div><p class="eyebrow" id="roundEyebrow">Setup</p><h2 id="phaseTitle">Build the bowl</h2></div>
@@ -48,6 +47,6 @@
   <div id="gameOverView" class="private hidden"><div><p class="eyebrow">Game over</p><div class="role" id="winner"></div><p class="muted" id="finalScores"></p><button class="primary" id="newGame">New game</button></div></div>
 </section>
 </main>
-<dialog id="rulesModal" class="modal"><button class="close" data-close type="button">×</button><div id="rulesContent"></div></dialog>
+<dialog id="rulesModal" class="modal"><button class="close" data-close type="button" aria-label="Close dialog">×</button><div id="rulesContent"></div></dialog>
 <script src="script.js"></script>
 </body></html>

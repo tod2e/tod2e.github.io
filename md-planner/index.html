@@ -1,10 +1,11 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MD Planner</title><link rel="stylesheet" href="styles.css">
-  <link rel="preload" href="../assets/fonts/instrument-serif-latin-400.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="../assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="../typography.css" />
+<meta name="theme-color" content="#ffffff">
 </head>
-<body><main class="shell"><header class="topbar"><a class="brand" href="./">MD Planner<small>plan the protocol, generate the files</small></a><nav class="nav"><a class="pill" href="../">All games & tools</a><button class="pill" id="mdNotesBtn">Assumptions</button></nav></header>
-<section class="hero"><p class="eyebrow">GROMACS protocol generator</p><h1>MD Planner</h1><p class="lede">Choose standard all-atom MD, HMR, steered MD, umbrella sampling or metadynamics; specify conditions and runtime; inspect the computational plan; then download generated MDP files and supporting inputs as a ZIP.</p></section>
+<body>
+<a class="skip-link" href="#mainContent">Skip to content</a><main class="shell"><header class="topbar"><a class="brand" href="../">Ben’s games &amp; tools</a><nav class="nav" aria-label="Page controls"><button class="pill" id="mdNotesBtn">Assumptions</button></nav></header>
+<section id="mainContent" tabindex="-1" class="hero"><h1>MD Planner</h1><p class="lede">Plan a GROMACS simulation, inspect the protocol, and download the input files.</p></section>
 
 <section class="panel stack">
 <div class="grid3"><label class="field">Protocol<select id="mdMode"><option value="standard">Standard all-atom MD</option><option value="hmr">HMR production MD</option><option value="steered">Steered MD / pulling</option><option value="umbrella">Umbrella sampling</option><option value="meta">Metadynamics (PLUMED)</option></select></label>
@@ -34,5 +35,5 @@
 </section>
 </main>
 
-<dialog class="modal" id="mdNotes"><button class="close">×</button><p class="eyebrow">Important</p><h2>Generated ≠ automatically valid for every system</h2><p class="muted">The planner generates transparent starting templates. Force-field-specific cutoffs, membrane pressure coupling, special restraints, virtual sites, free-energy settings, unusual water models and system-specific index groups can require changes. Always run <span class="kbd">gmx grompp</span>, inspect warnings, and verify the MDP against the force field and the physical ensemble you intend to sample.</p><p class="muted"><strong>HMR:</strong> changing the timestep is not hydrogen-mass repartitioning. Atomic masses must be repartitioned in the topology beforehand.</p><p class="muted"><strong>Umbrella:</strong> each window still needs a starting configuration close to its restraint centre, usually extracted from a pulling trajectory or otherwise prepared.</p></dialog>
+<dialog class="modal" id="mdNotes"><button class="close" aria-label="Close dialog">×</button><p class="eyebrow">Important</p><h2>Generated ≠ automatically valid for every system</h2><p class="muted">The planner generates transparent starting templates. Force-field-specific cutoffs, membrane pressure coupling, special restraints, virtual sites, free-energy settings, unusual water models and system-specific index groups can require changes. Always run <span class="kbd">gmx grompp</span>, inspect warnings, and verify the MDP against the force field and the physical ensemble you intend to sample.</p><p class="muted"><strong>HMR:</strong> changing the timestep is not hydrogen-mass repartitioning. Atomic masses must be repartitioned in the topology beforehand.</p><p class="muted"><strong>Umbrella:</strong> each window still needs a starting configuration close to its restraint centre, usually extracted from a pulling trajectory or otherwise prepared.</p></dialog>
 <script src="script.js"></script></body></html>

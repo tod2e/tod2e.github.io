@@ -6,30 +6,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Truth or Drink</title>
   <link rel="stylesheet" href="styles.css" />
-
-  <link rel="preload" href="assets/fonts/instrument-serif-latin-400.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="typography.css" />
+<meta name="theme-color" content="#ffffff">
 </head>
 <body>
+<a class="skip-link" href="truth-or-drink/#top">Skip to content</a>
   <main class="app-shell">
     <header class="topbar" aria-label="Main navigation">
       <div class="brand-block">
-        <a class="brand" href="truth-or-drink/#top" aria-label="Truth or Drink home">Truth or Drink</a>
-        <span class="byline">Written by Ben Shin</span>
+        <a class="brand" href="./">Ben’s games &amp; tools</a><span class="page-name">Truth or Drink</span>
+
       </div>
       <nav class="top-actions" aria-label="Game controls">
-        <a href="./" aria-label="All games" class="chip-button" style="text-decoration:none;display:inline-flex;align-items:center;">All games</a>
+
         <button type="button" class="chip-button" data-open-modal="playersModal">Players</button>
         <button type="button" class="chip-button" data-open-modal="moodModal">Categories</button>
         <button type="button" class="chip-button" data-open-modal="rulesModal">Rules</button>
       </nav>
     </header>
 
-    <section id="top" class="table-stage" aria-labelledby="mainTitle">
+    <section id="top" tabindex="-1" class="table-stage" aria-labelledby="mainTitle">
       <div class="stage-copy">
         <p class="eyebrow" id="roundLabel">Round 1</p>
-        <h1 id="mainTitle"><span id="currentPlayerName">Set up players</span><span class="muted-heading"> draws</span></h1>
+        <h1 id="mainTitle"><span id="currentPlayerName">Set up players</span><span id="turnVerb" class="muted-heading" hidden> draws</span></h1>
         <p id="turnStatus" class="turn-status">Add players first, then the card becomes the center of the game.</p>
       </div>
 

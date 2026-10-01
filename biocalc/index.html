@@ -1,10 +1,11 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>BioCalc</title><link rel="stylesheet" href="styles.css">
-  <link rel="preload" href="../assets/fonts/instrument-serif-latin-400.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="../assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="../typography.css" />
+<meta name="theme-color" content="#ffffff">
 </head>
-<body><main class="shell"><header class="topbar"><a class="brand" href="./">BioCalc<small>Recipes, mixtures, and protein concentration</small></a><nav class="nav"><a class="pill" href="../">All games & tools</a><button class="pill" id="helpBtn">Notes</button></nav></header>
-<section class="hero"><p class="eyebrow">Lab utility</p><h1>BioCalc</h1><p class="lede">Recipes, multicomponent mixtures, Beer–Lambert concentration, sequence-derived A280 estimates, and the small calculations that otherwise end up scattered across notebooks.</p></section>
+<body>
+<a class="skip-link" href="#mainContent">Skip to content</a><main class="shell"><header class="topbar"><a class="brand" href="../">Ben’s games &amp; tools</a><nav class="nav" aria-label="Page controls"><button class="pill" id="helpBtn">Notes</button></nav></header>
+<section id="mainContent" tabindex="-1" class="hero"><h1>BioCalc</h1><p class="lede">Scale recipes, mix solutions, and calculate concentrations.</p></section>
 <div class="tooltabs">
 <button class="tabbtn active" data-tab="recipes">Recipes</button><button class="tabbtn" data-tab="mix">Mix builder</button><button class="tabbtn" data-tab="a280">A280 / concentration</button><button class="tabbtn" data-tab="quick">Quick calculators</button>
 </div>
@@ -61,6 +62,6 @@
 </section>
 </main>
 
-<dialog class="modal" id="helpModal"><button class="close" data-close>×</button><p class="eyebrow">Recipe notes</p><h2>Using your own recipes</h2><p class="muted">Built-in recipes are starting points. Follow your lab protocol for preparation order, pH, sterilization, and supplements. Use Add custom recipe to save your own formulations in this browser. Choose Export custom recipes to keep a separate copy.</p></dialog>
-<dialog class="modal" id="recipeModal"><button class="close" data-close>×</button><p class="eyebrow">Custom formulation</p><h2>Add recipe</h2><div class="stack"><label class="field">Name<input id="customRecipeName"></label><div class="grid2"><label class="field">Base volume<input id="customRecipeBase" type="number" value="1000"></label><label class="field">Base unit<select id="customRecipeBaseUnit"><option>mL</option><option>L</option></select></label></div><label class="field">Components <small>One per line: name | amount | unit | optional note</small><textarea id="customRecipeComponents" rows="7" placeholder="NaCl | 8 | g |&#10;Tris | 3.03 | g | 25 mM"></textarea></label><label class="field">Instructions <small>One step per line</small><textarea id="customRecipeInstructions" rows="5"></textarea></label><button class="primary" id="saveCustomRecipe">Save recipe</button><p id="customRecipeStatus" class="status"></p></div></dialog>
+<dialog class="modal" id="helpModal"><button class="close" data-close aria-label="Close dialog">×</button><p class="eyebrow">Recipe notes</p><h2>Using your own recipes</h2><p class="muted">Built-in recipes are starting points. Follow your lab protocol for preparation order, pH, sterilization, and supplements. Use Add custom recipe to save your own formulations in this browser. Choose Export custom recipes to keep a separate copy.</p></dialog>
+<dialog class="modal" id="recipeModal"><button class="close" data-close aria-label="Close dialog">×</button><p class="eyebrow">Custom formulation</p><h2>Add recipe</h2><div class="stack"><label class="field">Name<input id="customRecipeName"></label><div class="grid2"><label class="field">Base volume<input id="customRecipeBase" type="number" value="1000"></label><label class="field">Base unit<select id="customRecipeBaseUnit"><option>mL</option><option>L</option></select></label></div><label class="field">Components <small>One per line: name | amount | unit | optional note</small><textarea id="customRecipeComponents" rows="7" placeholder="NaCl | 8 | g |&#10;Tris | 3.03 | g | 25 mM"></textarea></label><label class="field">Instructions <small>One step per line</small><textarea id="customRecipeInstructions" rows="5"></textarea></label><button class="primary" id="saveCustomRecipe">Save recipe</button><p id="customRecipeStatus" class="status"></p></div></dialog>
 <script src="recipes.js"></script><script src="script.js"></script></body></html>

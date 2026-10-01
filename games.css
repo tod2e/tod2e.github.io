@@ -1,0 +1,41 @@
+@import url("toolkit.css");
+
+/* Pass-and-play layouts; color is reserved for game state. */
+.shell { max-width: 920px; }
+.card, .chain-step, .answer { padding: 16px; border: 1px solid var(--line); border-radius: 8px; background: var(--bg); }
+.big-card { min-height: 270px; display: grid; place-items: center; padding: 32px; border-radius: 8px; text-align: center; background: var(--bg-soft); }
+.big-card .prompt { font-size: clamp(1.8rem, 5vw, 3.25rem); font-weight: 600; line-height: 1.2; letter-spacing: -.03em; text-wrap: balance; }
+.big-card .sub { color: var(--muted); margin-top: 16px; }
+.scorebar { display: flex; align-items: center; flex-wrap: wrap; gap: 16px; }
+.scorechip { color: var(--muted); font-size: .875rem; }
+.scorechip strong { margin-left: 6px; color: var(--ink); font-variant-numeric: tabular-nums; }
+.actions { margin-top: 8px; }
+.timer { font-size: clamp(2rem, 6vw, 3.5rem); font-weight: 500; font-variant-numeric: tabular-nums; letter-spacing: -.04em; }
+.timer.low { color: var(--warn); }
+.timer.out { color: var(--bad); }
+.option-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.option { min-height: 56px; padding: 16px; border: 1px solid var(--line-strong); border-radius: 6px; background: var(--bg); color: var(--ink); text-align: left; }
+.option:hover { background: var(--bg-soft); }
+.option.selected { background: var(--accent-soft); border-color: var(--accent); }
+.rank-list, .chain { display: grid; gap: 12px; }
+.rank-item { display: flex; align-items: center; gap: 12px; padding: 12px; border-bottom: 1px solid var(--line); }
+.rank-num { width: 30px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.bar { height: 8px; border-radius: 4px; background: var(--bg-soft); overflow: hidden; }
+.bar > span { display: block; height: 100%; background: var(--accent); border-radius: inherit; }
+.private { min-height: 330px; display: grid; place-items: center; padding: 24px 0; text-align: center; }
+.private .role { margin-bottom: 16px; font-size: clamp(2rem, 6vw, 3.5rem); font-weight: 600; letter-spacing: -.03em; line-height: 1.2; overflow-wrap: anywhere; }
+.private .actions { justify-content: center; }
+.canvas-wrap { overflow: hidden; border: 1px solid var(--line-strong); border-radius: 8px; }
+canvas { display: block; width: 100%; height: auto; touch-action: none; background: #f5f1eb; }
+.chain-step img { width: 100%; max-height: 420px; object-fit: contain; background: #f5f1eb; border-radius: 6px; margin-top: 12px; }
+.answer.truth { border-color: var(--good); background: #eef7f1; }
+.answer.mine { opacity: .6; }
+.badge { color: var(--muted); font-size: .8125rem; }
+@media (max-width: 760px) {
+  .option-grid { grid-template-columns: 1fr; }
+  .big-card { min-height: 230px; padding: 24px; }
+}
+
+/* Long answers and player names must fit a shared phone screen. */
+.big-card, .answer, .option, .scorechip, .rank-item { min-width: 0; overflow-wrap: anywhere; }
+.big-card > *, .row > * { min-width: 0; max-width: 100%; }
